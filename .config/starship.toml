@@ -1,0 +1,58 @@
+add_newline = false
+
+format = """\
+  $time\
+  $battery\
+  $username\
+  $hostname\
+  $directory\
+  $git_branch\
+  $git_state\
+  $git_status\
+  $git_commit\
+  $package\
+  $rust\
+  $cmd_duration\
+  $jobs\
+  $line_break\
+  $character\
+"""
+
+[time]
+format = "[%H:%M]"
+disabled = true
+
+[directory]
+truncation_length = 0
+
+[character]
+success_symbol = "[>>](bold green)"
+error_symbol = "[!!](bold red)"
+vicmd_symbol = "[<<](bold green)"
+
+[jobs]
+threshold = 1
+
+[git_commit]
+only_detached = false
+commit_hash_length = 8
+
+[package]
+symbol = " "
+
+[battery]
+full_symbol = ' '
+charging_symbol = ' '
+discharging_symbol = ' '
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 30
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 100
+style = "green"

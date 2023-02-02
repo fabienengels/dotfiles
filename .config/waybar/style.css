@@ -1,0 +1,84 @@
+/* https://github.com/sainnhe/everforest/blob/master/palette.md */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Jetbrains Mono;
+    font-size: 18px;
+    min-height: 0;
+}
+
+window#waybar {
+  /* #232A2E */
+  background: rgba(35, 42, 46, 0.7);
+  color: #D3C6AA;
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 0.8);
+  border: 2px solid rgba(100, 114, 125, 0.5);
+  border-radius: 10px;
+}
+/* tooltip label { */
+/*   color: white; */
+/* } */
+
+#workspaces button {
+  padding: 0 5px;
+  background: transparent;
+  color: #9da9a0;
+  /* border-bottom: 3px solid transparent; */
+}
+
+#workspaces button.current_output {
+  color: #D3C6AA;
+}
+
+#workspaces button.active {
+  color: #e67e80;
+  /* color: #7fbbb3; */
+}
+
+#pulseaudio, #clock, #network {
+  padding: 0 5px;
+  margin: 5px;
+}
+
+#clock {
+  color: #d699db;
+}
+
+#network {
+  color: #dbbc7f;
+}
+
+#pulseaudio {
+  color: #a7c080;
+}
+
+#mpd {
+  font-style: italic;
+  font-size: 16px;
+}
+
+/* #battery { */
+/*     background-color: #ffffff; */
+/*     color: black; */
+/* } */
+
+/* #battery.charging { */
+/*     color: white; */
+/*     background-color: #83C092; */
+/* } */
+
+/* #battery.full { */
+/*   color: #A7C080; */
+/* } */
+/**/
+/* #battery.yarning { */
+/*   color: #E69875; */
+/* } */
+/**/
+/* #battery.critical { */
+/*   color: #E67E80; */
+/* } */

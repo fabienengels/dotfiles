@@ -1,0 +1,21 @@
+set window-title-basename true
+set page-padding 20
+set adjust-open best-fit
+set font "DejaVu Sans Bold 12"
+
+#set guioptions ""
+
+set default-bg "#2e3440"
+
+set scroll-full-overlap 0.01
+set scroll-page-aware true
+set scroll-step 100
+set scroll-wrap true
+
+set advance-pages-per-row true
+set pages-per-row 1
+
+map [normal]     k navigate previous
+map [fullscreen] k navigate previous
+map [normal]     j navigate next
+map [fullscreen] j navigate next

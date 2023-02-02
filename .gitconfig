@@ -1,0 +1,41 @@
+[user]
+  name = Fabien Engels
+  email = code@fabienengels.com
+
+[core]
+  abbrev = 8
+  autocrlf = false
+  editor = nvim
+  pager = delta
+
+[merge]
+  conflictstyle = diff3
+
+[color]
+  ui = auto
+
+[push]
+  default = simple
+
+[alias]
+  incoming = !git fetch && git log --oneline ..@{u}
+  outgoing = log @{u}..
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+  st = status
+  l = pull
+  p = push
+  c = commit
+  d = diff
+  a = add
+  root = rev-parse --show-toplevel
+  test = clone --depth=1
+  authors = shortlog -e -s -n
+  list-tracked-files = ls-tree -r master --name-only
+[delta]
+  side-by-side = false
+  navigate = true  # use n and N to move between diff sections
+  line-numbers = true
+  theme = gruvbox-dark
+  colorMoved = default
+[init]
+  defaultBranch = main

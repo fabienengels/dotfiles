@@ -1,0 +1,39 @@
+themes {
+  everforest-dark {
+    bg "#2b3339"
+    fg "#d3c6aa"
+    black "#4b565c"
+    red "#e67e80"
+    green "#a7c080"
+    yellow "#dbbc7f"
+    blue "#7fbbb3"
+    magenta "#d699b6"
+    cyan "#83c092"
+    white "#d3c6aa"
+    orange "#FF9E64"
+  }
+}
+theme "everforest-dark"
+default_layout "compact"
+simplified_ui true
+copy_on_select true
+
+ui {
+  pane_frames {
+    rounded_corners true
+  }
+}
+
+keybinds {
+  normal {
+    bind "Alt 1" { GoToTab 1; }
+    bind "Alt 2" { GoToTab 2; }
+    bind "Alt 3" { GoToTab 3; }
+    bind "Alt 4" { GoToTab 4; }
+    bind "Alt 5" { GoToTab 5; }
+    bind "Alt 6" { GoToTab 6; }
+    bind "Alt 7" { GoToTab 7; }
+    bind "Alt 8" { GoToTab 8; }
+    bind "Alt 9" { GoToTab 9; }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "layer": "top",
+  "position": "top",
+    "modules-left": ["wlr/workspaces"],
+    "modules-center": ["mpd"],
+    "modules-right": ["tray", "pulseaudio", "battery", "network", "clock"],
+    "sway/window": {
+      "max-length": 50
+    },
+    "wlr/workspaces": {
+      "format": "{name}",
+      "on-click": "activate",
+      "on-scroll-up": "hyprctl dispatch workspace e+1",
+      "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "sort-by-number": true
+    },
+    "tray": {
+      "spacing": 5,
+      "icon-size": 24
+    },
+    "mpd": {},
+    "network": {
+        "format-wifi": "SSID:{essid}",
+        "format-ethernet": "ETH:{ifname}",
+        "format-disconnected": "OFFLINE",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) {ipaddr}/{cidr}",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "clock": {
+      "format": "{:%H:%M}",
+      "tooltip": true,
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "pulseaudio": {
+      "format": "VOL:{volume}%",
+      "format-bluetooth": "BLU:{volume}",
+      "format-muted": "MUTE",
+      "scroll-step": 1,
+      "on-click": "pavucontrol",
+      "tooltip": true
+    }
+}
