@@ -245,7 +245,7 @@ local servers = {
 	"jsonls",
 	"pyright",
 	"yamlls",
-	"sumneko_lua",
+	"lua_ls",
 	"rust_analyzer",
 	"ansiblels",
 	"bashls",
@@ -271,7 +271,7 @@ local runtime_path = vim.split(package.path, ";", {})
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-require("lspconfig").sumneko_lua.setup({
+require("lspconfig").lua_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
@@ -280,9 +280,6 @@ require("lspconfig").sumneko_lua.setup({
 			diagnostics = {
 				enable = true,
 				globals = { "vim" },
-				neededFileStatus = {
-					["codestyle-check"] = "Any",
-				},
 			},
 			format = {
 				enable = false,
