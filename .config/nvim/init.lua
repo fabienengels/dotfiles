@@ -213,14 +213,24 @@ local on_attach = function(_, bufnr)
 		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 	end, "[W]orkspace [L]ist Folders")
 
+	-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+	-- if client.supports_method("textDocument/formatting") then
+	vim.api.nvim_create_autocmd("BufWritePre", {
+		buffer = bufnr,
+		callback = function()
+			vim.lsp.buf.format({ bufnr = bufnr })
+		end,
+	})
+
 	-- Create a command `:Format` local to the LSP buffer
-	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-		if vim.lsp.buf.format then
-			vim.lsp.buf.format()
-		elseif vim.lsp.buf.formatting then
-			vim.lsp.buf.formatting()
-		end
-	end, { desc = "Format current buffer with LSP" })
+	-- vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
+	-- 	if vim.lsp.buf.format then
+	-- 		vim.lsp.buf.format()
+	-- 	elseif vim.lsp.buf.formatting then
+	-- 		vim.lsp.buf.formatting()
+	-- 	end
+	-- end, { desc = "Format current buffer with LSP" })
 end
 
 vim.diagnostic.config({
