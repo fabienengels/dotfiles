@@ -157,10 +157,18 @@ return {
 		"catppuccin/nvim",
 		enabled = false,
 		name = "catppuccin",
+		config = function()
+			require("catppuccin").setup({
+				flavour = "mocha",
+				transparent_background = true,
+			})
+
+			vim.cmd.colorscheme("catppuccin")
+		end,
 	},
 	{
 		"neanias/everforest-nvim",
-		enabled = true,
+		enabled = false,
 		priority = 1000,
 		config = function()
 			require("everforest").setup({
@@ -168,15 +176,20 @@ return {
 				transparent_background_level = 1,
 			})
 
-			vim.cmd("colorscheme everforest")
+			vim.cmd.colorscheme("everforest")
 		end,
 	},
 	{
 		-- TODO test
 		"rebelot/kanagawa.nvim",
-		enabled = false,
+		enabled = true,
 		priority = 1000,
 		config = function()
+			require("kanagawa").setup({
+				transparent = true,
+				dimInactive = true,
+				-- theme = "light",
+			})
 			vim.cmd("colorscheme kanagawa")
 		end,
 	},
