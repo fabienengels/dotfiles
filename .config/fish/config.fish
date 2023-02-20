@@ -31,8 +31,8 @@ alias a="l -a"
 alias bt_on="echo 'power on' | bluetoothctl && sleep 1 && echo 'power on' | bluetoothctl"
 alias bt_off="echo 'power off' | bluetoothctl"
 
-# set fish_color_autosuggestion green
-# set fish_color_command blue
-# set fish_color_match green
-
 source ~/.config/fish/themes/kanagawa.fish
+
+# set fish_color_autosuggestion green
+set fish_color_command blue
+# set fish_color_match green

@@ -1,12 +1,8 @@
 {
   "layer": "top",
-  "position": "top",
+  "position": "left",
     "modules-left": ["wlr/workspaces"],
-    "modules-center": ["mpd"],
     "modules-right": ["tray", "pulseaudio", "battery", "network", "clock"],
-    "sway/window": {
-      "max-length": 50
-    },
     "wlr/workspaces": {
       "format": "{name}",
       "on-click": "activate",
@@ -16,13 +12,12 @@
     },
     "tray": {
       "spacing": 5,
-      "icon-size": 24
+      "icon-size": 48
     },
-    "mpd": {},
     "network": {
-        "format-wifi": "SSID:{essid}",
-        "format-ethernet": "ETH:{ifname}",
-        "format-disconnected": "OFFLINE",
+        "format-wifi": "SSID",
+        "format-ethernet": "ETH",
+        "format-disconnected": "OFF",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) {ipaddr}/{cidr}",
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}"
     },
@@ -32,11 +27,20 @@
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "pulseaudio": {
-      "format": "VOL:{volume}%",
+      "format": "{icon}{volume}%",
       "format-bluetooth": "BLU:{volume}",
-      "format-muted": "MUTE",
+      "format-muted": "",
       "scroll-step": 1,
       "on-click": "pavucontrol",
-      "tooltip": true
+      "tooltip": true,
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", ""]
+      }
     }
 }

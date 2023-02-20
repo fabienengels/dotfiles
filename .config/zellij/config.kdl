@@ -1,22 +1,22 @@
 themes {
-  everforest-dark {
-    bg "#2b3339"
-    fg "#d3c6aa"
-    black "#4b565c"
-    red "#e67e80"
-    green "#a7c080"
-    yellow "#dbbc7f"
-    blue "#7fbbb3"
-    magenta "#d699b6"
-    cyan "#83c092"
-    white "#d3c6aa"
-    orange "#FF9E64"
+  kanagawa {
+    fg "#DCD7BA"
+      bg "#1F1F28"
+      red "#C34043"
+      green "#76946A"
+      yellow "#FF9E3B"
+      blue "#7E9CD8"
+      magenta "#957FB8"
+      orange "#FFA066"
+      cyan "#7FB4CA"
+      black "#16161D"
+      white "#DCD7BA"
   }
 }
-theme "everforest-dark"
+
+theme "kanagawa"
 default_layout "compact"
 pane_frames false
-simplified_ui true
 copy_on_select true
 
 keybinds {
