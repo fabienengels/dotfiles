@@ -22,12 +22,12 @@
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}"
     },
     "clock": {
-      "format": "{:%H:%M}",
+      "format": "{:%H\n%M}",
       "tooltip": true,
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "pulseaudio": {
-      "format": "{icon}{volume}%",
+      "format": "{icon}\n{volume:03}%",
       "format-bluetooth": "BLU:{volume}",
       "format-muted": "",
       "scroll-step": 1,
