@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     font-family: Jetbrains Mono;
-    font-size: 18px;
+    font-size: 24px;
     min-height: 0;
     /* color: #DCD7BA; */
 }
@@ -39,6 +39,8 @@ window#waybar {
 
 #clock {
   margin-bottom: 20px;
+  font-weight: bold;
+  padding: 8px;
 }
 
 #workspaces button.active {

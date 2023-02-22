@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "left",
     "modules-left": ["wlr/workspaces"],
-    "modules-right": ["tray", "pulseaudio", "battery", "network", "clock"],
+    "modules-right": ["tray", "pulseaudio", "network", "clock"],
     "wlr/workspaces": {
       "format": "{name}",
       "on-click": "activate",
@@ -15,9 +15,9 @@
       "icon-size": 48
     },
     "network": {
-        "format-wifi": "SSID",
-        "format-ethernet": "ETH",
-        "format-disconnected": "OFF",
+        "format-wifi": "",
+        "format-ethernet": "󰱓",
+        "format-disconnected": "󰅛",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) {ipaddr}/{cidr}",
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}"
     },
@@ -27,12 +27,13 @@
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "pulseaudio": {
-      "format": "{icon}\n{volume:03}%",
+      "format": "{icon}",
       "format-bluetooth": "BLU:{volume}",
       "format-muted": "",
       "scroll-step": 1,
       "on-click": "pavucontrol",
       "tooltip": true,
+      "tooltip-format": "Volume : {volume}%",
       "format-icons": {
         "headphone": "",
         "hands-free": "",
