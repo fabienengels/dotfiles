@@ -250,24 +250,25 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local servers = {
-	"svelte",
-	"arduino_language_server",
-	"jsonls",
-	"pyright",
-	"yamlls",
-	"lua_ls",
-	"rust_analyzer",
 	"ansiblels",
+	"arduino_language_server",
 	"bashls",
 	"dockerls",
 	"elixirls",
-	"tsserver",
+	"jsonls",
+	"lua_ls",
+	"pyright",
+	"rust_analyzer",
+	"svelte",
 	"tailwindcss",
+	"tsserver",
+	"yamlls",
 }
 
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = servers,
+	automatic_installation = true,
 })
 
 for _, lsp in ipairs(servers) do

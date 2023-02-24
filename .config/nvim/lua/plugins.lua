@@ -154,41 +154,25 @@ return {
 		"folke/which-key.nvim",
 	},
 	{
-		"catppuccin/nvim",
-		enabled = false,
-		name = "catppuccin",
-		config = function()
-			require("catppuccin").setup({
-				flavour = "mocha",
-				transparent_background = true,
-			})
-
-			vim.cmd.colorscheme("catppuccin")
-		end,
-	},
-	{
-		"neanias/everforest-nvim",
-		enabled = false,
-		priority = 1000,
-		config = function()
-			require("everforest").setup({
-				background = "hard",
-				transparent_background_level = 1,
-			})
-
-			vim.cmd.colorscheme("everforest")
-		end,
-	},
-	{
 		-- TODO test
 		"rebelot/kanagawa.nvim",
 		enabled = true,
 		priority = 1000,
 		config = function()
+			vim.opt.laststatus = 3
+			vim.opt.fillchars:append({
+				horiz = "━",
+				horizup = "┻",
+				horizdown = "┳",
+				vert = "┃",
+				vertleft = "┨",
+				vertright = "┣",
+				verthoriz = "╋",
+			})
 			require("kanagawa").setup({
 				transparent = true,
 				dimInactive = true,
-				-- theme = "light",
+				globalStatus = true,
 			})
 			vim.cmd("colorscheme kanagawa")
 		end,
@@ -203,7 +187,13 @@ return {
 		config = function()
 			local null_ls = require("null-ls")
 			null_ls.setup({
-				sources = { null_ls.builtins.formatting.stylua },
+				sources = {
+					null_ls.builtins.formatting.stylua,
+					null_ls.builtins.diagnostics.ansiblelint,
+					null_ls.builtins.formatting.prettierd.with({
+						extra_filetypes = { "svelte" },
+					}),
+				},
 			})
 		end,
 	},
