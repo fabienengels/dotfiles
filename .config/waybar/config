@@ -12,7 +12,7 @@
     },
     "tray": {
       "spacing": 5,
-      "icon-size": 48
+      "icon-size": 32
     },
     "network": {
         "format-wifi": "",
