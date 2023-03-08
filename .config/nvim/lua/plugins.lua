@@ -140,8 +140,12 @@ return {
 		opts = { check_ts = true },
 	},
 	{
-		"norcalli/nvim-colorizer.lua",
-		config = true,
+		"NvChad/nvim-colorizer.lua",
+		opts = {
+			user_default_options = {
+				tailwind = true,
+			},
+		},
 	},
 	{
 		"simrat39/rust-tools.nvim",
