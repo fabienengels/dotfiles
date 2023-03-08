@@ -178,6 +178,15 @@ return {
 				transparent = true,
 				dimInactive = true,
 				globalStatus = true,
+				colors = {
+					theme = {
+						all = {
+							ui = {
+								bg_gutter = "none",
+							},
+						},
+					},
+				},
 			})
 			vim.cmd("colorscheme kanagawa")
 		end,
