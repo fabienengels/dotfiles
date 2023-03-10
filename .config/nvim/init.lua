@@ -278,6 +278,16 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
+require("lspconfig").yamlls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		yaml = {
+			keyordering = false,
+		},
+	},
+})
+
 local runtime_path = vim.split(package.path, ";", {})
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
