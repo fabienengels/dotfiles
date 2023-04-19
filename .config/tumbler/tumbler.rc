@@ -25,6 +25,13 @@
 # Image Thumbnailers
 ###
 
+[PhotoshopThumbnailer]
+Disabled=false
+Priority=6
+Locations=
+Excludes=
+MaxFileSize=0
+
 # Jpeg thumbnailer (from exif data if possible)
 [JPEGThumbnailer]
 Disabled=false
@@ -54,17 +61,6 @@ MaxFileSize=0
 # Video Thumbnailers
 ###
 
-# Download cover from omdbapi.com or themoviedb.org if an
-# API key is given. This plugin is disabled because it
-# sends your (private) movie names over the internet.
-[CoverThumbnailer]
-Disabled=true
-Priority=3
-Locations=~/movies
-Excludes=
-MaxFileSize=0
-#APIKey=your-api-key-from-themoviedb.org
-
 # ffmpegthumbnailer plugin
 [FfmpegThumbnailer]
 Disabled=false
@@ -92,7 +88,6 @@ Priority=1
 Locations=
 Excludes=
 MaxFileSize=0
-
 
 # PDF/PS thumbnailer
 [PopplerThumbnailer]

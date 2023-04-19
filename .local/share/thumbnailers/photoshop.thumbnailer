@@ -1,0 +1,5 @@
+[Thumbnailer Entry]
+Name=PhotoshopThumbnailer
+Type=X-Thumbnailer
+Exec=convert -thumbnail %s %i %o
+MimeType=image/vnd.adobe.photoshop; image/x-photoshop; image/x-psd;
