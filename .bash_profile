@@ -16,12 +16,16 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # FZF
 export FZF_DEFAULT_COMMAND="rg --files"
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-    --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
-    --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS
+# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+# --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
+# --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54'
 
 # Set keyboard layout
 export XKB_DEFAULT_VARIANT='altgr-intl'
+
+# Use podman instead of docker
+#export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 
 # Start hyprland automatically
 if [ -f /usr/bin/Hyprland ] && [ -z "${DISPLAY}" ]; then
