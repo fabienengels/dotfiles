@@ -134,6 +134,7 @@ require("which-key").register({
 
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
+		"astro",
 		"arduino",
 		"scss",
 		"help",
@@ -252,8 +253,10 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protoc
 local servers = {
 	"ansiblels",
 	"arduino_language_server",
+	"astro",
 	"bashls",
 	"dockerls",
+  "efm",
 	"elixirls",
 	"jsonls",
 	"lua_ls",
