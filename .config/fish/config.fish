@@ -5,6 +5,7 @@ set -U fish_greeting
 switch (uname)
   case Darwin
     fish_add_path -p /opt/homebrew/bin
+    fish_add_path -p /usr/local/bin
 end
 
 fish_add_path -p ~/.local/bin ~/.cargo/bin
