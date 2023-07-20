@@ -1,5 +1,5 @@
 # Update paths
-export PATH="/opt/homebrew/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.yarn/bin:$PATH"
+export PATH="/opt/homebrew/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.yarn/bin:/usr/local/bin:$PATH"
 
 # Elixir IEx settings
 export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_bytes 1024000"
