@@ -1,5 +1,3 @@
-source ~/.config/fish/key-bindings.fish
-
 set -U fish_greeting
 
 switch (uname)
@@ -12,6 +10,7 @@ fish_add_path -p ~/.local/bin ~/.cargo/bin
 
 starship init fish | source
 zoxide init fish | source
+atuin init fish | source
 
 alias vi="nvim"
 alias g="git"
