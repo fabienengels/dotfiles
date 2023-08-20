@@ -10,7 +10,7 @@ fish_add_path -p ~/.local/bin ~/.cargo/bin
 
 starship init fish | source
 zoxide init fish | source
-atuin init fish | source
+atuin init fish --disable-up-arrow | source
 
 alias vi="nvim"
 alias g="git"
