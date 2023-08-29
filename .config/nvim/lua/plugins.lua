@@ -1,42 +1,11 @@
 return {
   {
-    "folke/noice.nvim",
-    enabled = false,
-    config = true,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      {
-        "rcarriga/nvim-notify",
-        enabled = false,
-        opts = {
-          background_colour = "#000000",
-        },
-      },
-    },
-  },
-  {
-    "goolord/alpha-nvim",
-    enabled = false,
-    config = function()
-      require("alpha").setup(require("alpha.themes.dashboard").config)
-    end,
-  },
-  {
     "m4xshen/hardtime.nvim",
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim"
     },
     opts = {}
-  },
-  {
-    "folke/todo-comments.nvim",
-    enabled = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim",
-    },
-    config = true,
   },
   {
     "lewis6991/gitsigns.nvim",
@@ -207,8 +176,5 @@ return {
     "j-hui/fidget.nvim",
     tag = 'legacy',
     config = true,
-  },
-  {
-    "imsnif/kdl.vim",
   },
 }
