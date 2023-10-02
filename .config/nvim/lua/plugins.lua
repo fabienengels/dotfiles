@@ -1,13 +1,5 @@
 return {
   {
-    "m4xshen/hardtime.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim"
-    },
-    opts = {}
-  },
-  {
     "lewis6991/gitsigns.nvim",
     tag = "release",
     opts = {
@@ -102,15 +94,25 @@ return {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
     opts = {
-      char = "┊",
-      show_trailing_blankline_indent = false,
-      enabled = true,
-      use_treesitter = true,
-      show_first_indent_level = false,
-      show_current_context = false,
-      show_current_context_start = false,
     },
+    config = function ()
+      require("ibl").setup({
+        scope = {
+          enabled = false
+        },
+        indent = {
+          char = "┊",
+        }
+      })
+
+      local hooks = require "ibl.hooks"
+      hooks.register(
+        hooks.type.WHITESPACE,
+        hooks.builtin.hide_first_space_indent_level
+      )
+    end
   },
   {
     "windwp/nvim-autopairs",
@@ -175,6 +177,7 @@ return {
   {
     "j-hui/fidget.nvim",
     tag = 'legacy',
-    config = true,
+    event = "LspAttach",
+    opts = {}
   },
 }

@@ -17,7 +17,8 @@ local options = {
   updatetime = 250, -- faster completion (4000ms default)
   signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
   shortmess = vim.opt.shortmess + "c",
-  completeopt = { "menu", "menuone", "noselect" },
+  -- completeopt = { "menu", "menuone", "noselect" },
+  completeopt = { "menuone", "noselect" },
   timeoutlen = 250, -- don't wait to open Which key popup
   title = false,
   mouse = "",
@@ -269,6 +270,7 @@ local servers = {
   "jsonls",
   "lua_ls",
   -- "nil_ls",
+  "marksman",
   "pyright",
   "rust_analyzer",
   "svelte",
@@ -441,3 +443,5 @@ vim.api.nvim_set_keymap("n", "<C-P>", ":bprev<cr>", { noremap = true, silent = t
 vim.api.nvim_set_keymap("n", "<C-C>", ":close<CR>", { noremap = true, silent = true })
 
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+
+vim.diagnostic.config({virtual_text = true})
