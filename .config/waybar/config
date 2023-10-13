@@ -1,9 +1,9 @@
 {
   "layer": "top",
   "position": "left",
-    "modules-left": ["wlr/workspaces"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-right": ["tray", "pulseaudio", "network", "clock"],
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
       "format": "{name}",
       "on-click": "activate",
       "on-scroll-up": "hyprctl dispatch workspace e+1",
