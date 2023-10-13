@@ -7,7 +7,8 @@ local config = {
   allow_square_glyphs_to_overflow_width = "Always",
   native_macos_fullscreen_mode = true,
   audible_bell = "Disabled",
-  pane_focus_follows_mouse = true
+  pane_focus_follows_mouse = true,
+  hide_mouse_cursor_when_typing = false
 }
 
 local has_override, override = pcall(require, "override")
