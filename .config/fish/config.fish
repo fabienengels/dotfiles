@@ -3,10 +3,11 @@ set -U fish_greeting
 switch (uname)
   case Darwin
     fish_add_path -p /opt/homebrew/bin
+    fish_add_path -p $HOME/.rd/bin
     fish_add_path -p /usr/local/bin
 end
 
-fish_add_path -p ~/.local/bin ~/.cargo/bin
+fish_add_path -p ~/.nix-profile/bin ~/.local/bin ~/.cargo/bin ~/.bun/bin
 
 starship init fish | source
 zoxide init fish | source
