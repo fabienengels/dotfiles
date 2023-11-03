@@ -1,4 +1,5 @@
-theme = "kanagawa-no-background"
+# theme = "kanagawa-no-background"
+theme = "everforest-no-background"
 
 [editor]
 line-number = "relative"
@@ -18,9 +19,9 @@ separator = "|"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
-left = ["spinner", "mode", "version-control"]
+left = ["mode", "version-control"]
 center = ["file-modification-indicator", "file-name", "read-only-indicator"]
-right = ["diagnostics", "selections", "register", "position", "position-percentage", "file-encoding"]
+right = ["spinner", "diagnostics", "selections", "register", "position", "position-percentage", "file-encoding"]
 
 [editor.lsp]
 display-messages = true

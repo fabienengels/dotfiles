@@ -7,6 +7,14 @@ name = "toml"
 language-servers = [ "scls" ]
 
 [[language]]
+name = "elixir"
+auto-format = true
+
+[[language]]
+name = "svelte"
+auto-format = true
+
+[[language]]
 name = "stub"
 scope = "text.stub"
 file-types = []
