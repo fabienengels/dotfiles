@@ -3,11 +3,11 @@ set -U fish_greeting
 switch (uname)
   case Darwin
     fish_add_path -p /opt/homebrew/bin
-    fish_add_path -p $HOME/.rd/bin
+    # fish_add_path -p $HOME/.rd/bin
     fish_add_path -p /usr/local/bin
 end
 
-fish_add_path -p ~/.nix-profile/bin ~/.local/bin ~/.cargo/bin ~/.bun/bin
+fish_add_path -p ~/.local/bin ~/.cargo/bin ~/.bun/bin
 
 starship init fish | source
 zoxide init fish | source
@@ -26,7 +26,7 @@ alias groot="cd (git root)"
 alias k="kubectl"
 alias kns="kubectl config set-context --current --namespace"
 
-alias l="exa --long --icons --group-directories-first --sort extension --git"
+alias l="eza --long --icons --group-directories-first --sort extension --git"
 alias a="l -a"
 
 alias bt_on="echo 'power on' | bluetoothctl && sleep 1 && echo 'power on' | bluetoothctl"
