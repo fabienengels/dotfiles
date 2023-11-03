@@ -1,0 +1,17 @@
+[language-server.scls]
+command = "simple-completion-language-server"
+config = { max_completion_items = 20, snippets_first = false }
+
+[[language]]
+name = "toml"
+language-servers = [ "scls" ]
+
+[[language]]
+name = "stub"
+scope = "text.stub"
+file-types = []
+shebangs = []
+roots = []
+auto-format = false
+language-servers = [ "scls" ]
+
