@@ -7,7 +7,7 @@ true-color = true
 cursorline = true
 mouse = false
 bufferline = "always"
-color-modes = true
+color-modes = false
 
 [editor.cursor-shape]
 insert = "bar"
@@ -15,11 +15,11 @@ normal = "block"
 select = "underline"
 
 [editor.statusline]
-separator = "|"
+separator = "\ue0b1"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
-left = ["mode", "version-control"]
+left = ["mode", "separator", "version-control"]
 center = ["file-modification-indicator", "file-name", "read-only-indicator"]
 right = ["spinner", "diagnostics", "selections", "register", "position", "position-percentage", "file-encoding"]
 
