@@ -4,14 +4,31 @@ config = { max_completion_items = 20, snippets_first = false }
 
 [[language]]
 name = "toml"
-language-servers = [ "scls" ]
+auto-format = true
+formatter = { command = "taplo", args = ["format", "-"] }
+language-servers = ["scls"]
 
 [[language]]
 name = "elixir"
 auto-format = true
 
 [[language]]
+name = "javascript"
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "js"] }
+auto-format = true
+
+[[language]]
+name = "json"
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "json"] }
+
+[[language]]
 name = "svelte"
+auto-format = true
+
+
+[[language]]
+name = "typescript"
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "ts"] }
 auto-format = true
 
 [[language]]
@@ -21,5 +38,9 @@ file-types = []
 shebangs = []
 roots = []
 auto-format = false
-language-servers = [ "scls" ]
+language-servers = ["scls"]
 
+# [[language]]
+# name = "typst"
+# auto-format = true
+# formatter = { command = "typstfmt", args = ["--output", "-"] }

@@ -1,12 +1,12 @@
-# theme = "kanagawa-no-background"
-theme = "everforest-no-background"
+theme = "kanagawa-no-background"
+# theme = "everforest-no-background"
 
 [editor]
 line-number = "relative"
 true-color = true
 cursorline = true
 mouse = false
-bufferline = "always"
+bufferline = "multiple"
 color-modes = false
 
 [editor.cursor-shape]
@@ -19,9 +19,28 @@ separator = "\ue0b1"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
-left = ["mode", "separator", "version-control"]
-center = ["file-modification-indicator", "file-name", "read-only-indicator"]
-right = ["spinner", "diagnostics", "selections", "register", "position", "position-percentage", "file-encoding"]
+left = [
+  "spacer",
+  "spinner",
+  "mode",
+  "separator",
+  "spacer",
+  "version-control",
+  "spacer",
+  "separator",
+  "file-name",
+  "file-modification-indicator",
+  "read-only-indicator",
+]
+center = []
+right = [
+  "diagnostics",
+  "selections",
+  "register",
+  "position",
+  "position-percentage",
+  "file-encoding",
+]
 
 [editor.lsp]
 display-messages = true
@@ -32,4 +51,5 @@ character = "┆"
 skip-levels = 1
 
 [keys.normal]
-esc = [ "collapse_selection", "keep_primary_selection" ]
+"space" = { "q" = ":buffer-close" }
+esc = ["collapse_selection", "keep_primary_selection"]
