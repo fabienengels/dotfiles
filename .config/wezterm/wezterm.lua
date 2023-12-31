@@ -3,6 +3,7 @@ local config = {
   color_scheme = "kanagawabones",
   hide_tab_bar_if_only_one_tab = true,
   window_background_opacity = 0.9,
+  macos_window_background_blur = 15,
   default_prog = { "fish" },
   allow_square_glyphs_to_overflow_width = "Always",
   native_macos_fullscreen_mode = true,
