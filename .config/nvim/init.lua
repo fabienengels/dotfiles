@@ -146,7 +146,6 @@ require("nvim-treesitter.configs").setup({
     "fish",
     "gitignore",
     "heex",
-    "help",
     "html",
     "json",
     "lua",
