@@ -270,6 +270,7 @@ local servers = {
   "lua_ls",
   "marksman",
   "pyright",
+  "ruff_lsp",
   "rust_analyzer",
   "svelte",
   "tailwindcss",
