@@ -12,6 +12,7 @@ fish_add_path -p ~/.local/bin ~/.cargo/bin ~/.bun/bin
 starship init fish | source
 zoxide init fish | source
 atuin init fish --disable-up-arrow | source
+poetry completions fish | source
 
 # Create hx alias when using Arch
 command -q hx || alias hx=helix
