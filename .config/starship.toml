@@ -1,7 +1,6 @@
 add_newline = false
 
 format = """\
-  $time\
   $battery\
   $username\
   $hostname\
@@ -14,13 +13,13 @@ format = """\
   $rust\
   $cmd_duration\
   $jobs\
+  $direnv\
   $line_break\
   $character\
 """
 
-[time]
-format = "[%H:%M]"
-disabled = true
+[direnv]
+disabled = false
 
 [directory]
 truncation_length = 0
