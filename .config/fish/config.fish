@@ -18,6 +18,7 @@ poetry completions fish | source
 # Create hx alias when using Arch
 command -q hx || alias hx=helix
 
+alias cd="z"
 alias g="git"
 alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias d="dotfiles"
