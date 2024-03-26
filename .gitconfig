@@ -8,8 +8,8 @@
   editor = nvim
   pager = delta
 
-[merge]
-  conflictstyle = diff3
+[diff]
+  external = difft
 
 [color]
   ui = auto
@@ -31,14 +31,10 @@
   test = clone --depth=1
   authors = shortlog -e -s -n
   list-tracked-files = ls-tree -r master --name-only
-[delta]
-  side-by-side = false
-  navigate = true  # use n and N to move between diff sections
-  line-numbers = true
-  theme = gruvbox-dark
-  colorMoved = default
+
 [init]
   defaultBranch = main
+
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
