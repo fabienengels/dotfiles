@@ -6,7 +6,6 @@
   abbrev = 8
   autocrlf = false
   editor = nvim
-  pager = delta
 
 [diff]
   external = difft
