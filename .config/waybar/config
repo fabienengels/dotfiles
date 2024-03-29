@@ -4,23 +4,24 @@
     "modules-left": ["hyprland/workspaces"],
     "modules-right": ["tray", "pulseaudio", "network", "clock"],
     "hyprland/workspaces": {
-      "persistent-workspaces": {
-        "Browser": [],
-        "Code": [],
+      "persistent_workspaces": {
+        "Web": [],
+        "Dev": [],
+        "Files": [],
         "Games": [],
-        "Media": []
+        "Communication": [],
       },
       "format": "{icon}",
       "format-icons": {
-        "Browser": "",
-        "Code": "󰘦",
+        "Web": "",
+        "Dev": "󰘦",
+        "Files": "󱝟",
         "Games": "",
-        "Media": "󱝟"
+        "Communication": ""
       },
       "on-click": "activate",
       "on-scroll-up": "hyprctl dispatch workspace e+1",
       "on-scroll-down": "hyprctl dispatch workspace e-1",
-      "sort-by-number": true
     },
     "tray": {
       "spacing": 5,
