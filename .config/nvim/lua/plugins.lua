@@ -142,38 +142,49 @@ return {
     "folke/which-key.nvim",
   },
   {
-    -- TODO test
-    "rebelot/kanagawa.nvim",
+    "catppuccin/nvim",
     enabled = true,
+    name = "catppuccin",
     priority = 1000,
+    flavor = "mocha",
     config = function()
-      vim.opt.laststatus = 3
-      vim.opt.fillchars:append({
-        horiz = "━",
-        horizup = "┻",
-        horizdown = "┳",
-        vert = "┃",
-        vertleft = "┨",
-        vertright = "┣",
-        verthoriz = "╋",
-      })
-      require("kanagawa").setup({
-        transparent = true,
-        dimInactive = true,
-        globalStatus = true,
-        colors = {
-          theme = {
-            all = {
-              ui = {
-                bg_gutter = "none",
-              },
-            },
-          },
-        },
-      })
-      vim.cmd("colorscheme kanagawa")
-    end,
+      require("catppuccin").setup()
+      vim.cmd.colorscheme "catppuccin"
+    end
   },
+  -- {
+  --   -- TODO test
+  --   "rebelot/kanagawa.nvim",
+  --   enabled = true,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.opt.laststatus = 3
+  --     vim.opt.fillchars:append({
+  --       horiz = "━",
+  --       horizup = "┻",
+  --       horizdown = "┳",
+  --       vert = "┃",
+  --       vertleft = "┨",
+  --       vertright = "┣",
+  --       verthoriz = "╋",
+  --     })
+  --     require("kanagawa").setup({
+  --       transparent = true,
+  --       dimInactive = true,
+  --       globalStatus = true,
+  --       colors = {
+  --         theme = {
+  --           all = {
+  --             ui = {
+  --               bg_gutter = "none",
+  --             },
+  --           },
+  --         },
+  --       },
+  --     })
+  --     vim.cmd("colorscheme kanagawa")
+  --   end,
+  -- },
   {
     "j-hui/fidget.nvim",
     tag = 'legacy',
