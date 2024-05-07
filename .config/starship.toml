@@ -22,7 +22,8 @@ format = """\
 disabled = false
 
 [directory]
-truncation_length = 0
+truncation_length = 8
+truncation_symbol = '…/'
 
 [character]
 success_symbol = "[>>](bold green)"
