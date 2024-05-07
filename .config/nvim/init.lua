@@ -68,6 +68,8 @@ vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
+vim.cmd.colorscheme "catppuccin"
+
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 
 for type, icon in pairs(signs) do

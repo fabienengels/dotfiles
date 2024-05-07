@@ -144,13 +144,13 @@ return {
   {
     "catppuccin/nvim",
     enabled = true,
+    lazy = false,
     name = "catppuccin",
     priority = 1000,
     flavor = "mocha",
-    config = function()
-      require("catppuccin").setup()
-      vim.cmd.colorscheme "catppuccin"
-    end
+    opts = {
+      transparent_background = true,
+    }
   },
   -- {
   --   -- TODO test
