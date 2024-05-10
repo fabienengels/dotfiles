@@ -4,21 +4,6 @@
     "modules-left": ["hyprland/workspaces"],
     "modules-right": ["tray", "pulseaudio", "network", "clock"],
     "hyprland/workspaces": {
-      "persistent_workspaces": {
-        "Web": [],
-        "Dev": [],
-        "Files": [],
-        "Games": [],
-        "Communication": [],
-      },
-      "format": "{icon}",
-      "format-icons": {
-        "Web": "",
-        "Dev": "󰘦",
-        "Files": "󱝟",
-        "Games": "",
-        "Communication": ""
-      },
       "on-click": "activate",
       "on-scroll-up": "hyprctl dispatch workspace e+1",
       "on-scroll-down": "hyprctl dispatch workspace e-1",
