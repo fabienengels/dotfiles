@@ -54,17 +54,17 @@ vim.g.maplocalleader = " "
 --              |___/
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
     "--filter=blob:none",
-    "--single-branch",
     "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
     lazypath,
   })
 end
-vim.opt.runtimepath:prepend(lazypath)
+vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
@@ -77,119 +77,6 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-require("which-key").register({
-  ["w"] = { "<cmd>w!<cr>", "Save" },
-  ["q"] = { "<cmd>q!<cr>", "Quit" },
-  ["c"] = { "<cmd>BufferKill<cr>", "Close Buffer" },
-  b = {
-    name = "Buffers",
-    f = { "<cmd>Telescope buffers<cr>", "Find buffer" },
-  },
-  f = {
-    name = "Files",
-    g = { "<cmd>Telescope git_files<cr>", "Find git file" }, -- create a binding with label
-    f = { "<cmd>Telescope find_files<cr>", "Find file" }, -- create a binding with label
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" }, -- additional options for creating the keymap
-    n = { "New File" }, -- just a label. don't create any mapping
-    e = "Edit File", -- same as above
-  },
-  g = {
-    name = "Git",
-    j = { "<cmd>Gitsigns next_hunk<cr>", "Next hunk" },
-    k = { "<cmd>Gitsigns prev_hunk<cr>", "Previous hunk" },
-    p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview hunk" },
-    r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset hunk" },
-    R = { "<cmd>Gitsigns reset_buffer<cr>", "Reset buffer" },
-    s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage hunk" },
-    u = { "<cmd>Gitsigns undo_stage_hunk<cr>", "Undo stage hunk" },
-    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    d = { "<cmd>Gitsigns diffthis<cr>", "Git diff" },
-  },
-  d = {
-    name = "Diagnostics",
-    -- j = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Next diagnostic" },
-    -- k = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Previous diagnostic" },
-    j = { "<cmd>lua vim.diagnostic.goto_next({float = false})<cr>", "Next diagnostic" },
-    k = { "<cmd>lua vim.diagnostic.goto_prev({float = false})<cr>", "Previous diagnostic" },
-    b = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
-    d = { "<cmd>Telescope diagnostics theme=get_ivy<cr>", "Diagnostics" },
-  },
-  l = {
-    name = "Language Server",
-    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename references" },
-    d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go to definition" },
-    D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go to definition" },
-    s = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Symbol information" },
-    i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "List all the implementations" },
-    t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Jump to the type definition" },
-    R = { "<cmd>lua vim.lsp.buf.references()<cr>", "List references" },
-  },
-  D = {
-    name = "Debug",
-    c = { "<cmd>checkhealth<cr>", "Check health" },
-    t = { "<cmd>TSConfigInfo<cr>", "TreeSitter information" },
-    l = { "<cmd>LspInfo<cr>", "LSP information" },
-  },
-}, { prefix = "<leader>" })
-
-require("nvim-treesitter.configs").setup({
-  ensure_installed = {
-    "vim",
-    "markdown",
-    "markdown_inline",
-    "arduino",
-    "astro",
-    "dockerfile",
-    "eex",
-    "elixir",
-    "fish",
-    "gitignore",
-    "heex",
-    "html",
-    "json",
-    "lua",
-    "nix",
-    "python",
-    "rust",
-    "scss",
-    "svelte",
-    "typescript",
-  },
-  highlight = { enable = true, additional_vim_regex_highlighting = false },
-  disable = function (buf)
-    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-    return ok and stats and stats.size > 100 * 1024
-  end,
-  indent = { enable = true, disable = { "yaml" } },
-  rainbow = { enable = true, extended_mode = true },
-  -- context_commentstring = { enable = true }
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "<c-space>",
-      node_incremental = "<c-space>",
-      scope_incremental = "<c-s>",
-      node_decremental = "<c-backspace>",
-    },
-  },
-  textobjects = {
-    select = {
-      enable = true,
-      lookahead = true,
-      keymaps = {
-        ["aa"] = "@parameter.outer",
-        ["ia"] = "@parameter.inner",
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ac"] = "@class.outer",
-        ["ic"] = "@class.inner",
-      },
-    },
-  },
-})
 
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
@@ -421,27 +308,6 @@ cmp.setup({
     { name = "path" },
   },
 })
-
--- Indent with Tab
-vim.api.nvim_set_keymap("n", "<Tab>", ">>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<S-Tab>", "<<", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<Tab>", ">><Esc>gv", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<S-Tab>", "<<<Esc>gv", { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap("n", "<ESC>", ":noh<return><ESC>", { noremap = true, silent = true })
-
--- Move around splits
-vim.api.nvim_set_keymap("n", "<C-J>", "<C-W>j", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-K>", "<C-W>k", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-L>", "<C-W>l", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-H>", "<C-W>h", { noremap = true, silent = true })
-
--- Move around buffers
-vim.api.nvim_set_keymap("n", "<C-N>", ":bnext<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-P>", ":bprev<cr>", { noremap = true, silent = true })
-
--- Close current window
-vim.api.nvim_set_keymap("n", "<C-C>", ":close<CR>", { noremap = true, silent = true })
 
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
