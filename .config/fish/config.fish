@@ -20,6 +20,7 @@ command -q hx || alias hx=helix
 
 alias cd="z"
 alias g="git"
+alias lg="lazygit"
 alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias d="dotfiles"
 alias deletedsstore="fd -H '.DS_Store' $HOME -X rm -fv {}"
