@@ -9,9 +9,6 @@ return {
     config = function ()
       require("nvim-treesitter.configs").setup({
         ensure_installed = {
-          "vim",
-          "markdown",
-          "markdown_inline",
           "arduino",
           "astro",
           "dockerfile",
@@ -23,12 +20,16 @@ return {
           "html",
           "json",
           "lua",
+          "markdown",
+          "markdown_inline",
           "nix",
           "python",
           "rust",
           "scss",
           "svelte",
           "typescript",
+          "vim",
+          "vimdoc",
         },
         highlight = { enable = true, additional_vim_regex_highlighting = false },
         disable = function (buf)

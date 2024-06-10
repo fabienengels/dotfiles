@@ -106,7 +106,7 @@ local servers = {
 return {
   {
     "williamboman/mason.nvim",
-    config = {
+    opts = {
       ui = {
         check_outdated_packages_on_open = true,
       },
