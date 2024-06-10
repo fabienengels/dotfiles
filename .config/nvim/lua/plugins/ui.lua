@@ -53,8 +53,8 @@ return {
     lazy = false,
     name = "catppuccin",
     priority = 1000,
-    flavor = "mocha",
     opts = {
+      flavor = "mocha",
       transparent_background = true,
     }
   },
