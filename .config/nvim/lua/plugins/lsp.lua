@@ -90,7 +90,7 @@ local servers = {
   "bashls",
   "dockerls",
   "efm",
-  "elixirls",
+  "lexical",
   "jsonls",
   "lua_ls",
   "marksman",
