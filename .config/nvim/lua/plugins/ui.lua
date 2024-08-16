@@ -88,4 +88,5 @@ return {
       )
     end
   },
+  { 'echasnovski/mini.icons', version = false },
 }
