@@ -1,6 +1,6 @@
 {
-  "layer": "top",
-  "position": "top",
+  "layer": "bottom",
+  "position": "left",
     "modules-left": ["hyprland/workspaces"],
     "modules-right": ["tray", "pulseaudio", "network", "clock"],
     "hyprland/workspaces": {
@@ -20,7 +20,7 @@
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}"
     },
     "clock": {
-      "format": "{:%H:%M}",
+      "format": "{:%H\n%M}",
       "tooltip": true,
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },

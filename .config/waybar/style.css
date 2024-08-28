@@ -7,48 +7,26 @@
   color: #DCD7BA;
 }
 
-window#waybar {
-  background: transparent;
-  /*min-height: 64px;  Macbook M1 top notch height */
-  /* padding: 10px; */
-}
-
 window#waybar > box {
   background: #1f1f28;
-  margin: 0px 0px 10px 0px;
-  padding: 0px 10px 3px 10px;
+  padding: 10px;
+  /* margin: 0px 0px 10px 0px; */
+  /* padding: 0px 10px 3px 10px; */
   /* border-radius: 8px; */
   /* margin: 4px 8px 8px 8px; */
   /* background-color: rgba(32, 32, 32, 0.75); */
   /* box-shadow: 4px 4px 2px 1px #101010; */
-  box-shadow: 4px 4px 2px 1px #101010;
+  /* box-shadow: 4px 4px 2px 1px #101010; */
 }
 
-#workspaces button, #tray, #pulseaudio, #clock, #network {
-  padding-left: 5px;
-  padding-right: 5px;
+#tray, #pulseaudio, #clock, #network, #wokspaces button {
+  padding-bottom: 10px;
 }
 
 #workspaces button {
-  margin-right: 10px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-radius: 8px;
 }
 
 #workspaces button.active {
   background-color: #76946A;
 }
-
-/* #workspaces button.empty { */
-/*   background-color: #363646; */
-/* } */
-
-#tray, #pulseaudio, #clock, #network {
-  margin-left: 10px;
-}
-
-/* tooltip { */
-/*   background: rgba(43, 48, 59, 0.8); */
-/*   border: 2px solid rgba(100, 114, 125, 0.5); */
-/*   border-radius: 10px; */
-/* } */
