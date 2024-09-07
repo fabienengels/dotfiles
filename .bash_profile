@@ -28,21 +28,21 @@ export XKB_DEFAULT_VARIANT='altgr-intl'
 #export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 
 # Start hyprland automatically
-if [ -f /usr/bin/Hyprland ] && [ -z "${DISPLAY}" ]; then
-  # Wayland
-  export XDG_SESSION_TYPE=wayland
-  export GDK_BACKEND=wayland
-  export MOZ_ENABLE_WAYLAND=1
-  export WLR_DRM_NO_MODIFIERS=1
-
-  # Log WLR errors and logs to the hyprland log. Recommended
-  export HYPRLAND_LOG_WLR=1
-
-  # Tell XWayland to use a cursor theme
-  export XCURSOR_THEME=Bibata-Modern-Classic
-
-  # Set a cursor size
-  export XCURSOR_SIZE=24
-
-  exec ssh-agent Hyprland
-fi
+# if [ -f /usr/bin/Hyprland ] && [ -z "${DISPLAY}" ]; then
+#   # Wayland
+#   export XDG_SESSION_TYPE=wayland
+#   export GDK_BACKEND=wayland
+#   export MOZ_ENABLE_WAYLAND=1
+#   export WLR_DRM_NO_MODIFIERS=1
+#
+#   # Log WLR errors and logs to the hyprland log. Recommended
+#   export HYPRLAND_LOG_WLR=1
+#
+#   # Tell XWayland to use a cursor theme
+#   export XCURSOR_THEME=Bibata-Modern-Classic
+#
+#   # Set a cursor size
+#   export XCURSOR_SIZE=24
+#
+#   exec ssh-agent Hyprland
+# fi
