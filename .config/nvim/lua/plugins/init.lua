@@ -24,6 +24,7 @@ return {
         "elixir",
         "fish",
         "gitignore",
+        "go",
         "heex",
         "html",
         "html",

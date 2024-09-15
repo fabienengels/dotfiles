@@ -12,6 +12,7 @@ local servers = {
   "dockerls",
   "efm",
   -- "elixirls",
+  "gopls",
   "html",
   "htmx",
   "hyprls",
