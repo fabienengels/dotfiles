@@ -28,6 +28,8 @@ alias deletesyncconflict="fd -H sync-conflict- . -X rm -vf {}"
 alias music-player="ncmpcpp"
 alias groot="cd (git root)"
 
+alias rust-book="rustup doc --book"
+
 alias k="kubectl"
 alias kns="kubectl config set-context --current --namespace"
 
