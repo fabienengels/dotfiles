@@ -8,8 +8,7 @@ bar:
   right:
     - clock:
         content:
-          - string: {text: "{date}", right-margin: 5}
-          - string: {text: "{time}   "}
+          - string: {text: "{date} {time}", right-margin: 10}
   left:
     - river:
         anchors:
@@ -55,13 +54,12 @@ bar:
                   <<: *river_base
                   deco: {underline: {size: 3, color: ea6962ff}}
 
-
-  center:
     - foreign-toplevel:
         content:
           map:
             conditions:
               ~activated: {empty: {}}
               activated:
-                - string: {text: "   {app-id}", foreground: ffa0a0ff}
-                - string: {text: ": {title}"}
+                - string: {text: "[{app-id}]", left-margin: 10, foreground: ffa0a0ff}
+                - string: {text: " {title}"}
+  # center:
