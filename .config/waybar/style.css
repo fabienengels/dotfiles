@@ -8,23 +8,18 @@
 }
 
 window#waybar > box {
-  background: #1f1f28;
-  padding: 10px;
-  /* margin: 0px 0px 10px 0px; */
-  /* padding: 0px 10px 3px 10px; */
-  /* border-radius: 8px; */
-  /* margin: 4px 8px 8px 8px; */
-  /* background-color: rgba(32, 32, 32, 0.75); */
-  /* box-shadow: 4px 4px 2px 1px #101010; */
-  /* box-shadow: 4px 4px 2px 1px #101010; */
+  background: rgba(29, 32, 33, 0.75);
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: 16px;
 }
 
 #tray, #pulseaudio, #clock, #network, #wokspaces button {
-  padding-bottom: 10px;
+  padding: 8px;
 }
 
 #workspaces button {
-  border-radius: 8px;
+  background: #551199;
 }
 
 #workspaces button.active {
