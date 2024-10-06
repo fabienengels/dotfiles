@@ -1,5 +1,7 @@
 #!/bin/sh
 
+riverctl keyboard-layout -variant altgr-intl us
+
 riverctl map normal Super Return spawn kitty
 riverctl map normal Super B spawn firefox
 
