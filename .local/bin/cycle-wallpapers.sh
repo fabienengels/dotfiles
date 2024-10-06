@@ -1,3 +1,3 @@
 #!/bin/bash
 
-while random-wallpaper.sh; do sleep $1; done
+while sleep $1; do random-wallpaper.sh; done
