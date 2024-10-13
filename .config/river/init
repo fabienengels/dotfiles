@@ -4,6 +4,8 @@ riverctl keyboard-layout -variant altgr-intl us
 
 riverctl map normal Super Return spawn kitty
 riverctl map normal Super B spawn firefox
+riverctl map normal Super E spawn thunar
+riverctl map normal Super R spawn 'tofi-drun --drun-launch=true'
 
 riverctl map normal Super Q close
 
@@ -15,8 +17,8 @@ riverctl map-pointer normal Super BTN_LEFT move-view
 riverctl map-pointer normal Super BTN_RIGHT resize-view
 riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 
-riverctl map normal Super i send-layout-cmd rivertile "main-count +1"
-riverctl map normal Super r send-layout-cmd rivertile "main-count 1"
+riverctl map normal Super+Shift i send-layout-cmd rivertile "main-count +1"
+riverctl map normal Super+Shift r send-layout-cmd rivertile "main-count 1"
 
 for i in $(seq 1 9); do
 	tags=$((1 << ($i -1)))
@@ -40,8 +42,10 @@ rivertile -view-padding 6 -outer-padding 6 -main-ratio 0.5 &
 
 riverctl rule-add -app-id firefox ssd
 riverctl rule-add -title Picture-in-Picture float
+riverctl rule-add -app-id mpv float
 
 riverctl border-width 3
 
 swww-daemon &
 yambar &
+cycle-wallpapers.sh 600 &
