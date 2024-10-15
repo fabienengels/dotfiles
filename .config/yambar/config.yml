@@ -35,6 +35,8 @@ bar:
     - pipewire:
         content:
           map:
+            on-click:
+              left: pavucontrol
             default:
               string:
                 right-margin: 15

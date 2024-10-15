@@ -45,6 +45,7 @@ riverctl rule-add -title Picture-in-Picture float
 riverctl rule-add -app-id mpv float
 riverctl rule-add -app-id oculante float
 riverctl rule-add -app-id 'org.edgetx.companion*' float
+riverctl rule-add -app-id org.pulseaudio.pavucontrol float
 
 riverctl border-width 3
 
