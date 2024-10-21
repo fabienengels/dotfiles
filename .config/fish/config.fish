@@ -44,3 +44,5 @@ source ~/.config/fish/themes/kanagawa.fish
 # set fish_color_autosuggestion green
 set fish_color_command blue
 # set fish_color_match green
+
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
