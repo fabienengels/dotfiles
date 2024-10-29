@@ -39,6 +39,8 @@ alias a="l -a"
 alias bt_on="echo 'power on' | bluetoothctl && sleep 1 && echo 'power on' | bluetoothctl"
 alias bt_off="echo 'power off' | bluetoothctl"
 
+alias yt="yt-dlp --cookies-from-browser firefox --embed-thumbnail --embed-chapters"
+
 source ~/.config/fish/themes/kanagawa.fish
 
 # set fish_color_autosuggestion green
