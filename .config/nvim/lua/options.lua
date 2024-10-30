@@ -29,6 +29,7 @@ local options = {
   cursorline = true,
   breakindent = true,
   undofile = true,
+  clipboard = "",
 }
 
 for k, v in pairs(options) do
