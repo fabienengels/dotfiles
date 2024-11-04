@@ -1,5 +1,7 @@
 set -U fish_greeting
 
+fish_vi_key_bindings
+
 switch (uname)
   case Darwin
     fish_add_path -p /opt/homebrew/bin
