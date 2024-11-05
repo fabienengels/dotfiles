@@ -1,4 +1,8 @@
+local wezterm = require 'wezterm'
+local action = wezterm.action
+
 local config = {
+  font = wezterm.font "JetBrains Mono",
   font_size = 13,
   color_scheme = "kanagawabones",
   hide_tab_bar_if_only_one_tab = true,
@@ -9,8 +13,23 @@ local config = {
   native_macos_fullscreen_mode = true,
   audible_bell = "Disabled",
   pane_focus_follows_mouse = true,
-  hide_mouse_cursor_when_typing = false
+  hide_mouse_cursor_when_typing = false,
+  keys = {
+    {
+      key = 't',
+      mods = 'CTRL',
+      action = action.SpawnTab 'CurrentPaneDomain'
+    }
+  }
 }
+
+for i = 1, 9 do
+  table.insert(config.keys, {
+    key = tostring(i),
+    mods = 'ALT',
+    action = action.ActivateTab(i - 1)
+  })
+end
 
 local has_override, override = pcall(require, "override")
 
