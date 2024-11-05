@@ -47,6 +47,7 @@ rivertile -view-padding 6 -outer-padding 6 -main-ratio 0.5 &
 
 riverctl rule-add -app-id firefox ssd
 riverctl rule-add -title Picture-in-Picture float
+riverctl rule-add -title 'File Operation Progress' float
 riverctl rule-add -app-id mpv float
 riverctl rule-add -app-id oculante float
 riverctl rule-add -app-id 'org.edgetx.companion*' float
