@@ -32,7 +32,7 @@ local servers = {
   "tailwindcss",
   "terraformls",
   "ts_ls",
-  "typst_lsp",
+  "tinymist",
 }
 
 local nvlsp = require "nvchad.configs.lspconfig"
