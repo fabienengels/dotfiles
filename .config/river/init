@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+[ -f ~/.config/river/multihead-setup.sh ] && ~/.config/river/multihead-setup.sh
 
 riverctl keyboard-layout -variant altgr-intl us
 
