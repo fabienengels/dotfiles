@@ -16,17 +16,17 @@ map("n", "<C-N>", ":bnext<cr>", { noremap = true, silent = true })
 map("n", "<C-P>", ":bprev<cr>", { noremap = true, silent = true })
 
 -- Telescope
-map("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { noremap = true, silent = true })
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true })
+map("n", "fg", "<cmd>Telescope git_files<cr>", { noremap = true, silent = true })
+map("n", "ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true })
 
 -- Git
-map("n", "<leader>gj", "<cmd>Gitsigns next_hunk<cr>", { noremap = true, silent = true })
-map("n", "<leader>gk", "<cmd>Gitsigns prev_hunk<cr>", { noremap = true, silent = true })
-map("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", { noremap = true, silent = true })
-map("n", "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", { noremap = true, silent = true })
-map("n", "<leader>gR", "<cmd>Gitsigns reset_buffer<cr>", { noremap = true, silent = true })
-map("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>", { noremap = true, silent = true })
-map("n", "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<cr>", { noremap = true, silent = true })
+map("n", "gj", "<cmd>Gitsigns next_hunk<cr>", { noremap = true, silent = true })
+map("n", "gk", "<cmd>Gitsigns prev_hunk<cr>", { noremap = true, silent = true })
+map("n", "gp", "<cmd>Gitsigns preview_hunk<cr>", { noremap = true, silent = true })
+map("n", "gr", "<cmd>Gitsigns reset_hunk<cr>", { noremap = true, silent = true })
+map("n", "gR", "<cmd>Gitsigns reset_buffer<cr>", { noremap = true, silent = true })
+map("n", "gs", "<cmd>Gitsigns stage_hunk<cr>", { noremap = true, silent = true })
+map("n", "gu", "<cmd>Gitsigns undo_stage_hunk<cr>", { noremap = true, silent = true })
 --         d = {
 --           name = "Diagnostics",
 --           -- j = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Next diagnostic" },

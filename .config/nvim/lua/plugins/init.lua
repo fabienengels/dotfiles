@@ -8,18 +8,19 @@ return {
       dashboard = { enabled = true },
       dim = { enabled = true },
       input = { enabled = true },
+      lazygit = { enabled = true },
       notifier = { enabled = true },
       quickfile = { enabled = true },
+      scope = { enabled = true },
       scroll = { enabled = true },
       statuscolumn = { enabled = true },
-      scope = { enabled = true },
       zen = { enabled = true },
     },
   },
 
   {
     "stevearc/conform.nvim",
-    event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -31,9 +32,9 @@ return {
   },
 
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
         "arduino",
         "astro",
         "css",
@@ -59,7 +60,7 @@ return {
         "typescript",
         "vim",
         "vimdoc",
-  		},
-  	},
+      },
+    },
   },
 }
