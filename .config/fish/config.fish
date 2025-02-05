@@ -59,4 +59,4 @@ if test -z "$SSH_AUTH_SOCK"
     export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 end
 
-export EDITOR=nvim
+export EDITOR=hx
