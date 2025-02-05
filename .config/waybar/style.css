@@ -3,15 +3,13 @@
   border: none;
   border-radius: 0;
   font-family: Jetbrains Mono;
-  font-size: 24px;
+  font-size: 16px;
   color: #DCD7BA;
 }
 
 window#waybar > box {
   background: rgba(29, 32, 33, 0.75);
-  margin-top: 16px;
-  margin-bottom: 16px;
-  margin-left: 16px;
+  margin: 8px;
 }
 
 #tray, #pulseaudio, #clock, #network, #wokspaces button {
@@ -23,5 +21,6 @@ window#waybar > box {
 }
 
 #workspaces button.active {
-  background-color: #76946A;
+  background: #76946A;
+  color: #FF0000;
 }
