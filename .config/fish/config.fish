@@ -1,12 +1,13 @@
 set -U fish_greeting
 
-fish_vi_key_bindings
+# fish_vi_key_bindings
 
 switch (uname)
-  case Darwin
-    fish_add_path -p /opt/homebrew/bin
-    # fish_add_path -p $HOME/.rd/bin
-    fish_add_path -p /usr/local/bin
+    case Darwin
+        fish_add_path -p /opt/homebrew/bin
+        fish_add_path -p /opt/homebrew/opt/rustup/bin
+        # fish_add_path -p $HOME/.rd/bin
+        fish_add_path -p /usr/local/bin
 end
 
 fish_add_path -p ~/.local/bin ~/.cargo/bin ~/.bun/bin ~/.nix-profile/bin
@@ -55,7 +56,7 @@ set fish_color_command blue
 # set fish_color_match green
 
 if test -z "$SSH_AUTH_SOCK"
-  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+    export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 end
 
 export EDITOR=nvim
