@@ -51,3 +51,11 @@ skip-levels = 1
 [keys.normal]
 "space" = { "q" = ":buffer-close" }
 esc = ["collapse_selection", "keep_primary_selection"]
+C-g = [
+  ":write-all",
+  ":new",
+  ":insert-output lazygit",
+  ":buffer-close!",
+  ":redraw",
+  ":reload-all",
+]
