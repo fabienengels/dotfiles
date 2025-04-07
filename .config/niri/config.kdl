@@ -250,7 +250,7 @@ layout {
 spawn-at-startup "gammastep"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "waybar"
-spawn-at-startup "cycle-wallpapers.sh" "60"
+spawn-at-startup "cycle-wallpapers.sh" "600"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
