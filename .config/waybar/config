@@ -10,10 +10,8 @@
       "on-scroll-down": "hyprctl dispatch workspace e-1",
     },
     "niri/workspaces": {
-      "format": "{index}"
     },
     "niri/window": {
-      
     },
     "tray": {
       "spacing": 5,
