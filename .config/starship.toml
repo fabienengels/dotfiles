@@ -11,6 +11,7 @@ format = """\
   $git_commit\
   $package\
   $rust\
+  $kubernetes\
   $cmd_duration\
   $jobs\
   $direnv\
@@ -39,6 +40,11 @@ commit_hash_length = 8
 
 [package]
 symbol = " "
+
+[kubernetes]
+detect_env_vars = ['KUBECONFIG']
+disabled = false
+format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
 
 [battery]
 full_symbol = ' '
