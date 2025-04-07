@@ -200,9 +200,9 @@ size = 16
 # Multiplier default is 3.0.
 # Divider default is 1.0.
 # Example:
-# [scroll]
-# multiplier = 3.0
-# divider = 1.0
+[scroll]
+multiplier = 5.0
+divider = 1.0
 
 # Navigation
 #
