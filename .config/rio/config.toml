@@ -246,6 +246,8 @@ mode = "TopTab"
 # [shell]
 # program = "/bin/fish"
 # args = ["--login"]
+[shell]
+program = "fish"
 #
 # Example 2 for Windows using powershell
 #
