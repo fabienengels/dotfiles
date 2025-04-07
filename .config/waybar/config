@@ -1,7 +1,7 @@
 {
   "layer": "bottom",
   "position": "top",
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-left": ["niri/workspaces", "niri/window"],
     "modules-center": ["clock"],
     "modules-right": ["tray", "pulseaudio", "network"],
     "hyprland/workspaces": {
@@ -9,7 +9,10 @@
       "on-scroll-up": "hyprctl dispatch workspace e+1",
       "on-scroll-down": "hyprctl dispatch workspace e-1",
     },
-    "hyprland/window": {
+    "niri/workspaces": {
+      "format": "{index}"
+    },
+    "niri/window": {
       
     },
     "tray": {
