@@ -50,3 +50,8 @@ language-servers = ["svelteserver", "tailwindcss-ls"]
 name = "typescript"
 formatter = { command = 'deno', args = ["fmt", "-", "--ext", "ts"] }
 auto-format = true
+
+[[language]]
+name = "yaml"
+formatter = { command = "prettierd", args = [".yaml"] }
+auto-format = true
