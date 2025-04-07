@@ -250,6 +250,7 @@ layout {
 spawn-at-startup "gammastep"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "waybar"
+spawn-at-startup "cycle-wallpapers.sh" "60"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -327,6 +328,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return repeat=false { spawn "rio"; }
+    Mod+E repeat=false { spawn "cosmic-files"; }
     Mod+B repeat=false { spawn "firefox"; }
     Mod+R repeat=false { spawn "tofi-drun" "--drun-launch=true"; }
     Mod+Ctrl+L repeat=false { spawn "hyprlock"; }
@@ -396,7 +398,7 @@ binds {
     Mod+P { switch-preset-column-width; }
     // Mod+Shift+R { switch-preset-window-height; }
     // Mod+Ctrl+R { reset-window-height; }
-    // Mod+F { maximize-column; }
+    Mod+F { maximize-column; }
     // Mod+Shift+F { fullscreen-window; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
