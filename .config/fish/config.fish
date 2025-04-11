@@ -17,11 +17,11 @@ starship init fish | source
 zoxide init fish | source
 atuin init fish --disable-up-arrow | source
 poetry completions fish | source
+flux completion fish | source
 
 if test -f '/usr/share/fish/vendor_completions.d/kubectl.fish'
     source /usr/share/fish/vendor_completions.d/kubectl.fish
 end
-
 
 # Create hx alias when using Arch
 command -q hx || alias hx=helix
