@@ -303,7 +303,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return repeat=false { spawn "kitty"; }
-    Mod+E repeat=false { spawn "cosmic-files"; }
+    Mod+E repeat=false { spawn "thunar"; }
     Mod+B repeat=false { spawn "firefox"; }
     Mod+R repeat=false { spawn "tofi-drun" "--drun-launch=true"; }
     Mod+Ctrl+L repeat=false { spawn "hyprlock"; }
