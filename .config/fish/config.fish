@@ -10,7 +10,7 @@ switch (uname)
         fish_add_path -p /usr/local/bin
 end
 
-fish_add_path -p ~/.local/bin ~/.cargo/bin ~/.bun/bin ~/.nix-profile/bin
+fish_add_path -p ~/.local/bin ~/.cargo/bin ~/.bun/bin ~/.nix-profile/bin ~/.bun/bin
 
 direnv hook fish | source
 starship init fish | source
@@ -41,6 +41,7 @@ alias deletesyncconflict="fd -H sync-conflict- . -X rm -vf {}"
 alias music-player="ncmpcpp"
 alias groot="cd (git root)"
 alias vim=nvim
+alias switch-cluster="export KUBECONFIG=(fd -e yaml . ~/.kubeconfig | fzf)"
 
 alias rust-book="rustup doc --book"
 
