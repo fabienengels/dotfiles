@@ -225,7 +225,7 @@ spawn-at-startup "gammastep"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "waybar"
 spawn-at-startup "cycle-wallpapers.sh" "600"
-spawn-at-startup "xwayland-satellite"
+spawn-at-startup "xwayland-satellite" ":12"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -331,10 +331,10 @@ binds {
     Mod+Shift+K     { move-window-up-or-to-workspace-up; }
     Mod+Shift+L     { move-column-right; }
 
-    Mod+WheelScrollDown      { focus-workspace-down; }
-    Mod+WheelScrollUp        { focus-workspace-up; }
-    Mod+Shift+WheelScrollDown      { focus-column-right; }
-    Mod+Shift+WheelScrollUp        { focus-column-left; }
+    Mod+Shift+WheelScrollDown      { focus-workspace-down; }
+    Mod+Shift+WheelScrollUp        { focus-workspace-up; }
+    Mod+WheelScrollDown      { focus-column-right; }
+    Mod+WheelScrollUp        { focus-column-left; }
 
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
