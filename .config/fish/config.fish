@@ -42,6 +42,7 @@ alias music-player="ncmpcpp"
 alias groot="cd (git root)"
 alias vim=nvim
 alias switch-cluster="export KUBECONFIG=(fd -e yaml . ~/.kubeconfig | fzf)"
+alias cat=bat
 
 alias rust-book="rustup doc --book"
 
