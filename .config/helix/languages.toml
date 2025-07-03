@@ -32,11 +32,6 @@ formatter = { command = "taplo", args = ["format", "-"] }
 language-servers = ["scls"]
 
 [[language]]
-name = "elixir"
-formatter = { command = "mix", args = ["format", "-"] }
-auto-format = true
-
-[[language]]
 name = "javascript"
 formatter = { command = 'deno', args = ["fmt", "-", "--ext", "js"] }
 auto-format = true
@@ -55,3 +50,48 @@ auto-format = true
 name = "yaml"
 formatter = { command = "prettierd", args = [".yaml"] }
 auto-format = true
+
+[language-server.golangci-lint-lsp.config]
+command = [
+  "golangci-lint-langserver",
+  "run",
+  "--out-format",
+  "json",
+  "--issues-exit-code=1",
+]
+
+[language-server.gopls.config]
+gofumpt = true
+
+[[language]]
+name = "go"
+auto-format = true
+
+[[language]]
+name = "hcl"
+language-servers = ["terraform-ls"]
+language-id = "terraform"
+
+[[language]]
+name = "tfvars"
+auto-format = true
+language-servers = ["terraform-ls"]
+language-id = "terraform-vars"
+
+[language-server.terraform-ls]
+command = "terraform-ls"
+args = ["serve"]
+# config.indexing.ignorePaths = ["ignore.hcl"]
+
+[language-server.lexical]
+command = "lexical"
+
+[[language]]
+name = "elixir"
+formatter = { command = "mix", args = ["format", "-"] }
+auto-format = true
+language-servers = ["lexical"]
+
+[[language]]
+name = "heex"
+language-servers = ["lexical"]
