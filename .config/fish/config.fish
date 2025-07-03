@@ -38,11 +38,8 @@ alias dotfiles-lazygit="lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias d="dotfiles"
 alias deletedsstore="fd -H '.DS_Store' $HOME -X rm -fv {}"
 alias deletesyncconflict="fd -H sync-conflict- . -X rm -vf {}"
-alias music-player="ncmpcpp"
 alias groot="cd (git root)"
-alias vim=nvim
 alias switch-cluster="export KUBECONFIG=(fd -e yaml . ~/.kubeconfig | fzf)"
-alias cat=mcat
 
 alias rust-book="rustup doc --book"
 
