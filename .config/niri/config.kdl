@@ -43,7 +43,7 @@ output "LG Electronics LG ULTRAGEAR+ 306NTTQ3U177" {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 24
 
     tab-indicator {
         width 8
@@ -68,9 +68,6 @@ layout {
         proportion 0.33333
         proportion 0.5
         proportion 0.66667
-
-        // Fixed sets the width in logical pixels exactly.
-        // fixed 1920
     }
 
     // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
@@ -106,7 +103,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        active-color "#8aadf4"
 
         // Color of the ring on inactive monitors.
         inactive-color "#505050"
