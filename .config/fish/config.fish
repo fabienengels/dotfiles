@@ -40,6 +40,7 @@ alias deletedsstore="fd -H '.DS_Store' $HOME -X rm -fv {}"
 alias deletesyncconflict="fd -H sync-conflict- . -X rm -vf {}"
 alias groot="cd (git root)"
 alias switch-cluster="export KUBECONFIG=(fd -e yaml . ~/.kubeconfig | fzf)"
+alias cat="mcat --theme catppuccin"
 
 alias rust-book="rustup doc --book"
 
