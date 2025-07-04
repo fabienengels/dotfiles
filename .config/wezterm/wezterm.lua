@@ -3,7 +3,9 @@ local action = wezterm.action
 
 local config = {
   font = wezterm.font "JetBrains Mono",
+  -- font = wezterm.font "Fira Mono",
   font_size = 13,
+  line_height = 1.1,
   color_scheme = "kanagawabones",
   hide_tab_bar_if_only_one_tab = true,
   window_background_opacity = 0.95,
