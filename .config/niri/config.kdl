@@ -89,44 +89,14 @@ layout {
     // Alternatively, you can override it with a window rule called
     // `draw-border-with-background`.
 
-    // You can change how the focus ring looks.
     focus-ring {
-        // Uncomment this line to disable the focus ring.
-        // off
-
-        // How many logical pixels the ring extends out from the windows.
-        width 4
-
-        // Colors can be set in a variety of ways:
-        // - CSS named colors: "red"
-        // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
-        // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
-
-        // Color of the ring on the active monitor.
-        active-color "#8aadf4"
-
-        // Color of the ring on inactive monitors.
-        inactive-color "#505050"
-
-        // You can also use gradients. They take precedence over solid colors.
-        // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
-        // The angle is the same as in linear-gradient, and is optional,
-        // defaulting to 180 (top-to-bottom gradient).
-        // You can use any CSS linear-gradient tool on the web to set these up.
-        // Changing the color space is also supported, check the wiki for more info.
-        //
-        // active-gradient from="#80c8ff" to="#bbddff" angle=45
-
-        // You can also color the gradient relative to the entire view
-        // of the workspace, rather than relative to just the window itself.
-        // To do that, set relative-to="workspace-view".
-        //
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+        off
     }
 
-    // You can also add a border. It's similar to the focus ring, but always visible.
     border {
-        off
+        active-gradient from="#7dc4e4" to="#8aadf4" angle=45
+        inactive-gradient from="#939ab7" to="#8087a2" angle=45
+        width 4
     }
 
     // You can enable drop shadows for windows.
