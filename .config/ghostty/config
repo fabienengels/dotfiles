@@ -1,0 +1,24 @@
+font-family = Jetbrains Mono
+font-size = 13
+adjust-cell-height = 10%
+
+auto-update = off
+
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = false
+cursor-opacity = 0.8
+
+theme = catppuccin-macchiato
+background-opacity = 0.9
+background-blur = true
+
+command = fish
+shell-integration = fish
+
+mouse-hide-while-typing = true
+resize-overlay = never
+
+selection-invert-fg-bg = true
+
+keybind = alt+t=new_tab

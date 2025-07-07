@@ -255,7 +255,8 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return repeat=false { spawn "wezterm"; }
+    // Mod+Return repeat=false { spawn "wezterm"; }
+    Mod+Return repeat=false { spawn "ghostty"; }
     Mod+E repeat=false { spawn "thunar"; }
     Mod+B repeat=false { spawn "firefox"; }
     Mod+R repeat=false { spawn "tofi-drun" "--drun-launch=true"; }
