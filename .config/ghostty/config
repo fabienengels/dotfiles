@@ -20,6 +20,7 @@ shell-integration = fish
 
 mouse-hide-while-typing = true
 resize-overlay = never
+window-padding-balance = true
 
 selection-invert-fg-bg = true
 
