@@ -2,6 +2,8 @@ font-family = Jetbrains Mono
 font-size = 13
 adjust-cell-height = 10%
 
+gtk-single-instance = true
+
 auto-update = off
 
 shell-integration-features = no-cursor
