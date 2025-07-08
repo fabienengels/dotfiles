@@ -60,12 +60,10 @@ command = [
   "--issues-exit-code=1",
 ]
 
-[language-server.gopls.config]
-gofumpt = true
-
 [[language]]
 name = "go"
 auto-format = true
+formatter = { command = "goimports" }
 
 [[language]]
 name = "hcl"
