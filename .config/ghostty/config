@@ -25,3 +25,5 @@ window-padding-balance = true
 selection-invert-fg-bg = true
 
 keybind = alt+t=new_tab
+
+config-file = override
