@@ -5,7 +5,7 @@
 [core]
   abbrev = 8
   autocrlf = false
-  editor = nvim
+  editor = hx
 
 [diff]
   external = difft
