@@ -61,6 +61,11 @@ command = [
 ]
 
 [[language]]
+name = "templ"
+auto-format = true
+formatter = { command = "templ", args = ["fmt"] }
+
+[[language]]
 name = "go"
 auto-format = true
 formatter = { command = "goimports" }
