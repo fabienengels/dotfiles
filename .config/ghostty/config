@@ -7,9 +7,10 @@ gtk-single-instance = true
 auto-update = off
 
 shell-integration-features = no-cursor
-cursor-style = block
-cursor-style-blink = false
+cursor-style = underline
+cursor-style-blink = true
 cursor-opacity = 0.8
+cursor-invert-fg-bg = true
 
 theme = catppuccin-macchiato
 background-opacity = 0.95
