@@ -3,7 +3,7 @@
   email = code@fabienengels.com
 
 [core]
-  abbrev = 8
+  abbrev = 10
   autocrlf = false
   editor = hx
 
@@ -30,6 +30,10 @@
   test = clone --depth=1
   authors = shortlog -e -s -n
   list-tracked-files = ls-tree -r master --name-only
+  wt = worktree
+
+[worktree]
+  useRelativePaths = true
 
 [init]
   defaultBranch = main

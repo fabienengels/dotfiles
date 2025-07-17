@@ -1,5 +1,3 @@
-# theme = "kanagawa-no-background"
-# theme = "everforest-no-background"
 theme = "catppuccin_macchiato-no-background"
 
 [editor]
