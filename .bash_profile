@@ -8,8 +8,8 @@ export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_byte
 export EDITOR="nvim"
 
 # Man
-export MANPAGER="nvim +Man!"
-export MANWIDTH=999
+# export MANPAGER="nvim +Man!"
+# export MANWIDTH=999
 
 # Disable warning when using bash under MacOS
 export BASH_SILENCE_DEPRECATION_WARNING=1
