@@ -1,64 +1,51 @@
-add_newline = false
-
-format = """\
-  $battery\
-  $username\
-  $hostname\
-  $directory\
-  $git_branch\
-  $git_state\
-  $git_status\
-  $git_commit\
-  $package\
-  $rust\
-  $kubernetes\
-  $cmd_duration\
-  $jobs\
-  $direnv\
-  $line_break\
-  $character\
-"""
-
-[direnv]
-disabled = false
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch \
+$git_state\
+$git_commit\
+$git_status\
+$cmd_duration\
+$line_break\
+$python\
+$character"""
 
 [directory]
-truncation_length = 8
-truncation_symbol = '…/'
+style = "blue"
 
 [character]
-success_symbol = "[>>](bold green)"
-error_symbol = "[!!](bold red)"
-vicmd_symbol = "[<<](bold green)"
+success_symbol = "[❯](blue)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
 
-[jobs]
-threshold = 1
+[git_branch]
+format = "on(grey) [ $branch](purple)"
+style = "bright-black"
 
 [git_commit]
 only_detached = false
-commit_hash_length = 8
+commit_hash_length = 10
 
-[package]
-symbol = " "
+[git_status]
+# format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+# style = "cyan"
+# conflicted = "​"
+# untracked = "​"
+# modified = "​"
+# staged = "​"
+# renamed = "​"
+deleted = "-"
+stashed = "≡"
 
-[kubernetes]
-detect_env_vars = ['KUBECONFIG']
-disabled = false
-format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
 
-[battery]
-full_symbol = ' '
-charging_symbol = ' '
-discharging_symbol = ' '
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
 
-[[battery.display]]
-threshold = 10
-style = "bold red"
-
-[[battery.display]]
-threshold = 30
-style = "bold yellow"
-
-[[battery.display]]
-threshold = 100
-style = "green"
+[python]
+format = "[$virtualenv]($style) "
+style = "bright-black"
