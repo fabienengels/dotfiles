@@ -1,133 +1,27 @@
+hide-cursor-when-typing = true
 
-# Hide the cursor while typing
-#
-# Default is `false`
-#
-# hide-cursor-when-typing = false
+theme = "catppuccin-macchiato"
 
-# Ignore theme selection foreground color
-#
-# Default is false
-#
-# Example:
-# ignore-selection-foreground-color = false
-
-# Theme
-#
-# It makes Rio look for the specified theme in the themes folder
-# (macos and linux: ~/.config/rio/themes/dracula.toml)
-# (windows: C:\Users\USER\AppData\Local\rio\themes\dracula.toml)
-#
-# Example:
-theme = "kanagawabones"
-
-# Padding-x
-#
-# define x axis padding (default is 0)
-#
-# Example:
-# padding-x = 10
-
-# Padding-y
-#
-# define y axis padding based on a format [top, bottom]
-# (default is [0, 0])
-#
-# Example:
-# padding-y = [30, 10]
-
-# Option as Alt
-#
-# This config only works on MacOS.
-# Possible choices: 'both', 'left' and 'right'.
-#
-# Example:
-# option-as-alt = 'left'
-
-# Line height
-#
-# This option will apply an modifier to line-height
-# Default is `1.0`
-#
-# Example:
-# line-height = 1.2
-
-# Startup directory
-#
-# Directory the shell is started in. If this is unset the working
-# directory of the parent process will be used.
-#
-# This configuration only has effect if use-fork is disabled.
-#
-# Example:
-# working-dir = "/Users/raphael/Documents/"
-
-# Environment variables
-#
-# Example:
+line-height = 1.1
 # env-vars = []
+confirm-before-quit = false
 
-# Use fork
-#
-# Defaults for POSIX-based systems (Windows is not configurable):
-# MacOS: spawn processes
-# Linux/BSD: fork processes
-#
-# Example:
-# use-fork = false
-
-# Confirm before exiting Rio
-# Default is `true`
-#
-# confirm-before-quit = false
-
-# Cursor
-#
-# shape - Default cursor shape is 'block'
-# Other available options are: 'underline', 'beam' or 'hidden'
-#
-# blinking - Whether the cursor blinks. The default is false
-#
-# blinking-interval - Cursor update on milliseconds interval
-#
-# [cursor]
-# shape = 'block'
-# blinking = false
-# blinking-interval = 800
+[cursor]
+shape = 'block'
+blinking = true
+blinking-interval = 800
 
 [window]
-opacity = 0.9
+opacity = 0.95
 blur = true
 
 [fonts]
 family = "JetBrains Mono"
-size = 16
+size = 22
 
 [scroll]
 multiplier = 5.0
 divider = 1.0
-
-# Navigation
-#
-# "mode" - Define navigation mode
-#   • NativeTab (MacOS only)
-#   • Bookmark
-#   • BottomTab
-#   • TopTab
-#   • Plain
-#
-# "hide-if-single" - Hide navigation UI if is single.
-# "clickable" - Enable click on tabs to switch.
-# "use-current-path" - Use same path whenever a new tab is created (Note: requires `use-fork` to be set to false).
-# "color-automation" - Set a specific color for the tab whenever a specific program is running, or in a specific directory.
-#
-# Example:
-# [navigation]
-# mode = "bookmark"
-# clickable = false
-# hide-if-single = true
-# use-current-path = false
-# color-automation = []
 
 [navigation]
 hide-if-single = true
