@@ -15,6 +15,7 @@
 
 [language-server.tailwindcss-ls]
 command = "tailwindcss-language-server"
+config = { userLanguages = { templ = "html" } }
 args = ["--stdio"]
 
 [[language]]
@@ -35,6 +36,11 @@ language-servers = ["scls"]
 name = "javascript"
 formatter = { command = 'deno', args = ["fmt", "-", "--ext", "js"] }
 auto-format = true
+
+[[language]]
+name = "templ"
+auto-format = true
+language-servers = ["templ", "tailwindcss-ls"]
 
 [[language]]
 name = "svelte"
