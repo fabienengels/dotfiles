@@ -50,6 +50,7 @@ alias l="eza --icons --group-directories-first --sort extension --git"
 alias a="l -a"
 
 alias yt="yt-dlp --cookies-from-browser firefox --embed-thumbnail --embed-chapters"
+alias s2c="slurp | grim -g - - | wl-copy"
 
 source ~/.config/fish/themes/kanagawa.fish
 
