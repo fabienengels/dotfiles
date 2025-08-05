@@ -7,14 +7,14 @@ cursorline = true
 mouse = false
 bufferline = "always"
 color-modes = false
-end-of-line-diagnostics = "hint"
 
 [editor.cursor-shape]
 insert = "bar"
 select = "underline"
 
 [editor.inline-diagnostics]
-cursor-line = "error"
+other-lines = "hint"
+cursor-line = "hint"
 
 [editor.statusline]
 separator = "\ue0b1"
