@@ -13,6 +13,11 @@
 # auto-format = false
 # language-servers = ["scls"]
 
+[[language]]
+name = "nix"
+formatter = { command = "nixfmt" }
+auto-format = true
+
 [language-server.tailwindcss-ls]
 command = "tailwindcss-language-server"
 config = { userLanguages = { templ = "html" } }
