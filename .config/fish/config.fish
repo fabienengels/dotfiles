@@ -40,6 +40,7 @@ alias deletesyncconflict="fd -H sync-conflict- . -X rm -vf {}"
 alias groot="cd (git root)"
 alias switch-cluster="export KUBECONFIG=(fd -e yaml . ~/.kubeconfig | fzf)"
 alias mcat="mcat --theme catppuccin"
+alias j="just"
 
 alias rust-book="rustup doc --book"
 
