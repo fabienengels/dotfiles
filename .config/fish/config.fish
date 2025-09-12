@@ -9,7 +9,7 @@ switch (uname)
         fish_add_path -p /usr/local/bin
 end
 
-fish_add_path -p ~/.local/bin ~/.cargo/bin ~/.bun/bin ~/.nix-profile/bin ~/.bun/bin
+fish_add_path -p ~/.local/bin ~/.cargo/bin ~/.bun/bin ~/.nix-profile/bin ~/.bun/bin ~/go/bin
 
 direnv hook fish | source
 starship init fish | source
