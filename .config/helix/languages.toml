@@ -79,7 +79,7 @@ formatter = { command = "templ", args = ["fmt"] }
 [[language]]
 name = "go"
 auto-format = true
-formatter = { command = "goimports" }
+formatter = { command = "gofumpt" }
 
 [[language]]
 name = "hcl"
