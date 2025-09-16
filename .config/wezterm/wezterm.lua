@@ -19,7 +19,7 @@ local config = {
   keys = {
     {
       key = 't',
-      mods = 'CTRL',
+      mods = 'ALT',
       action = action.SpawnTab 'CurrentPaneDomain'
     }
   }
