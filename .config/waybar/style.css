@@ -7,13 +7,16 @@
   color: #CCCCCC;
 }
 
-window#waybar > box {
+window#waybar>box {
   background: rgba(0, 0, 0, 0.5);
+  padding: 6px;
 }
 
-#window, #tray, #pulseaudio, #clock, #network {
-  padding-left: 8px;
-  padding-right: 8px;
+#tray,
+#pulseaudio,
+#clock,
+#network {
+  padding-right: 10px;
 }
 
 #window {
@@ -21,9 +24,14 @@ window#waybar > box {
 }
 
 #workspaces button {
-  padding: 4px;
+  padding-right: 10px;
 }
 
-#workspaces button.active {
-  background: rgba(129, 132, 133, 1);
+#mpd {
+  /* font-weight: 400; */
+  font-style: italic;
+}
+
+#clock {
+  font-weight: 600;
 }

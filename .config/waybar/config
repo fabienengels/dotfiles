@@ -2,19 +2,22 @@
   "layer": "bottom",
   "position": "top",
     "modules-left": ["niri/workspaces", "niri/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["tray", "pulseaudio", "network"],
-    "hyprland/workspaces": {
-      "on-click": "activate",
-      "on-scroll-up": "hyprctl dispatch workspace e+1",
-      "on-scroll-down": "hyprctl dispatch workspace e-1",
-    },
+    "modules-center": ["mpd"],
+    "modules-right": ["tray", "pulseaudio", "network", "clock"],
     "niri/workspaces": {
+      "disable-scroll": true,
+      "tooltip": false,
+      "format": "{icon}",
+      "format-icons": {
+        "default": "",
+        "active": "",
+      },
     },
     "niri/window": {
+      "swap-icon-label": false,
     },
     "tray": {
-      "spacing": 5,
+      "spacing": 6,
       "icon-size": 32
     },
     "network": {
@@ -28,6 +31,10 @@
       "format": "{:%H:%M}",
       "tooltip": true,
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "mpd": {
+      "tooltip": false,
+      "format-paused": "Paused",
     },
     "pulseaudio": {
       "format": "{icon}",
