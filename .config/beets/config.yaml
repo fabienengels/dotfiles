@@ -3,18 +3,19 @@ library: ~/.config/beets/library.db
 plugins: the convert embedart fetchart ftintitle lastgenre missing scrub duplicates replaygain
 original_date: yes
 replace:
-  '&': 'and'
-  '[*<>\/\\]': '-'
+  "Alt236": "ALT 236"
+  "&": "and"
+  '[*<>\/\\]': "-"
   '[<>:"\?\*\|]': _
-  '[?.":\!`]': ''
+  '[?.":\!`]': ""
   '[\\/]': _
   '[\x00-\x1f]': _
   '\.$': _
-  '\s+$': ''
-  '^-': _
+  '\s+$': ""
+  "^-": _
   '^\.': _
-  '^\s+': ''
-  '✝': '+'
+  '^\s+': ""
+  "✝": "+"
 ui:
   color: yes
 import:
@@ -26,7 +27,7 @@ musicbrainz:
   genres: yes
 match:
   preferred:
-    countries: ['FR', 'US', 'GB|UK']
+    countries: ["FR", "US", "GB|UK"]
 paths:
   default: Albums/%lower{%left{$albumartist, 1}}/$albumartist - $album%aunique{}/$track $title
   comp: Albums/_/$album%aunique{}/$track $title
@@ -35,6 +36,6 @@ fetchart:
   enforce_ratio: true
   minwidth: 1200
   maxwidth: 1200
-  sources: '*'
+  sources: "*"
 replaygain:
   backend: gstreamer
