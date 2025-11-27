@@ -1,3 +1,6 @@
 filter_mode = "directory"
 style = "auto"
 update_check = false
+
+[theme]
+name = "catppuccin-macchiato-blue"
