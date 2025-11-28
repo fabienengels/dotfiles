@@ -1,4 +1,0 @@
-return {
-  font_size = 14,
-  default_prog = { "/opt/homebrew/bin/fish" }
-}
