@@ -7,24 +7,31 @@ gtk-single-instance = true
 auto-update = off
 
 shell-integration-features = no-cursor
-cursor-style = underline
-cursor-style-blink = true
-cursor-opacity = 0.8
+cursor-style = block
+cursor-style-blink = false
+cursor-opacity = 0.5
 cursor-invert-fg-bg = true
 
 theme = catppuccin-macchiato.conf
-background-opacity = 0.95
+background-opacity = 0.75
 background-blur = true
+background = #000000
+
+minimum-contrast = 2
 
 command = fish
-shell-integration = fish
 
 mouse-hide-while-typing = true
 resize-overlay = never
+window-padding-x = 10
+window-padding-y = 10
 window-padding-balance = true
+
+confirm-close-surface = false
 
 selection-invert-fg-bg = true
 
 keybind = alt+t=new_tab
 
 config-file = override
+
