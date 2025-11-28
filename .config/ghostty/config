@@ -10,7 +10,6 @@ shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = false
 cursor-opacity = 0.5
-cursor-invert-fg-bg = true
 
 theme = catppuccin-macchiato.conf
 background-opacity = 0.75
