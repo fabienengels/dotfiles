@@ -53,11 +53,11 @@ alias a="l -a"
 alias yt="yt-dlp --cookies-from-browser firefox --embed-thumbnail --embed-chapters"
 alias s2c="slurp | grim -g - - | wl-copy"
 
-source ~/.config/fish/themes/kanagawa.fish
+fish_config theme choose 'Catppuccin Macchiato'
 source ~/.config/fish/fzf/catppuccin-fzf-macchiato.fish
 
 # set fish_color_autosuggestion green
-set fish_color_command blue
+# set fish_color_command blue
 # set fish_color_match green
 
 if test -z "$SSH_AUTH_SOCK"
