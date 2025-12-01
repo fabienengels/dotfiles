@@ -54,6 +54,7 @@ alias yt="yt-dlp --cookies-from-browser firefox --embed-thumbnail --embed-chapte
 alias s2c="slurp | grim -g - - | wl-copy"
 
 source ~/.config/fish/themes/kanagawa.fish
+source ~/.config/fish/fzf/catppuccin-fzf-macchiato.fish
 
 # set fish_color_autosuggestion green
 set fish_color_command blue
