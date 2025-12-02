@@ -1,0 +1,27 @@
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+    geometry-corner-radius 32
+    clip-to-geometry true
+}
+
+window-rule {
+    match app-id="org.gnome.Solanum"
+    open-floating true
+}
+
+window-rule {
+    match app-id="mpv"
+    open-floating true
+}
+
+window-rule {
+    match app-id=".*amiberry.*"
+    open-floating true
+}
+
+// window-rule {
+//     geometry-corner-radius 4
+//     clip-to-geometry true
+// }
