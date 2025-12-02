@@ -1,3 +1,8 @@
+window-rule {
+    geometry-corner-radius 2
+    clip-to-geometry true
+}
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
@@ -20,8 +25,3 @@ window-rule {
     match app-id=".*amiberry.*"
     open-floating true
 }
-
-// window-rule {
-//     geometry-corner-radius 4
-//     clip-to-geometry true
-// }
