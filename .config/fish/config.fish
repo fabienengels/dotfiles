@@ -17,6 +17,7 @@ zoxide init fish | source
 atuin init fish --disable-up-arrow | source
 poetry completions fish | source
 flux completion fish | source
+kubecm completion fish | source
 
 if test -f '/usr/share/fish/vendor_completions.d/kubectl.fish'
     source /usr/share/fish/vendor_completions.d/kubectl.fish
@@ -42,10 +43,15 @@ alias switch-cluster="export KUBECONFIG=(fd -e yaml . ~/.kubeconfig | fzf)"
 alias mcat="mcat --theme catppuccin"
 alias j="just"
 
+alias niri-windows='niri msg -j windows | jq .'
+
+alias upgrade-opencode="bun add -g opencode-ai"
+
 alias rust-book="rustup doc --book"
 
 alias k="kubectl"
 alias kns="kubectl config set-context --current --namespace"
+alias unset-context="kubectl config unset current-context"
 
 alias l="eza --icons --group-directories-first --sort extension --git"
 alias a="l -a"
