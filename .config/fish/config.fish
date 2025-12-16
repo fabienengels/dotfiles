@@ -1,5 +1,9 @@
 set -U fish_greeting
 
+# TODO
+# https://gist.github.com/StringKe/4634f44b6a7ac61030cc17b9d6ce85b7
+# ex : type -q atuin
+
 # fish_vi_key_bindings
 
 switch (uname)
@@ -12,7 +16,13 @@ end
 fish_add_path -p ~/.local/bin ~/.cargo/bin ~/.bun/bin ~/.nix-profile/bin ~/.bun/bin ~/go/bin
 
 direnv hook fish | source
+
+function starship_transient_prompt_func
+    starship module character
+end
 starship init fish | source
+enable_transience
+
 zoxide init fish | source
 atuin init fish --disable-up-arrow | source
 poetry completions fish | source
