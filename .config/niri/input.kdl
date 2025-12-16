@@ -8,7 +8,7 @@ input {
 
     workspace-auto-back-and-forth
     focus-follows-mouse
-    warp-mouse-to-focus mode="center-xy"
+    // warp-mouse-to-focus mode="center-xy"
 
     // Uncomment this to make the mouse warp to the center of newly focused windows.
 
