@@ -17,12 +17,7 @@ fish_add_path -p ~/.local/bin ~/.cargo/bin ~/.bun/bin ~/.nix-profile/bin ~/.bun/
 
 direnv hook fish | source
 
-function starship_transient_prompt_func
-    starship module character
-end
 starship init fish | source
-enable_transience
-
 zoxide init fish | source
 atuin init fish --disable-up-arrow | source
 poetry completions fish | source
