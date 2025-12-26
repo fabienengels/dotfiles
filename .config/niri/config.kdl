@@ -7,6 +7,8 @@ include "startup.kdl"
 environment {
     NIXOS_OZONE_WL "1"
     ELECTRON_OZONE_PLATFORM_HINT "wayland"
+    // Fix ghostty issue with altgr-intl
+    GTK_IM_MODULE "simple"
 }
 
 output "LG Electronics LG ULTRAGEAR+ 306NTTQ3U177" {
