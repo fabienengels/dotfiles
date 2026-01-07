@@ -58,7 +58,7 @@ alias k="kubectl"
 alias kns="kubectl config set-context --current --namespace"
 alias unset-context="kubectl config unset current-context"
 
-alias l="eza --icons --group-directories-first --sort extension --git"
+alias l="eza -l --icons --group-directories-first --git"
 alias a="l -a"
 
 alias yt="yt-dlp --cookies-from-browser firefox --embed-thumbnail --embed-chapters"
