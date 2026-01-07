@@ -5,7 +5,7 @@ binds {
 
     // Mod+Return repeat=false { spawn "wezterm"; }
     Mod+Return repeat=false { spawn "ghostty"; }
-    Mod+E repeat=false { spawn "thunar"; }
+    Mod+E repeat=false { spawn "cosmic-files"; }
     Mod+B repeat=false { spawn "firefox"; }
     Mod+R repeat=false { spawn "tofi-drun" "--drun-launch=true"; }
     Mod+S repeat=false { spawn "solanum"; }
