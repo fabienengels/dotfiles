@@ -1,17 +1,15 @@
 window-rule {
     geometry-corner-radius 2
     clip-to-geometry true
+}
+
+window-rule {
     open-floating true
-}
+    exclude app-id="firefox"
+    exclude app-id="com.mitchellh.ghostty"
 
-window-rule {
-    match app-id="com.mitchellh.ghostty"
-    open-floating false
-}
-
-window-rule {
-    match app-id="firefox"
-    open-floating false
+    default-window-height { proportion 0.9; }
+    default-column-width { proportion 0.5; }
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
