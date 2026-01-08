@@ -13,9 +13,14 @@ window-rule {
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
-// window-rule {
-//     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-//     open-floating true
-//     geometry-corner-radius 32
-//     clip-to-geometry true
-// }
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+    geometry-corner-radius 10
+    clip-to-geometry true
+
+    default-column-width { fixed 960; }
+    default-window-height { fixed 540; }
+
+    default-floating-position x=40 y=40 relative-to="top-right"
+}
