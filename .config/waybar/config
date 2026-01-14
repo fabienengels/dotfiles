@@ -1,8 +1,7 @@
 {
   "layer": "bottom",
-  "position": "top",
-    "modules-left": ["niri/workspaces", "niri/window"],
-    "modules-center": ["mpd"],
+  "position": "left",
+    "modules-center": ["niri/workspaces"],
     "modules-right": ["tray", "pulseaudio", "network", "clock"],
     "niri/workspaces": {
       "disable-scroll": true,
@@ -13,12 +12,9 @@
         "active": "",
       },
     },
-    "niri/window": {
-      "swap-icon-label": false,
-    },
     "tray": {
       "spacing": 6,
-      "icon-size": 32
+      "icon-size": 24
     },
     "network": {
         "format-wifi": "",
@@ -28,13 +24,9 @@
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}"
     },
     "clock": {
-      "format": "{:%H:%M}",
+      "format": "{:%H\n%M}",
       "tooltip": true,
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "mpd": {
-      "tooltip": false,
-      "format-paused": "Paused",
     },
     "pulseaudio": {
       "format": "{icon}",

@@ -3,20 +3,19 @@
   border: none;
   border-radius: 0;
   font-family: Jetbrains Mono Bold;
-  font-size: 18px;
+  font-size: 24px;
   color: #CCCCCC;
 }
 
 window#waybar>box {
-  background: rgba(0, 0, 0, 0.75);
-  padding: 6px;
+  background: rgba(0, 0, 0, 0.85);
 }
 
 #tray,
 #pulseaudio,
 #clock,
 #network {
-  padding-right: 10px;
+  margin: 6px;
 }
 
 #window {
@@ -25,11 +24,6 @@ window#waybar>box {
 
 #workspaces button {
   padding-right: 10px;
-}
-
-#mpd {
-  /* font-weight: 400; */
-  font-style: italic;
 }
 
 #clock {
