@@ -12,7 +12,7 @@ cursor-style-blink = false
 cursor-opacity = 0.5
 
 theme = catppuccin-macchiato.conf
-background-opacity = 0.75
+background-opacity = 0.85
 background-blur = true
 background = #000000
 
