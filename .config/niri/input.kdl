@@ -6,6 +6,20 @@ input {
         }
     }
 
+    touchpad {
+        natural-scroll
+        accel-speed 0
+        scroll-factor 0.5
+    }
+
+    trackpoint {
+        off
+    }
+
+    touch {
+        off
+    }
+
     workspace-auto-back-and-forth
     focus-follows-mouse
     // warp-mouse-to-focus mode="center-xy"

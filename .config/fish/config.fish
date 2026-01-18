@@ -23,6 +23,7 @@ atuin init fish --disable-up-arrow | source
 poetry completions fish | source
 flux completion fish | source
 kubecm completion fish | source
+dms completion fish | source
 
 if test -f '/usr/share/fish/vendor_completions.d/kubectl.fish'
     source /usr/share/fish/vendor_completions.d/kubectl.fish

@@ -7,8 +7,8 @@ binds {
     Mod+Return repeat=false { spawn "ghostty"; }
     Mod+E repeat=false { spawn "cosmic-files"; }
     Mod+B repeat=false { spawn "firefox"; }
-    Mod+R repeat=false { spawn "tofi-drun" "--drun-launch=true"; }
-    Mod+S repeat=false { spawn "solanum"; }
+    Mod+R repeat=false { spawn "dms" "ipc" "call" "spotlight" "open"; }
+    // Mod+S repeat=false { spawn "solanum"; }
     Mod+Ctrl+L repeat=false allow-when-locked=true { spawn "hyprlock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
