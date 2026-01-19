@@ -145,7 +145,7 @@
   "spotlightCloseNiriOverview": true,
   "niriOverviewOverlayEnabled": true,
   "useAutoLocation": false,
-  "weatherEnabled": true,
+  "weatherEnabled": false,
   "networkPreference": "auto",
   "vpnLastConnected": "",
   "iconTheme": "System Default",
