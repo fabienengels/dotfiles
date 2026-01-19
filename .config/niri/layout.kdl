@@ -1,5 +1,5 @@
 layout {
-    gaps 24
+    gaps 8
 
     tab-indicator {
         width 8
@@ -40,7 +40,7 @@ layout {
         // active-gradient from="#7dc4e4" to="#8aadf4" angle=45
         active-gradient from="#7287fd" to="#8839ef" angle=45
         inactive-gradient from="#939ab7" to="#8087a2" angle=45
-        width 4
+        width 2
     }
 
     shadow {
