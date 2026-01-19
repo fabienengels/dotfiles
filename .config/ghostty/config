@@ -1,5 +1,5 @@
-font-family = Jetbrains Mono
-font-size = 13
+# font-family = Jetbrains Mono
+font-size = 14
 adjust-cell-height = 10%
 
 gtk-single-instance = true
@@ -28,7 +28,7 @@ window-padding-balance = true
 
 confirm-close-surface = false
 
-selection-invert-fg-bg = true
+# selection-invert-fg-bg = true
 
 keybind = alt+t=new_tab
 
