@@ -65,12 +65,7 @@ alias a="l -a"
 alias yt="yt-dlp --cookies-from-browser firefox --embed-thumbnail --embed-chapters"
 alias s2c="slurp | grim -g - - | wl-copy"
 
-fish_config theme choose 'Base16 Default'
-source ~/.config/fish/fzf/catppuccin-fzf-macchiato.fish
-
-# set fish_color_autosuggestion green
-# set fish_color_command blue
-# set fish_color_match green
+fish_config theme choose base16-default
 
 if test -z "$SSH_AUTH_SOCK"
     export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
