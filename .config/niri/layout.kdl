@@ -1,10 +1,10 @@
 layout {
-    gaps 8
+    // gaps 8
 
-    tab-indicator {
-        width 8
-        length total-proportion=0.5
-    }
+    // tab-indicator {
+    //     width 8
+    //     length total-proportion=0.5
+    // }
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -31,16 +31,16 @@ layout {
         off
     }
 
-    insert-hint {
-        color "#7287fd"
-    }
+    // insert-hint {
+    //     color "#7287fd"
+    // }
 
     border {
         on
         // active-gradient from="#7dc4e4" to="#8aadf4" angle=45
-        active-gradient from="#7287fd" to="#8839ef" angle=45
-        inactive-gradient from="#939ab7" to="#8087a2" angle=45
-        width 2
+        // active-gradient from="#7287fd" to="#8839ef" angle=45
+        // inactive-gradient from="#939ab7" to="#8087a2" angle=45
+        // width 2
     }
 
     shadow {

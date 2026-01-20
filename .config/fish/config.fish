@@ -65,7 +65,7 @@ alias a="l -a"
 alias yt="yt-dlp --cookies-from-browser firefox --embed-thumbnail --embed-chapters"
 alias s2c="slurp | grim -g - - | wl-copy"
 
-fish_config theme choose 'Catppuccin Macchiato'
+fish_config theme choose 'Base16 Default'
 source ~/.config/fish/fzf/catppuccin-fzf-macchiato.fish
 
 # set fish_color_autosuggestion green

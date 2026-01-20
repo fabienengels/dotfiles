@@ -11,7 +11,7 @@ cursor-style = block
 cursor-style-blink = false
 cursor-opacity = 0.5
 
-theme = catppuccin-macchiato.conf
+theme = dankcolors
 background-opacity = 0.85
 background-blur = true
 background = #000000
