@@ -23,6 +23,9 @@ binds {
     XF86AudioPrev        allow-when-locked=true { spawn "playerctl" "previous"; }
     XF86AudioNext        allow-when-locked=true { spawn "playerctl" "next"; }
 
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" "backlight:amdgpu_bl1"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" "backlight:amdgpu_bl1"; }
+
     Mod+Q { close-window; }
 
     Mod+J     { focus-window-or-workspace-down; }
