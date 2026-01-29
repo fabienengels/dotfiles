@@ -9,8 +9,8 @@ environment {
     ELECTRON_OZONE_PLATFORM_HINT "wayland"
     // Fix ghostty issue with altgr-intl
     GTK_IM_MODULE "simple"
-    QT_QPA_PLATFORMTHEME "gtk3"
-    QT_QPA_PLATFORMTHEME_QT6 "gtk3"
+    // QT_QPA_PLATFORMTHEME "gtk3"
+    // QT_QPA_PLATFORMTHEME_QT6 "gtk3"
 }
 
 output "LG Electronics LG ULTRAGEAR+ 306NTTQ3U177" {
@@ -33,6 +33,10 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // screenshot-path null
 
 animations { }
+
+hotkey-overlay {
+    skip-at-startup
+}
 
 include "dms/alttab.kdl"
 include "dms/colors.kdl"
