@@ -6,6 +6,8 @@ gtk-single-instance = true
 
 auto-update = off
 
+app-notifications = no-config-reload
+
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = false
