@@ -1,0 +1,15 @@
+{
+	"layer": "bottom",
+	"position": "top",
+	"height": 32,
+	"margin-top": 16,
+
+	"modules-center": [
+		"tray",
+		"clock",
+		"niri/workspaces",
+		"network",
+		"battery",
+		"wireplumber"
+	]
+}
