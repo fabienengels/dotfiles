@@ -1,31 +1,73 @@
+/* @import "colors/colors.css" */
+
 * {
-  all: unset;
   border: none;
-  border-radius: 0;
-  font-family: Jetbrains Mono Bold;
-  font-size: 24px;
-  color: #CCCCCC;
+  border-radius: 0px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 16px;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
 }
 
-window#waybar>box {
-  background: rgba(0, 0, 0, 0.85);
+window#waybar {
+  background: transparent;
 }
 
-#tray,
-#pulseaudio,
-#clock,
-#network {
-  margin: 6px;
+.modules-center {
+  background: black;
+  padding: 6px 12px;
+  border-radius: 28px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-#window {
-  color: #CCCCCC;
+#workspaces {
+  background: transparent;
+  padding: 0;
+  margin: 0 10px 0 10px;
+  border: none;
+  box-shadow: none;
 }
 
 #workspaces button {
-  padding-right: 10px;
+  padding: 0 6px;
+  margin: 0 2px;
+  border-radius: 16px;
+  color: #444444;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+  background: linear-gradient(135deg, #0000ff 0%, #ff00ff 50%, #ff0000 100%);
+  color: black;
+  min-width: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+  color: white;
+}
+
+#workspaces button.urgent {
+  background-color: #ff0000;
+  color: black;
 }
 
 #clock {
-  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+#network {
+  color: #00ff00;
+  margin: 0 10px 0 0;
+}
+
+#battery {
+  color: #ff0000;
+  margin: 0 10px 0 0;
+}
+#wireplumber{
+  color: #00ffff;
+  margin: 0 10px 0 0;
 }

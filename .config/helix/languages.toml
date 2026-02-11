@@ -72,6 +72,16 @@ command = [
 ]
 
 [[language]]
+name = "json"
+formatter = { command = 'biome', args = ["format", "--stdin-file-path", "buffer.json"] }
+auto-format = true
+
+[[language]]
+name = "jsonc"
+formatter = { command = 'biome', args = ["format", "--stdin-file-path", "buffer.jsonc"] }
+auto-format = true
+
+[[language]]
 name = "templ"
 auto-format = true
 formatter = { command = "templ", args = ["fmt"] }

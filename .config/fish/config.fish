@@ -6,28 +6,16 @@ set -U fish_greeting
 
 # fish_vi_key_bindings
 
-switch (uname)
-    case Darwin
-        fish_add_path -p /opt/homebrew/bin
-        fish_add_path -p /opt/homebrew/opt/rustup/bin
-        fish_add_path -p /usr/local/bin
-end
-
-fish_add_path -p ~/.local/bin ~/.cargo/bin ~/.bun/bin ~/.nix-profile/bin ~/.bun/bin ~/go/bin
-
-direnv hook fish | source
+fish_add_path -p ~/.local/bin ~/.cargo/bin ~/.bun/bin ~/.bun/bin ~/go/bin
 
 starship init fish | source
 zoxide init fish | source
 atuin init fish --disable-up-arrow | source
-poetry completions fish | source
-flux completion fish | source
-kubecm completion fish | source
-dms completion fish | source
+# flux completion fish | source
 
-if test -f '/usr/share/fish/vendor_completions.d/kubectl.fish'
-    source /usr/share/fish/vendor_completions.d/kubectl.fish
-end
+# if test -f '/usr/share/fish/vendor_completions.d/kubectl.fish'
+#     source /usr/share/fish/vendor_completions.d/kubectl.fish
+# end
 
 # Create hx alias when using Arch
 command -q hx || alias hx=helix
@@ -60,7 +48,6 @@ alias kns="kubectl config set-context --current --namespace"
 alias unset-context="kubectl config unset current-context"
 
 alias l="eza -l --icons --group-directories-first --git"
-alias a="l -a"
 
 alias yt="yt-dlp --cookies-from-browser firefox --embed-thumbnail --embed-chapters"
 alias s2c="slurp | grim -g - - | wl-copy"

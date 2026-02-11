@@ -37,9 +37,3 @@ animations { }
 hotkey-overlay {
     skip-at-startup
 }
-
-include "dms/alttab.kdl"
-include "dms/colors.kdl"
-include "dms/cursor.kdl"
-include "dms/layout.kdl"
-include "dms/wpblur.kdl"
