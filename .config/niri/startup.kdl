@@ -1,5 +1,5 @@
 // spawn-at-startup "sunsetr"
-spawn-at-startup "swww-daemon"
-spawn-at-startup "ironbar"
-// spawn-at-startup "waybar"
+spawn-at-startup "awww-daemon"
+// spawn-at-startup "ironbar"
+spawn-at-startup "waybar"
 // spawn-at-startup "~/.local/bin/cycle-wallpapers.sh" "600"

@@ -1,4 +1,4 @@
-/* @import "colors/colors.css" */
+@import "colors.css";
 
 * {
   border: none;
@@ -15,7 +15,7 @@ window#waybar {
 }
 
 .modules-center {
-  background: black;
+  background: @on_primary_fixed;
   padding: 6px 12px;
   border-radius: 28px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
@@ -33,13 +33,13 @@ window#waybar {
   padding: 0 6px;
   margin: 0 2px;
   border-radius: 16px;
-  color: #444444;
+  color: @primary_container;
   transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-  background: linear-gradient(135deg, #0000ff 0%, #ff00ff 50%, #ff0000 100%);
-  color: black;
+  background: linear-gradient(135deg, @primary 0%, @secondary 50%, @tertiary 100%);
+  color: @on_primary_fixed;
   min-width: 40px;
   transition: all 0.3s ease-in-out;
 }
@@ -49,25 +49,25 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-  background-color: #ff0000;
-  color: black;
+  background-color: @error_container;
+  color: @on_primary_fixed;
 }
 
 #clock {
-  color: white;
+  color: @primary;
   margin: 0;
 }
 
 #network {
-  color: #00ff00;
+  color: @surface_tint;
   margin: 0 10px 0 0;
 }
 
 #battery {
-  color: #ff0000;
+  color: @secondary;
   margin: 0 10px 0 0;
 }
 #wireplumber{
-  color: #00ffff;
+  color: @outline;
   margin: 0 10px 0 0;
 }

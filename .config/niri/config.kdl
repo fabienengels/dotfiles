@@ -1,9 +1,3 @@
-include "input.kdl"
-include "layout.kdl"
-include "bindings.kdl"
-include "rules.kdl"
-include "startup.kdl"
-
 environment {
     NIXOS_OZONE_WL "1"
     ELECTRON_OZONE_PLATFORM_HINT "wayland"
@@ -37,3 +31,10 @@ animations { }
 hotkey-overlay {
     skip-at-startup
 }
+
+include "input.kdl"
+include "layout.kdl"
+include "bindings.kdl"
+include "rules.kdl"
+include "startup.kdl"
+include "colors.kdl"

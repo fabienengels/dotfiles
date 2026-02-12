@@ -13,7 +13,7 @@ cursor-style = block
 cursor-style-blink = false
 cursor-opacity = 0.5
 
-theme = dankcolors
+theme = matugen
 background-opacity = 0.85
 background-blur = true
 background = #000000

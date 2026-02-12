@@ -1,19 +1,4 @@
 layout {
-    // gaps 8
-
-    // tab-indicator {
-    //     width 8
-    //     length total-proportion=0.5
-    // }
-
-    // When to center a column when changing focus, options are:
-    // - "never", default behavior, focusing an off-screen column will keep at the left
-    //   or right edge of the screen.
-    // - "always", the focused column will always be centered.
-    // - "on-overflow", focusing a column will center it if it doesn't fit
-    //   together with the previously focused column.
-    // center-focused-column "on-overflow"
-
     always-center-single-column
 
     preset-column-widths {
@@ -21,26 +6,18 @@ layout {
         proportion 0.5
         proportion 0.66667
     }
-
-    // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
-    // preset-window-heights { }
-
     default-column-width { proportion 0.5; }
 
     focus-ring {
         off
     }
 
-    // insert-hint {
-    //     color "#7287fd"
-    // }
-
     border {
         on
         // active-gradient from="#7dc4e4" to="#8aadf4" angle=45
         // active-gradient from="#7287fd" to="#8839ef" angle=45
         // inactive-gradient from="#939ab7" to="#8087a2" angle=45
-        // width 2
+        // width 5
     }
 
     shadow {
