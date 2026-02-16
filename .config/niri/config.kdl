@@ -2,7 +2,8 @@ environment {
     NIXOS_OZONE_WL "1"
     ELECTRON_OZONE_PLATFORM_HINT "wayland"
     // Fix ghostty issue with altgr-intl
-    GTK_IM_MODULE "simple"
+    GTK_IM_MODULE "fcitx"
+    QT_IM_MODULE "fcitx"
     // QT_QPA_PLATFORMTHEME "gtk3"
     // QT_QPA_PLATFORMTHEME_QT6 "gtk3"
 }
