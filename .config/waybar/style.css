@@ -61,15 +61,17 @@ window#waybar {
 #network {
   font-size: 20px;
   color: @surface_tint;
-  margin: 0 10px 0 0;
+  margin: 0 20px 0 0;
 }
 
 #battery {
+  font-size: 20px;
   color: @secondary;
-  margin: 0 10px 0 0;
+  margin: 0 20px 0 0;
 }
 
 #wireplumber {
+  font-size: 20px;
   color: @outline;
-  margin: 0 10px 0 0;
+  margin: 0 20px 0 0;
 }
