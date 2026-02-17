@@ -1,7 +1,0 @@
-inherits = "kanagawa"
-
-# Make background transparent
-"ui.background" = {}
-
-# Make selection more visible
-"ui.selection.primary" = { bg = "red" }
