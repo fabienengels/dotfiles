@@ -14,6 +14,10 @@ output_path = "~/.config/helix/themes/matugen.toml"
 input_path = "~/.config/matugen/templates/niri.kdl"
 output_path = "~/.config/niri/colors.kdl"
 
+[templates.rmpc]
+input_path = "~/.config/matugen/templates/rmpc.ron"
+output_path = "~/.config/rmpc/themes/matugen.ron"
+
 [templates.waybar]
 input_path = "~/.config/matugen/templates/waybar.css"
 output_path = "~/.config/waybar/colors.css"

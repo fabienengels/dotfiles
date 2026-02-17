@@ -5,7 +5,7 @@
 [core]
   abbrev = 10
   autocrlf = false
-  editor = hx
+  editor = helix
 
 [diff]
   external = difft
