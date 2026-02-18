@@ -52,10 +52,26 @@ alias l="eza -l --icons --group-directories-first --git"
 alias yt="yt-dlp --cookies-from-browser firefox --embed-thumbnail --embed-chapters"
 alias s2c="slurp | grim -g - - | wl-copy"
 
+function pr-worktree
+    git fetch -v origin pull/$argv/head:pr-$argv
+    set worktree "../$(path basename (pwd))-pr$argv"
+    if test ! -d $worktree
+        git worktree add $worktree pr-$argv
+    else
+        echo "Worktree $worktree already exists"
+    end
+end
+
+function pr-delete
+    set worktree "../$(path basename (pwd))-pr$argv"
+    if test -d $worktree
+        git worktree remove $worktree
+    end
+    git branch -D pr-$argv
+end
+
 fish_config theme choose base16-default
 
 if test -z "$SSH_AUTH_SOCK"
     export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 end
-
-export EDITOR=hx
