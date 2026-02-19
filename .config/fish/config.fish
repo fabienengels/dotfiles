@@ -70,6 +70,10 @@ function pr-delete
     git branch -D pr-$argv
 end
 
+function man
+    /usr/bin/man $argv | bat -l man -p
+end
+
 fish_config theme choose base16-default
 
 if test -z "$SSH_AUTH_SOCK"
