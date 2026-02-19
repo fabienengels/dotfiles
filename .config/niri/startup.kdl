@@ -2,4 +2,5 @@
 spawn-at-startup "awww-daemon"
 spawn-at-startup "fcitx5" "-d"
 spawn-at-startup "waybar"
+spawn-at-startup "hypridle"
 // spawn-at-startup "~/.local/bin/cycle-wallpapers.sh" "600"
