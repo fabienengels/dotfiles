@@ -3,6 +3,8 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+    Mod+Shift+F { fullscreen-window; }
+
     // Mod+Return repeat=false { spawn "wezterm"; }
     Mod+Return repeat=false { spawn "ghostty"; }
     Mod+E repeat=false { spawn "cosmic-files"; }
