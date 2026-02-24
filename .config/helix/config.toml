@@ -1,12 +1,19 @@
-theme = "matugen"
+theme = "catppuccin_macchiato"
 
 [editor]
 line-number = "relative"
-true-color = true
-cursorline = true
 mouse = false
-bufferline = "always"
-color-modes = false
+bufferline = "multiple"
+# color-modes = true
+cursorline = true
+
+[editor.auto-pairs]
+'(' = ")"
+'{' = "}"
+'[' = "]"
+'"' = '"'
+# '`' = '`'
+'<' = ">"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -15,45 +22,31 @@ select = "underline"
 [editor.inline-diagnostics]
 cursor-line = "hint"
 
-[editor.statusline]
-separator = "\ue0b1"
-left = [
-  "spacer",
-  "spinner",
-  "mode",
-  "separator",
-  "spacer",
-  "version-control",
-  "spacer",
-  "separator",
-  "file-name",
-  "file-modification-indicator",
-  "read-only-indicator",
-]
-center = []
-right = [
-  "diagnostics",
-  "selections",
-  "register",
-  "position",
-  "position-percentage",
-  "file-encoding",
-  "file-type",
-]
+[editor.lsp]
+display-inlay-hints = true
+display-progress-messages = true
 
-[editor.indent-guides]
-render = true
-character = "┆"
-skip-levels = 1
+[editor.statusline]
+left = ["mode", "version-control", "spinner"]
+center = ["read-only-indicator", "file-name"]
+right = ["diagnostics", "selections", "position", "file-type", "file-encoding"]
+
+[editor.statusline.mode]
+normal = "Normal"
+insert = "Insert"
+select = "Select"
+
+[editor.word-completion]
+trigger-length = 3
 
 [keys.normal]
-"space" = { "q" = ":buffer-close" }
-esc = ["collapse_selection", "keep_primary_selection"]
-C-g = [
-  ":write-all",
-  ":new",
-  ":insert-output lazygit",
-  ":buffer-close!",
-  ":redraw",
-  ":reload-all",
-]
+tab = ":buffer-next"
+S-tab = ":buffer-previous"
+space.v = "vsplit"
+space.h = "hsplit"
+# Print the current line's git blame information to the statusline
+space.B = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
+C-h = "jump_view_left"
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+C-l = "jump_view_right"
