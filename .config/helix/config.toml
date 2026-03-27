@@ -1,11 +1,11 @@
-theme = "matugen"
+theme = "base16_transparent"
 
 [editor]
 line-number = "relative"
 mouse = false
 bufferline = "multiple"
 # color-modes = true
-cursorline = true
+# cursorline = true
 
 [editor.auto-pairs]
 '(' = ")"

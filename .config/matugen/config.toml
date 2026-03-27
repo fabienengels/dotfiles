@@ -4,11 +4,11 @@ version_check = false
 [templates.ghostty]
 input_path = "~/.config/matugen/templates/ghostty"
 output_path = "~/.config/ghostty/themes/matugen"
-post_hook = 'pkill -SIGUSR2 ghostty'
+post_hook = "pkill -SIGUSR2 ghostty"
 
-[templates.helix]
-input_path = "~/.config/matugen/templates/helix.toml"
-output_path = "~/.config/helix/themes/matugen.toml"
+# [templates.helix]
+# input_path = "~/.config/matugen/templates/helix.toml"
+# output_path = "~/.config/helix/themes/matugen.toml"
 
 [templates.niri]
 input_path = "~/.config/matugen/templates/niri.kdl"
