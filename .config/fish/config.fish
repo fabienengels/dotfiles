@@ -36,6 +36,7 @@ alias groot="cd (git root)"
 alias sc="export KUBECONFIG=(fd -e yaml . ~/.kube | fzf)"
 alias mcat="mcat --theme catppuccin"
 alias j="just"
+alias aur-packages="paru -Qm"
 
 alias niri-windows='niri msg -j windows | jq .'
 
