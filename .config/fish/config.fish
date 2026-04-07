@@ -33,7 +33,7 @@ alias d="dotfiles"
 alias deletedsstore="fd -H '.DS_Store' $HOME -X rm -fv {}"
 alias deletesyncconflict="fd -H sync-conflict- . -X rm -vf {}"
 alias groot="cd (git root)"
-alias switch-cluster="export KUBECONFIG=(fd -e yaml . ~/.kubeconfig | fzf)"
+alias sc="export KUBECONFIG=(fd -e yaml . ~/.kube | fzf)"
 alias mcat="mcat --theme catppuccin"
 alias j="just"
 
