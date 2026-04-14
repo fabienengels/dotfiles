@@ -33,20 +33,16 @@ alias d="dotfiles"
 alias deletedsstore="fd -H '.DS_Store' $HOME -X rm -fv {}"
 alias deletesyncconflict="fd -H sync-conflict- . -X rm -vf {}"
 alias groot="cd (git root)"
+
+# Switch cluster
 alias sc="export KUBECONFIG=(fd -e yaml . ~/.kube | fzf)"
-alias mcat="mcat --theme catppuccin"
+
 alias j="just"
 alias aur-packages="paru -Qm"
 
 alias niri-windows='niri msg -j windows | jq .'
 
-alias upgrade-opencode="bun add -g opencode-ai"
-
 alias rust-book="rustup doc --book"
-
-alias k="kubectl"
-alias kns="kubectl config set-context --current --namespace"
-alias unset-context="kubectl config unset current-context"
 
 alias l="eza -l --icons --group-directories-first --git"
 
