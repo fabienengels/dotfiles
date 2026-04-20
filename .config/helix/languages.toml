@@ -2,6 +2,7 @@
 command = "uwu_colors"
 
 [language-server.expert]
+command = "expert"
 args = ["--stdio"]
 
 [[language]]
@@ -74,4 +75,9 @@ formatter = { command = "biome", args = [
   "--stdin-file-path",
   "buffer.tsx"
 ] }
+auto-format = true
+
+[[language]]
+name = "nix"
+formatter = { command = "nixfmt" }
 auto-format = true

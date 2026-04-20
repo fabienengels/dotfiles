@@ -36,8 +36,8 @@ normal = "Normal"
 insert = "Insert"
 select = "Select"
 
-[editor.word-completion]
-trigger-length = 3
+# [editor.word-completion]
+# trigger-length = 3
 
 [keys.normal]
 tab = ":buffer-next"
