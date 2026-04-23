@@ -18,4 +18,6 @@ function pr-worktree
     else
         echo "Worktree $worktree already exists"
     end
+
+    test -f .env && cp .env $worktree
 end
