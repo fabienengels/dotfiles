@@ -9,6 +9,7 @@ window-rule {
     exclude app-id="firefox"
     exclude app-id="obsidian"
     exclude app-id="thunar"
+    exclude app-id="org.mozilla.Thunderbird"
 
     default-window-height { proportion 0.9; }
     default-column-width { proportion 0.5; }
