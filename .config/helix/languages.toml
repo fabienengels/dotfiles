@@ -5,6 +5,15 @@ command = "uwu_colors"
 command = "expert"
 args = ["--stdio"]
 
+[language-server.yaml-language-server.config.yaml]
+format = { enable = true }
+validation = true
+
+[language-server.yaml-language-server.config.yaml.schemas]
+# "https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}"
+"https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-tasks.json" = "ansible/**.{yml,yaml}"
+"kubernetes" = "k8s/**"
+
 [[language]]
 name = "css"
 formatter = { command = "deno", args = ["fmt", "-", "--ext", "css"] }
@@ -29,7 +38,7 @@ formatter = { command = "just", args = ["--justfile", "/dev/stdin", "--dump"] }
 [[language]]
 name = "toml"
 auto-format = true
-language-servers = ["tombi", "uwu_colors"]
+# language-servers = ["tombi", "uwu_colors"]
 
 [[language]]
 name = "svelte"
@@ -80,4 +89,9 @@ auto-format = true
 [[language]]
 name = "nix"
 formatter = { command = "nixfmt" }
+auto-format = true
+
+[[language]]
+name = "yaml"
+formatter = { command = "dprint", args = ["fmt", "--stdin", "yaml"] }
 auto-format = true
