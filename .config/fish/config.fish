@@ -22,3 +22,7 @@ fish_config theme choose base16-default
 if test -z "$SSH_AUTH_SOCK"
     export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 end
+
+if test -f ~/.cargo/bin/hx
+    export HELIX_RUNTIME=~/Helix/helix/runtime
+end
