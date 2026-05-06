@@ -14,6 +14,9 @@ validation = true
 "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-tasks.json" = "ansible/**.{yml,yaml}"
 "kubernetes" = "k8s/**"
 
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
 [[language]]
 name = "css"
 formatter = { command = "deno", args = ["fmt", "-", "--ext", "css"] }
@@ -36,9 +39,19 @@ auto-format = true
 formatter = { command = "just", args = ["--justfile", "/dev/stdin", "--dump"] }
 
 [[language]]
+name = "rust"
+auto-format = true
+formatter = { command = "rustfmt", args = [
+  "--edition",
+  "2024",
+  "--style-edition",
+  "2024"
+] }
+
+[[language]]
 name = "toml"
 auto-format = true
-# language-servers = ["tombi", "uwu_colors"]
+language-servers = ["tombi", "uwu_colors"]
 
 [[language]]
 name = "svelte"
