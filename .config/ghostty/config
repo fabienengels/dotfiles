@@ -13,6 +13,7 @@ cursor-style-blink = false
 cursor-opacity = 0.5
 
 theme = matugen
+window-theme = dark
 background-opacity = 0.9
 background-blur = true
 background = #000000
