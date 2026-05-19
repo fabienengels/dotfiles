@@ -2,9 +2,11 @@
 -- https://echasnovski.com/blog/2026-03-13-a-guide-to-vim-pack.html
 -- https://tduyng.com/blog/neovim-basic-setup/
 
-require('config.options')
-require('config.pack')
-require('config.mini')
-require('config.lsp')
-require('config.diagnostics')
-require('config.mappings')
+require('vim._core.ui2').enable()
+
+require('options')
+require('pack')
+require('mini')
+require('lsp')
+require('diagnostics')
+require('mappings')
