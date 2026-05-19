@@ -11,6 +11,6 @@ vim.api.nvim_create_autocmd('PackChanged', {
 vim.pack.add {
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/nvim-mini/mini.nvim",
-	-- "https://github.com/stevearc/conform.nvim",
 }
 
+-- Add fugitive ?

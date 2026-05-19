@@ -7,18 +7,39 @@ require("mini.basics").setup {
         },
 }
 
+require("mini.notify").setup({
+    -- only show messages
+    content = {
+        format = function(notif)
+            return notif.msg
+        end
+    }
+})
+
+require("mini.cmdline").setup({
+    autocorrect = { enable = false }
+})
+
+require("mini.surround").setup()
+
+-- TODO
+require("mini.pick").setup()
+
+-- TODO
+require("mini.extra").setup()
+
+require("mini.completion").setup({
+    lsp_completion = {
+        auto_setup = true
+    }
+})
+
+-- TODO : mini.snippets
+-- TODO : mini.diff
+
 require("mini.tabline").setup()
 require("mini.statusline").setup()
-require("mini.completion").setup()
 require("mini.keymap").setup()
-require("mini.surround").setup()
 require("mini.pairs").setup()
 require("mini.keymap").setup()
-require("mini.jump2d").setup({
-        view = {
-
-
-
-
-        }
-})
+require("mini.jump2d").setup({})

@@ -9,4 +9,5 @@ require('pack')
 require('mini')
 require('lsp')
 require('diagnostics')
-require('mappings')
+require('keymaps')
+
