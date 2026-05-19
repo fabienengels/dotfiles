@@ -1,19 +1,3 @@
--- https://dotfiles.substack.com/p/whats-new-in-neovim-012
--- https://echasnovski.com/blog/2026-03-13-a-guide-to-vim-pack.html
-
-
-
--- require("conform").setup {
---   formatters_by_ft = {
---     lua = { "stylua" },
---   },
---   format_on_save = {
---     -- These options will be passed to conform.format()
---     timeout_ms = 500,
---     lsp_format = "fallback",
---   },
--- }
-
 vim.lsp.config('lua_ls', {
   on_init = function(client)
     if client.workspace_folders then
@@ -60,24 +44,17 @@ vim.lsp.config('lua_ls', {
 })
 
 
-vim.lsp.enable({ 'lua_ls', 'rust_analyzer' })
+vim.lsp.enable({ 'biome', 'lua_ls', 'rust_analyzer' })
+
 
 vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(args)
-    local bufnr = args.buf
-    local map = function(mode, lhs, rhs, desc)
-      vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
+    callback = function(args)
+        vim.o.signcolumn = 'yes:1'
+        local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+        if client:supports_method('textDocument/completion') then
+            vim.o.complete = 'o,.,w,b,u'
+            vim.o.completeopt = 'menu,menuone,popup,noinsert'
+            vim.lsp.completion.enable(true, client.id, args.buf)
+        end
     end
-
-    map('n', 'K', vim.lsp.buf.hover, 'LSP Hover')
-    map('n', 'gd', vim.lsp.buf.definition, 'Go to definition')
-    map('n', 'gD', vim.lsp.buf.declaration, 'Go to declaration')
-    map('n', 'gi', vim.lsp.buf.implementation, 'Go to implementation')
-    map('n', 'gr', vim.lsp.buf.references, 'References')
-    map('n', '<leader>rn', vim.lsp.buf.rename, 'Rename symbol')
-    map({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, 'Code action')
-    map('n', '<leader>f', function()
-      vim.lsp.buf.format({ async = true })
-    end, 'Format buffer')
-  end,
 })
