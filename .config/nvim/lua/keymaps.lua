@@ -3,9 +3,9 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- Delete text without saving it to any register
-map({"n", "v"}, "<leader>d", [["_d]], { desc = "Delete without yanking" })
+map({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })
 
-map("n", "<Esc>", ":nohl<CR>", { desc = "Clear search highlighting", silent = true})
+map("n", "<Esc>", ":nohl<CR>", { desc = "Clear search highlighting", silent = true })
 
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "moves lines down in visual selection" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual selection" })
@@ -24,14 +24,14 @@ map("n", "N", "Nzzzv", { desc = "Previous search result cursor centered" })
 map("n", "<leader>re", "<cmd>restart<cr>", { desc = "Restart config :restart)" })
 
 map("n", "<leader>u", function()
-    vim.cmd.packadd("nvim.undotree")
-    require("undotree").open()
+  vim.cmd.packadd "nvim.undotree"
+  require("undotree").open()
 end, { desc = "Toggle Builtin Undotree" })
 
 local diagnostic_goto = function(next, severity)
   severity = severity and vim.diagnostic.severity[severity] or nil
   return function()
-    vim.diagnostic.jump({ count = next and 1 or -1, float = true, severity = severity })
+    vim.diagnostic.jump { count = next and 1 or -1, float = true, severity = severity }
   end
 end
 
@@ -42,4 +42,3 @@ map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
 map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
-

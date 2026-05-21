@@ -1,28 +1,49 @@
-vim.lsp.config('lua_ls', {
+vim.lsp.config("lua_ls", {
   settings = {
     Lua = { diagnostics = {
-        globals = { "vim"}
-    }},
+      globals = { "vim" },
+    } },
   },
 })
 
-vim.lsp.config('rust_analyzer', {
-    settings = {
-        ["rust-analyzer"] = {
-            check = {
-                command = "clippy"
-            },
-            procMacro = {
-                enable = true
-            },
-            cargo = {
-                buildScripts = {
-                    enable = true
-                },
-                allFeatures = true
-            }
-        }
-    }
+local severity = vim.diagnostic.severity
+vim.diagnostic.config {
+  virtual_text = true,
+  signs = {
+    text = {
+      [severity.ERROR] = "",
+      [severity.WARN] = "",
+      [severity.INFO] = "",
+      [severity.HINT] = "",
+    },
+  },
+}
+
+vim.lsp.config("rust_analyzer", {
+  settings = {
+    ["rust-analyzer"] = {
+      -- https://rust-analyzer.github.io/book/configuration.html
+      check = {
+        command = "clippy",
+      },
+      procMacro = {
+        enable = true,
+      },
+      cargo = {
+        buildScripts = {
+          enable = true,
+        },
+        allFeatures = true,
+      },
+    },
+  },
 })
 
-vim.lsp.enable({ 'biome', 'lua_ls', 'rust_analyzer' })
+require("mini.icons").tweak_lsp_kind()
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = vim.tbl_deep_extend("force", capabilities, require("mini.completion").get_lsp_capabilities())
+
+vim.lsp.config("*", { capabilities = capabilities })
+
+vim.lsp.enable { "biome", "lua_ls", "rust_analyzer" }
