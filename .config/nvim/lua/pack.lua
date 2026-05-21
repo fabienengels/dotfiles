@@ -72,6 +72,7 @@ Conform.setup {
 
 -- https://github.com/catppuccin/nvim
 require("catppuccin").setup {
+  flavor = "mocha",
   transparent_background = true,
   float = {
     solid = true,
