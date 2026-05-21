@@ -40,7 +40,7 @@ require("mini.icons").setup()
 -- TODO : mini.diff
 
 require("mini.tabline").setup()
-require("mini.statusline").setup()
+-- require("mini.statusline").setup()
 require("mini.keymap").setup()
 require("mini.pairs").setup()
 require("mini.keymap").setup()

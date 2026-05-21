@@ -16,6 +16,7 @@ vim.pack.add {
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/stevearc/conform.nvim",
   "https://github.com/lewis6991/gitsigns.nvim",
+  "https://github.com/nvim-lualine/lualine.nvim",
   { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
 }
 
@@ -74,11 +75,18 @@ Conform.setup {
 require("catppuccin").setup {
   flavor = "mocha",
   transparent_background = true,
+  term_colors = true,
   float = {
     solid = true,
   },
 }
 
 vim.cmd.colorscheme "catppuccin-nvim"
+
+require("lualine").setup {
+  options = {
+    theme = "catppuccin-nvim",
+  },
+}
 
 require("gitsigns").setup()
