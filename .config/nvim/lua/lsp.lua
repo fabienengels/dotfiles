@@ -50,9 +50,9 @@ require("mini.icons").tweak_lsp_kind()
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = vim.tbl_deep_extend("force", capabilities, require("mini.completion").get_lsp_capabilities())
 
-vim.lsp.config("*", { capabilities = capabilities })
-
 vim.lsp.enable { "biome", "lua_ls", "rust_analyzer" }
+
+vim.lsp.config("*", { capabilities = capabilities })
 
 vim.api.nvim_create_autocmd("CursorHold", {
   callback = function()
