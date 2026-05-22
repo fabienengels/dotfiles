@@ -6,7 +6,6 @@
 -- TODO : https://github.com/catgoose/nvim-colorizer.lua ?
 -- TODO : https://github.com/folke/flash.nvim ?
 -- TODO : https://github.com/mrcjkb/rustaceanvim ?
--- TODO : https://github.com/nvim-telescope/telescope.nvim ?
 
 require("vim._core.ui2").enable()
 

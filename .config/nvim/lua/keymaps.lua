@@ -23,6 +23,9 @@ map("n", "N", "Nzzzv", { desc = "Previous search result cursor centered" })
 
 map("n", "<leader>re", "<cmd>restart<cr>", { desc = "Restart config :restart)" })
 
+local telescope = require "telescope.builtin"
+map("n", "<leader>f", telescope.git_files, { desc = "Find git files" })
+
 map("n", "<leader>u", function()
   vim.cmd.packadd "nvim.undotree"
   require("undotree").open()

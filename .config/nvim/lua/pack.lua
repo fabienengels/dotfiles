@@ -7,10 +7,17 @@ vim.api.nvim_create_autocmd("PackChanged", {
       end
       vim.cmd "TSUpdate"
     end
+
+    if name == "telescope-fzf-native.nvim" and (kind == "install" or kind == "update") then
+      vim.system({ "make" }, { cwd = ev.data.path }):wait()
+    end
   end,
 })
 
 vim.pack.add {
+  "https://github.com/nvim-lua/plenary.nvim",
+  "https://github.com/nvim-telescope/telescope.nvim",
+  "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/nvim-mini/mini.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter",
@@ -70,6 +77,9 @@ Conform.setup {
     lsp_format = "fallback",
   },
 }
+
+require("telescope").setup {}
+require("telescope").load_extension "fzf"
 
 -- https://github.com/catppuccin/nvim
 require("catppuccin").setup {
