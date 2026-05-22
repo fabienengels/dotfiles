@@ -8,7 +8,13 @@ vim.lsp.config("lua_ls", {
 
 local severity = vim.diagnostic.severity
 vim.diagnostic.config {
-  virtual_text = true,
+  float = {
+    border = "rounded", -- Options: "none", "single", "double", "rounded", "solid", "shadow"
+    source = "always", -- Shows the source of the diagnostic (e.g., tsserver, lua_ls)
+    header = "", -- Removes the default "Diagnostics:" header
+    prefix = "", -- Removes the prefix before each diagnostic text
+  },
+  -- virtual_text = true,
   signs = {
     text = {
       [severity.ERROR] = "",
@@ -47,3 +53,9 @@ capabilities = vim.tbl_deep_extend("force", capabilities, require("mini.completi
 vim.lsp.config("*", { capabilities = capabilities })
 
 vim.lsp.enable { "biome", "lua_ls", "rust_analyzer" }
+
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function()
+    vim.diagnostic.open_float(nil, { focusable = false, source = "if_many" })
+  end,
+})

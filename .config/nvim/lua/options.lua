@@ -8,12 +8,17 @@ opt.number = true
 opt.numberwidth = 3
 opt.relativenumber = true
 
+opt.pumblend = 0
+opt.winblend = 0
+
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
 opt.smartindent = true
 opt.wrap = false
+
+opt.updatetime = 300 -- Time in milliseconds to trigger CursorHold
 
 opt.completeopt = "menuone,noselect,fuzzy,nosort"
 opt.shortmess:append "c"
