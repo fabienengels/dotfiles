@@ -59,6 +59,7 @@ require("nvim-treesitter").install {
   "svelte",
   "terraform",
   "toml",
+  "tsx",
   "typescript",
   "typst",
   "yaml",
