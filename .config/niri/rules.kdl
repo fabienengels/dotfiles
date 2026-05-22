@@ -6,7 +6,7 @@ blur {
 }
 
 window-rule {
-    geometry-corner-radius 2
+    geometry-corner-radius 16
     clip-to-geometry true
 }
 
