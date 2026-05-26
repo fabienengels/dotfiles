@@ -18,7 +18,20 @@ require("mini.notify").setup {
 
 require("mini.surround").setup()
 require("mini.ai").setup()
-require("mini.pick").setup()
+require("mini.pick").setup {
+  window = {
+    config = function()
+      local height = math.floor(vim.o.lines / 2)
+      local width = vim.o.columns
+
+      return {
+        border = "rounded",
+        height = height,
+        width = width,
+      }
+    end,
+  },
+}
 require("mini.extra").setup()
 require("mini.icons").setup()
 require("mini.tabline").setup()
