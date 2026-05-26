@@ -75,3 +75,11 @@ end, { desc = "Diagnostic (current file)" })
 map("n", "<leader>D", function()
   pickers.diagnostic { scope = "all" }
 end, { desc = "Diagnostic (all)" })
+
+map({ "n", "x", "o" }, "s", function()
+  require("flash").jump()
+end)
+
+map({ "n", "x", "o" }, "S", function()
+  require("flash").treesitter()
+end)
