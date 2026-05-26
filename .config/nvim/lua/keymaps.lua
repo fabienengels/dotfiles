@@ -76,10 +76,11 @@ map("n", "<leader>D", function()
   pickers.diagnostic { scope = "all" }
 end, { desc = "Diagnostic (all)" })
 
-map({ "n", "x", "o" }, "s", function()
+map({ "n", "x", "o" }, "gw", function()
   require("flash").jump()
 end)
 
-map({ "n", "x", "o" }, "S", function()
-  require("flash").treesitter()
-end)
+-- TODO
+-- map({ "n", "x", "o" }, "<leader>J", function()
+--   require("flash").treesitter()
+-- end)
