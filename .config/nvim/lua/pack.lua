@@ -98,6 +98,12 @@ require("lualine").setup {
   options = {
     theme = "catppuccin-nvim",
   },
+  sections = {
+    lualine_c = { {
+      "filename",
+      path = 1,
+    } },
+  },
 }
 
 require("gitsigns").setup()
