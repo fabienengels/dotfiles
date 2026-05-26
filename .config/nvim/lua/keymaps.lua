@@ -34,6 +34,8 @@ local diagnostic_goto = function(next, severity)
   end
 end
 
+map("n", "<leader>t", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle Nvim Tree", silent = true })
+
 map("n", "<leader>f", "<cmd>Pick files<cr>", { desc = "Pick files" })
 map("n", "<leader>g", "<cmd>Pick git_files<cr>", { desc = "Pick git files" })
 map("n", "<leader>b", "<cmd>Pick buffers<cr>", { desc = "Pick git files" })

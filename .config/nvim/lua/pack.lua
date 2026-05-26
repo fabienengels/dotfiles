@@ -84,21 +84,21 @@ Conform.setup {
 require("nvim-tree").setup { filters = { dotfiles = true } }
 
 -- Create an augroup for nvim-tree setup
-local nvim_tree_git_group = vim.api.nvim_create_augroup("NvimTreeGitOpen", { clear = true })
+-- local nvim_tree_git_group = vim.api.nvim_create_augroup("NvimTreeGitOpen", { clear = true })
 
-vim.api.nvim_create_autocmd("VimEnter", {
-  group = nvim_tree_git_group,
-  callback = function()
-    -- Check if the current working directory contains a .git folder
-    local cwd = vim.fn.getcwd()
-    local is_git_repo = vim.fn.isdirectory(cwd .. "/.git") == 1
-
-    if is_git_repo then
-      -- Open nvim-tree without taking focus away from the main buffer
-      require("nvim-tree.api").tree.open { focus = false }
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   group = nvim_tree_git_group,
+--   callback = function()
+--     -- Check if the current working directory contains a .git folder
+--     local cwd = vim.fn.getcwd()
+--     local is_git_repo = vim.fn.isdirectory(cwd .. "/.git") == 1
+--
+--     if is_git_repo then
+--       -- Open nvim-tree without taking focus away from the main buffer
+--       require("nvim-tree.api").tree.open { focus = false }
+--     end
+--   end,
+-- })
 
 -- require("telescope").setup {}
 -- require("telescope").load_extension "fzf"
@@ -116,6 +116,20 @@ vim.api.nvim_create_autocmd("VimEnter", {
 
 -- Run :KanagawaCompile after a change
 require("kanagawa").setup {
+  -- overrides = function(colors)
+  --   return {
+  --     -- Define the master style on one group
+  --     ["@lsp.mod.macro.rust"] = { fg = colors.palette.dragonOrange, bold = false, italic = true },
+  --     ["@lsp.type.decorator.rust"] = { link = "@lsp.mod.macro.rust" },
+  --     ["@lsp.type.attributeBracket.rust"] = { link = "@lsp.mod.macro.rust" },
+  --
+  --     -- Link the other groups to the master group
+  --     -- ["@attribute.rust"] = { link = "@lsp.type.decorator.rust" },
+  --     -- ["rustAttribute"] = { link = "@lsp.type.decorator.rust" },
+  --     -- ["rustDerive"] = { link = "@lsp.type.decorator.rust" },
+  --     -- ["@lsp.type.derive.rust"] = { link = "@lsp.type.decorator.rust" },
+  --   }
+  -- end,
   compilation = true,
   transparent = true,
   colors = {
