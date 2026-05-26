@@ -14,7 +14,7 @@ cursor-opacity = 0.5
 
 theme = matugen
 window-theme = dark
-background-opacity = 0.9
+background-opacity = 0.95
 background-blur = true
 background = #000000
 

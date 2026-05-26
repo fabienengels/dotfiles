@@ -14,6 +14,7 @@ window-rule {
     match app-id="vicinae"
     match app-id="thunar"
     match app-id="com.system76.CosmicFiles"
+    match app-id="com.mitchellh.ghostty"
 
     opacity 0.9
     
