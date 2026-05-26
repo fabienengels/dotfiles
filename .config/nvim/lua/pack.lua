@@ -7,24 +7,17 @@ vim.api.nvim_create_autocmd("PackChanged", {
       end
       vim.cmd "TSUpdate"
     end
-
-    -- if name == "telescope-fzf-native.nvim" and (kind == "install" or kind == "update") then
-    --   vim.system({ "make" }, { cwd = ev.data.path }):wait()
-    -- end
   end,
 })
 
 vim.pack.add {
   "https://github.com/nvim-lua/plenary.nvim",
-  -- "https://github.com/nvim-telescope/telescope.nvim",
-  -- "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/nvim-mini/mini.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/stevearc/conform.nvim",
   "https://github.com/lewis6991/gitsigns.nvim",
   "https://github.com/nvim-lualine/lualine.nvim",
-  { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
   "https://github.com/nvim-tree/nvim-tree.lua",
   "https://github.com/rebelot/kanagawa.nvim",
 }
@@ -83,37 +76,6 @@ Conform.setup {
 
 require("nvim-tree").setup { filters = { dotfiles = true } }
 
--- Create an augroup for nvim-tree setup
--- local nvim_tree_git_group = vim.api.nvim_create_augroup("NvimTreeGitOpen", { clear = true })
-
--- vim.api.nvim_create_autocmd("VimEnter", {
---   group = nvim_tree_git_group,
---   callback = function()
---     -- Check if the current working directory contains a .git folder
---     local cwd = vim.fn.getcwd()
---     local is_git_repo = vim.fn.isdirectory(cwd .. "/.git") == 1
---
---     if is_git_repo then
---       -- Open nvim-tree without taking focus away from the main buffer
---       require("nvim-tree.api").tree.open { focus = false }
---     end
---   end,
--- })
-
--- require("telescope").setup {}
--- require("telescope").load_extension "fzf"
-
--- https://github.com/catppuccin/nvim
--- require("catppuccin").setup {
---   flavor = "mocha",
---   transparent_background = true,
---   -- auto_integrations = true,
---   term_colors = true,
---   float = {
---     transparent = false,
---   },
--- }
-
 -- Run :KanagawaCompile after a change
 require("kanagawa").setup {
   -- overrides = function(colors)
@@ -143,13 +105,11 @@ require("kanagawa").setup {
   },
 }
 
--- vim.cmd.colorscheme "catppuccin-nvim"
 vim.cmd.colorscheme "kanagawa"
 
 require("lualine").setup {
   options = {
     theme = "auto",
-    -- theme = "catppuccin-nvim",
   },
   sections = {
     lualine_c = { {
