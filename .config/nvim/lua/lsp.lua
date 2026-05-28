@@ -8,12 +8,12 @@ vim.lsp.config("lua_ls", {
 
 local severity = vim.diagnostic.severity
 vim.diagnostic.config {
-  -- float = {
-  --   border = "rounded", -- Options: "none", "single", "double", "rounded", "solid", "shadow"
-  --   source = "always", -- Shows the source of the diagnostic (e.g., tsserver, lua_ls)
-  --   header = "", -- Removes the default "Diagnostics:" header
-  --   prefix = "", -- Removes the prefix before each diagnostic text
-  -- },
+  float = {
+    border = "rounded", -- Options: "none", "single", "double", "rounded", "solid", "shadow"
+    source = "always", -- Shows the source of the diagnostic (e.g., tsserver, lua_ls)
+    header = "", -- Removes the default "Diagnostics:" header
+    prefix = "", -- Removes the prefix before each diagnostic text
+  },
   -- virtual_text = true,
   signs = {
     text = {
