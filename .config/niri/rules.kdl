@@ -16,7 +16,7 @@ window-rule {
     match app-id="com.system76.CosmicFiles"
     match app-id="com.mitchellh.ghostty"
 
-    opacity 0.9
+    opacity 0.92
     
     background-effect {
         blur true
