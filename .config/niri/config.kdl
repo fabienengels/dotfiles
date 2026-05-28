@@ -33,6 +33,14 @@ hotkey-overlay {
     skip-at-startup
 }
 
+cursor {
+    xcursor-theme "breeze_cursors"
+    xcursor-size 24
+
+    hide-when-typing
+    hide-after-inactive-ms 1000
+}
+
 include "input.kdl"
 include "layout.kdl"
 include "bindings.kdl"
