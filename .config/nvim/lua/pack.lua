@@ -1,137 +1,136 @@
 vim.api.nvim_create_autocmd("PackChanged", {
-    callback = function(ev)
-        local name, kind = ev.data.spec.name, ev.data.kind
-        if name == "nvim-treesitter" and kind == "update" then
-            if not ev.data.active then
-                vim.cmd.packadd "nvim-treesitter"
-            end
-            vim.cmd "TSUpdate"
-        end
-    end,
+  callback = function(ev)
+    local name, kind = ev.data.spec.name, ev.data.kind
+    if name == "nvim-treesitter" and kind == "update" then
+      if not ev.data.active then
+        vim.cmd.packadd "nvim-treesitter"
+      end
+      vim.cmd "TSUpdate"
+    end
+  end,
 })
 
 vim.pack.add {
-    "https://github.com/nvim-lua/plenary.nvim",
-    "https://github.com/neovim/nvim-lspconfig",
-    "https://github.com/nvim-mini/mini.nvim",
-    "https://github.com/nvim-treesitter/nvim-treesitter",
-    "https://github.com/stevearc/conform.nvim",
-    "https://github.com/lewis6991/gitsigns.nvim",
-    "https://github.com/nvim-lualine/lualine.nvim",
-    "https://github.com/nvim-tree/nvim-tree.lua",
-    "https://github.com/rebelot/kanagawa.nvim",
-    "https://github.com/folke/flash.nvim",
+  "https://github.com/nvim-lua/plenary.nvim",
+  "https://github.com/neovim/nvim-lspconfig",
+  "https://github.com/nvim-mini/mini.nvim",
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/stevearc/conform.nvim",
+  "https://github.com/lewis6991/gitsigns.nvim",
+  "https://github.com/nvim-lualine/lualine.nvim",
+  "https://github.com/nvim-tree/nvim-tree.lua",
+  "https://github.com/rebelot/kanagawa.nvim",
+  "https://github.com/folke/flash.nvim",
 }
 
 local languages = {
-
-    "astro",
-    "bash",
-    "c",
-    "caddy",
-    "cmake",
-    "cpp",
-    "css",
-    "dockerfile",
-    "eex",
-    "elixir",
-    "fish",
-    "glsl",
-    "go",
-    "heex",
-    "html",
-    "ini",
-    "javascript",
-    "jinja",
-    "json",
-    "just",
-    "lua",
-    "markdown",
-    "nix",
-    "nu",
-    "python",
-    "rust",
-    "ssh_config",
-    "svelte",
-    "terraform",
-    "toml",
-    "tsx",
-    "typescript",
-    "typst",
-    "yaml",
+  "astro",
+  "bash",
+  "c",
+  "caddy",
+  "cmake",
+  "cpp",
+  "css",
+  "dockerfile",
+  "eex",
+  "elixir",
+  "fish",
+  "glsl",
+  "go",
+  "heex",
+  "html",
+  "ini",
+  "javascript",
+  "jinja",
+  "json",
+  "just",
+  "lua",
+  "markdown",
+  "nix",
+  "nu",
+  "python",
+  "rust",
+  "ssh_config",
+  "svelte",
+  "terraform",
+  "toml",
+  "tsx",
+  "typescript",
+  "typst",
+  "yaml",
 }
 
 -- https://github.com/nvim-treesitter/nvim-treesitter/blob/main/SUPPORTED_LANGUAGES.md
 require("nvim-treesitter").install(languages)
 
-
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = languages,
-    callback = function()
-        vim.treesitter.start() -- highlighting
-        -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'     -- folds
-        -- vim.wo.foldmethod = 'expr'
-        -- vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()" -- indentation
-    end,
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = languages,
+  callback = function()
+    vim.treesitter.start() -- highlighting
+    -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'     -- folds
+    -- vim.wo.foldmethod = 'expr'
+    -- vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()" -- indentation
+  end,
 })
 
 local Conform = require "conform"
 
 Conform.setup {
-    formatters_by_ft = {
-        lua = { "stylua" },
-        rust = { "rustfmt" },
-    },
-    format_on_save = {
-        -- These options will be passed to conform.format()
-        timeout_ms = 3000,
-        lsp_format = "fallback",
-    },
+  formatters_by_ft = {
+    lua = { "stylua" },
+    rust = { "rustfmt" },
+    svelte = { "prettier" },
+  },
+  format_on_save = {
+    -- These options will be passed to conform.format()
+    timeout_ms = 3000,
+    lsp_format = "fallback",
+  },
 }
 
 require("nvim-tree").setup { filters = { dotfiles = true } }
 
 -- Run :KanagawaCompile after a change
 require("kanagawa").setup {
-    -- overrides = function(colors)
-    --   return {
-    --     -- Define the master style on one group
-    --     ["@lsp.mod.macro.rust"] = { fg = colors.palette.dragonOrange, bold = false, italic = true },
-    --     ["@lsp.type.decorator.rust"] = { link = "@lsp.mod.macro.rust" },
-    --     ["@lsp.type.attributeBracket.rust"] = { link = "@lsp.mod.macro.rust" },
-    --
-    --     -- Link the other groups to the master group
-    --     -- ["@attribute.rust"] = { link = "@lsp.type.decorator.rust" },
-    --     -- ["rustAttribute"] = { link = "@lsp.type.decorator.rust" },
-    --     -- ["rustDerive"] = { link = "@lsp.type.decorator.rust" },
-    --     -- ["@lsp.type.derive.rust"] = { link = "@lsp.type.decorator.rust" },
-    --   }
-    -- end,
-    compilation = true,
-    transparent = true,
-    colors = {
-        theme = {
-            all = {
-                ui = {
-                    bg_gutter = "none",
-                },
-            },
+  -- overrides = function(colors)
+  --   return {
+  --     -- Define the master style on one group
+  --     ["@lsp.mod.macro.rust"] = { fg = colors.palette.dragonOrange, bold = false, italic = true },
+  --     ["@lsp.type.decorator.rust"] = { link = "@lsp.mod.macro.rust" },
+  --     ["@lsp.type.attributeBracket.rust"] = { link = "@lsp.mod.macro.rust" },
+  --
+  --     -- Link the other groups to the master group
+  --     -- ["@attribute.rust"] = { link = "@lsp.type.decorator.rust" },
+  --     -- ["rustAttribute"] = { link = "@lsp.type.decorator.rust" },
+  --     -- ["rustDerive"] = { link = "@lsp.type.decorator.rust" },
+  --     -- ["@lsp.type.derive.rust"] = { link = "@lsp.type.decorator.rust" },
+  --   }
+  -- end,
+  compilation = true,
+  transparent = true,
+  colors = {
+    theme = {
+      all = {
+        ui = {
+          bg_gutter = "none",
         },
+      },
     },
+  },
 }
 
 vim.cmd.colorscheme "kanagawa"
 
 require("lualine").setup {
-    options = {
-        theme = "auto",
-    },
-    sections = {
-        lualine_c = { {
-            "filename",
-            path = 1,
-        } },
-    },
+  options = {
+    theme = "auto",
+  },
+  sections = {
+    lualine_c = { {
+      "filename",
+      path = 1,
+    } },
+  },
 }
 
 require("gitsigns").setup()
