@@ -49,6 +49,7 @@ local languages = {
   "nix",
   "nu",
   "python",
+  "ron",
   "rust",
   "ssh_config",
   "svelte",
