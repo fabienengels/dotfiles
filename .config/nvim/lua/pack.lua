@@ -94,20 +94,6 @@ require("nvim-tree").setup { filters = { dotfiles = true } }
 
 -- Run :KanagawaCompile after a change
 require("kanagawa").setup {
-  -- overrides = function(colors)
-  --   return {
-  --     -- Define the master style on one group
-  --     ["@lsp.mod.macro.rust"] = { fg = colors.palette.dragonOrange, bold = false, italic = true },
-  --     ["@lsp.type.decorator.rust"] = { link = "@lsp.mod.macro.rust" },
-  --     ["@lsp.type.attributeBracket.rust"] = { link = "@lsp.mod.macro.rust" },
-  --
-  --     -- Link the other groups to the master group
-  --     -- ["@attribute.rust"] = { link = "@lsp.type.decorator.rust" },
-  --     -- ["rustAttribute"] = { link = "@lsp.type.decorator.rust" },
-  --     -- ["rustDerive"] = { link = "@lsp.type.decorator.rust" },
-  --     -- ["@lsp.type.derive.rust"] = { link = "@lsp.type.decorator.rust" },
-  --   }
-  -- end,
   compilation = true,
   transparent = true,
   colors = {
@@ -139,7 +125,10 @@ require("gitsigns").setup()
 require("ibl").setup {
   enabled = false,
   indent = {
-    -- char = "▏",
-    char = "┆",
+    -- char = "┆",
+    char = { "", "┊", "┆", "¦", "|", "¦", "┆", "┊", "" },
+  },
+  scope = {
+    enabled = false,
   },
 }
