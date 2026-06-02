@@ -3,6 +3,6 @@
 #
 
 export MPD_HOST=$XDG_RUNTIME_DIR/mpd.sock
-export EDITOR=helix
+export EDITOR=nvim
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
