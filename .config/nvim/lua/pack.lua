@@ -21,6 +21,7 @@ vim.pack.add {
   "https://github.com/nvim-tree/nvim-tree.lua",
   "https://github.com/rebelot/kanagawa.nvim",
   "https://github.com/folke/flash.nvim",
+  "https://github.com/lukas-reineke/indent-blankline.nvim",
 }
 
 local languages = {
@@ -135,3 +136,10 @@ require("lualine").setup {
 }
 
 require("gitsigns").setup()
+require("ibl").setup {
+  enabled = false,
+  indent = {
+    -- char = "▏",
+    char = "┆",
+  },
+}

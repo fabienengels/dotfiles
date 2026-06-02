@@ -34,6 +34,8 @@ local diagnostic_goto = function(next, severity)
   end
 end
 
+map("n", "<leader>i", "<cmd>IBLToggle<cr>", { desc = "Toggle indent lines", silent = true })
+
 map("n", "<leader>t", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle Nvim Tree", silent = true })
 
 map("n", "<leader>f", "<cmd>Pick files<cr>", { desc = "Pick files" })
