@@ -28,6 +28,8 @@ binds {
     XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
 
+    Mod+Shift+W { spawn "~/.local/bin/random-wallpaper.nu"; }
+
     Mod+Q { close-window; }
 
     Mod+J     { focus-window-or-workspace-down; }
