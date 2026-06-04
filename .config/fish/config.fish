@@ -6,8 +6,6 @@ set -U fish_greeting
 
 # fish_vi_key_bindings
 
-fish_add_path -p ~/.local/bin ~/.cargo/bin ~/.bun/bin ~/.bun/bin ~/go/bin
-
 starship init fish | source
 zoxide init fish | source
 atuin init fish --disable-up-arrow | source
