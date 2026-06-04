@@ -64,6 +64,8 @@ map("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename symbol" })
 map("n", "<leader>a", vim.lsp.buf.code_action, { desc = "Code action" })
 map("n", "<leader>hs", vim.lsp.buf.signature_help, { desc = "Signature help" })
 
+map("n", "<leader>U", vim.pack.update, { desc = "Update plugins" })
+
 local pickers = require("mini.extra").pickers
 map("n", "<leader>s", function()
   pickers.lsp { scope = "document_symbol" }
