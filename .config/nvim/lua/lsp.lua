@@ -69,7 +69,7 @@ require("mini.icons").tweak_lsp_kind()
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = vim.tbl_deep_extend("force", capabilities, require("mini.completion").get_lsp_capabilities())
 
-vim.lsp.enable { "tailwindcss", "ts_ls", "biome", "svelte", "lua_ls", "rust_analyzer", "expert", "nushell" }
+vim.lsp.enable { "tombi", "tailwindcss", "ts_ls", "biome", "svelte", "lua_ls", "rust_analyzer", "expert", "nushell" }
 
 vim.lsp.config("*", { capabilities = capabilities })
 
