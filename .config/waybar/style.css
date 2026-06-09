@@ -70,6 +70,12 @@ window#waybar {
   margin: 0 20px 0 0;
 }
 
+#idle_inhibitor {
+  font-size: 20px;
+  color: @secondary;
+  margin: 0 20px 0 0;
+}
+
 #wireplumber {
   font-size: 20px;
   color: @outline;

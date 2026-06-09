@@ -8,6 +8,7 @@
 		"niri/workspaces",
 		"network",
 		"battery",
+        "idle_inhibitor",
 		"wireplumber",
 		"tray"
 	],
@@ -44,6 +45,13 @@
 			}
 		}
 	},
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
 	"network": {
 		"format": "{ifname}",
 		"format-wifi": "",
