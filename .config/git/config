@@ -27,7 +27,7 @@
 	root = rev-parse --show-toplevel
 	test = clone --depth=1
 	authors = shortlog -e -s -n
-	list-tracked-files = ls-tree -r master --name-only
+	list-tracked-files = ls-tree -r main --name-only
 	wt = worktree
 
 [worktree]
