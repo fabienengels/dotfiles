@@ -40,7 +40,7 @@ map("n", "<leader>t", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle Nvim Tree", si
 
 map("n", "<leader>f", "<cmd>Pick files<cr>", { desc = "Pick files" })
 map("n", "<leader>g", "<cmd>Pick git_files<cr>", { desc = "Pick git files" })
-map("n", "<leader>b", "<cmd>Pick buffers<cr>", { desc = "Pick git files" })
+map("n", "<leader>b", "<cmd>Pick buffers<cr>", { desc = "Pick buffers" })
 
 map("n", "<C-c>", ":bdelete<CR>", { desc = "Close current buffer", silent = true })
 map("n", "<Tab>", ":bnext<CR>", { desc = "Cycle to the next buffer", silent = true })

@@ -43,6 +43,8 @@ require("mini.completion").setup {
   },
 }
 
+require("flash").setup()
+
 -- TODO : mini.snippets
 -- TODO : https://github.com/rafamadriz/friendly-snippets
 -- TODO : mini.diff

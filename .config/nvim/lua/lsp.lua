@@ -73,8 +73,15 @@ vim.lsp.enable { "tombi", "tailwindcss", "ts_ls", "biome", "svelte", "lua_ls", "
 
 vim.lsp.config("*", { capabilities = capabilities })
 
+local diagnostic_timer = nil
 vim.api.nvim_create_autocmd("CursorHold", {
   callback = function()
-    vim.diagnostic.open_float(nil, { focusable = false, source = "if_many" })
+    if diagnostic_timer then
+      vim.uv.close(diagnostic_timer)
+    end
+    diagnostic_timer = vim.uv.new_timer()
+    diagnostic_timer:start(200, 0, function()
+      vim.diagnostic.open_float(nil, { focusable = false, source = "if_many" })
+    end)
   end,
 })

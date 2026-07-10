@@ -8,8 +8,7 @@ opt.number = true
 opt.numberwidth = 3
 opt.relativenumber = true
 
-opt.pumblend = 0
-opt.winblend = 0
+
 
 opt.tabstop = 4
 opt.softtabstop = 4
@@ -36,7 +35,6 @@ opt.backup = false
 opt.undofile = true
 opt.undodir = vim.fn.stdpath "data" .. "/undodir"
 
--- to check
 vim.opt.isfname:append "@-@"
 
 -- let the terminal choose the cursor
@@ -47,7 +45,7 @@ opt.scrolloff = 10
 opt.signcolumn = "yes"
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when anking text",
+  desc = "Highlight when yanking text",
   callback = function()
     vim.hl.on_yank()
   end,
