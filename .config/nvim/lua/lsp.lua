@@ -81,7 +81,9 @@ vim.api.nvim_create_autocmd("CursorHold", {
     end
     diagnostic_timer = vim.uv.new_timer()
     diagnostic_timer:start(200, 0, function()
-      vim.diagnostic.open_float(nil, { focusable = false, source = "if_many" })
+      vim.schedule(function()
+        vim.diagnostic.open_float(nil, { focusable = false, source = "if_many" })
+      end)
     end)
   end,
 })
