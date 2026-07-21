@@ -107,6 +107,7 @@ now_if_args(function()
 
 	vim.lsp.enable({
 		"lua_ls",
+		"rust_analyzer",
 	})
 end)
 
