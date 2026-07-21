@@ -40,11 +40,13 @@ layer-rule {
 
 window-rule {
     open-floating true
+
     exclude app-id="com.mitchellh.ghostty"
+    exclude app-id="com.system76.CosmicFiles"
     exclude app-id="firefox"
     exclude app-id="obsidian"
-    exclude app-id="thunar"
     exclude app-id="org.mozilla.Thunderbird"
+    exclude app-id="thunar"
 
     default-window-height { proportion 0.9; }
     default-column-width { proportion 0.5; }
