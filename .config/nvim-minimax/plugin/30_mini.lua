@@ -522,7 +522,11 @@ end)
 -- See also:
 -- - `:h MiniIndentscope.gen_animation` - available animation rules
 later(function()
-	require("mini.indentscope").setup()
+	require("mini.indentscope").setup({
+		draw = {
+			animation = require("mini.indentscope").gen_animation.none(),
+		},
+	})
 end)
 
 -- Customizable user input. Improves how Neovim and plugins ask for input.
