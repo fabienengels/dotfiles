@@ -9,7 +9,8 @@
 		"network",
 		"battery",
         "idle_inhibitor",
-		"wireplumber",
+        "pulseaudio",
+        "pulseaudio/slider",
 		"tray"
 	],
 	"battery": {
@@ -61,14 +62,17 @@
 		"tooltip-format-wifi": "{essid} ({signaldBm}dBm / {signalStrength}%)\n{ipaddr}",
 		"tooltip-format-ethernet": "{ifname}\n{ipaddr}"
 	},
-	"wireplumber": {
-		"format": "{icon}",
-		"format-muted": "",
-		"on-click": "pavucontrol",
-		"format-icons": [
-			"",
-			"",
-			""
-		]
-	}
+     "pulseaudio": {
+                "format": "{icon}",
+                "format-muted": "",
+                "on-click": "pavucontrol",
+                "format-icons": [
+                        "",
+                        "",
+                        ""
+                ]
+    },
+    "pulseaudio/slider": {
+		"on-click": "pavucontrol"
+    }
 }
