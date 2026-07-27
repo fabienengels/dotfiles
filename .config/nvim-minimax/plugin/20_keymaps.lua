@@ -1,12 +1,4 @@
--- ┌─────────────────┐
--- │ Custom mappings │
--- └─────────────────┘
---
--- This file contains definitions of custom general and Leader mappings.
-
 -- General mappings ===========================================================
-
--- Use this section to add custom general mappings. See `:h vim.keymap.set()`.
 
 -- An example helper to create a Normal mode mapping
 local nmap = function(lhs, rhs, desc)
@@ -22,8 +14,6 @@ nmap("]p", '<Cmd>exe "iput "  . v:register<CR>', "Paste Below")
 -- Many general mappings are created by 'mini.basics'. See 'plugin/30_mini.lua'
 
 -- stylua: ignore start
--- The next part (until `-- stylua: ignore end`) is aligned manually for easier
--- reading. Consider preserving this or remove `-- stylua` lines to autoformat.
 
 -- Leader mappings ============================================================
 
@@ -94,8 +84,6 @@ nmap_leader('bW', '<Cmd>lua MiniBufremove.wipeout(0, true)<CR>', 'Wipeout!')
 
 -- e is for 'Explore' and 'Edit'. Common usage:
 -- - `<Leader>ed` - open explorer at current working directory
--- - `<Leader>ef` - open directory of current file (needs to be present on disk)
--- - `<Leader>ei` - edit 'init.lua'
 -- - All mappings that use `edit_plugin_file` - edit 'plugin/' config files
 local edit_plugin_file = function(filename)
   return string.format('<Cmd>edit %s/plugin/%s<CR>', vim.fn.stdpath('config'), filename)

@@ -1,24 +1,4 @@
--- ┌──────────────────────────┐
--- │ Built-in Neovim behavior │
--- └──────────────────────────┘
---
--- This file defines Neovim's built-in behavior. The goal is to improve overall
--- usability in a way that works best with MINI.
---
--- Here `vim.o.xxx = value` sets default value of option `xxx` to `value`.
--- See `:h 'xxx'` (replace `xxx` with actual option name).
---
--- Option values can be customized on a per buffer or window basis.
--- See 'after/ftplugin/' for common example.
---
--- Notes:
--- - Some options (like `:h 'exrc'`) need to be set before this file is sourced.
---   Set them directly at the bottom of the 'init.lua' file.
-
 -- stylua: ignore start
--- The next part (until `-- stylua: ignore end`) is aligned manually for easier
--- reading. Consider preserving this or remove `-- stylua` lines to autoformat.
-
 -- General ====================================================================
 vim.g.mapleader = ' ' -- Use `<Space>` as <Leader> key
 
@@ -91,13 +71,16 @@ vim.o.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]]
 vim.o.complete        = '.,w,b,kspell'                  -- Use less sources
 vim.o.completeopt     = 'menuone,noselect,fuzzy,nosort' -- Use custom behavior
 vim.o.completetimeout = 100                             -- Limit sources delay
+-- stylua: ignore end
 
 -- Autocommands ===============================================================
 
 -- Don't auto-wrap comments and don't insert comment leader after hitting 'o'.
 -- Do on `FileType` to always override these changes from filetype plugins.
-local f = function() vim.cmd('setlocal formatoptions-=c formatoptions-=o') end
-Config.new_autocmd('FileType', nil, f, "Proper 'formatoptions'")
+local f = function()
+	vim.cmd("setlocal formatoptions-=c formatoptions-=o")
+end
+Config.new_autocmd("FileType", nil, f, "Proper 'formatoptions'")
 
 -- There are other autocommands created by 'mini.basics'. See 'plugin/30_mini.lua'.
 
@@ -107,23 +90,24 @@ Config.new_autocmd('FileType', nil, f, "Proper 'formatoptions'")
 -- a more conservative display while still being useful.
 -- See `:h vim.diagnostic` and `:h vim.diagnostic.config()`.
 local diagnostic_opts = {
-  -- Show signs on top of any other sign, but only for warnings and errors
-  signs = { priority = 9999, severity = { min = 'WARN', max = 'ERROR' } },
+	-- Show signs on top of any other sign, but only for warnings and errors
+	signs = { priority = 9999, severity = { min = "WARN", max = "ERROR" } },
 
-  -- Show all diagnostics as underline (for their messages type `<Leader>ld`)
-  underline = { severity = { min = 'HINT', max = 'ERROR' } },
+	-- Show all diagnostics as underline (for their messages type `<Leader>ld`)
+	underline = { severity = { min = "HINT", max = "ERROR" } },
 
-  -- Show more details immediately for errors on the current line
-  virtual_lines = false,
-  virtual_text = {
-    current_line = true,
-    severity = { min = 'ERROR', max = 'ERROR' },
-  },
+	-- Show more details immediately for errors on the current line
+	virtual_lines = false,
+	virtual_text = {
+		current_line = true,
+		severity = { min = "ERROR", max = "ERROR" },
+	},
 
-  -- Don't update diagnostics when typing
-  update_in_insert = false,
+	-- Don't update diagnostics when typing
+	update_in_insert = false,
 }
 
 -- Use `later()` to avoid sourcing `vim.diagnostic` on startup
-Config.later(function() vim.diagnostic.config(diagnostic_opts) end)
--- stylua: ignore end
+Config.later(function()
+	vim.diagnostic.config(diagnostic_opts)
+end)
