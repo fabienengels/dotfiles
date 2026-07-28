@@ -48,7 +48,6 @@ Config.leader_group_clues = {
   { mode = 'n', keys = '<Leader>o', desc = '+Other' },
   { mode = 'n', keys = '<Leader>s', desc = '+Session' },
   { mode = 'n', keys = '<Leader>t', desc = '+Terminal' },
-  { mode = 'n', keys = '<Leader>v', desc = '+Visits' },
 
   { mode = 'x', keys = '<Leader>g', desc = '+Git' },
   { mode = 'x', keys = '<Leader>l', desc = '+Language' },
@@ -103,7 +102,6 @@ nmap_leader('eQ', explore_locations,                        'Location list')
 -- - `<Leader>fg` - find inside files; requires `ripgrep`
 -- - `<Leader>fh` - find help tag
 -- - `<Leader>fr` - resume latest picker
--- - `<Leader>fv` - all visited paths; requires 'mini.visits'
 --
 -- All these use 'mini.pick'. See `:h MiniPick-overview` for an overview.
 local pick_added_hunks_buf = '<Cmd>Pick git_hunks path="%" scope="staged"<CR>'
@@ -131,8 +129,6 @@ nmap_leader('fr', '<Cmd>Pick resume<CR>',                       'Resume')
 nmap_leader('fR', '<Cmd>Pick lsp scope="references"<CR>',       'References (LSP)')
 nmap_leader('fs', pick_workspace_symbols_live,                  'Symbols workspace (live)')
 nmap_leader('fS', '<Cmd>Pick lsp scope="document_symbol"<CR>',  'Symbols document')
-nmap_leader('fv', '<Cmd>Pick visit_paths cwd=""<CR>',           'Visit paths (all)')
-nmap_leader('fV', '<Cmd>Pick visit_paths<CR>',                  'Visit paths (cwd)')
 
 -- g is for 'Git'. Common usage:
 -- - `<Leader>gs` - show information at cursor
@@ -197,23 +193,4 @@ nmap_leader('sw', '<Cmd>lua MiniSessions.write()<CR>',          'Write current')
 -- t is for 'Terminal'
 nmap_leader('tT', '<Cmd>horizontal term<CR>', 'Terminal (horizontal)')
 nmap_leader('tt', '<Cmd>vertical term<CR>',   'Terminal (vertical)')
-
--- v is for 'Visits'. Common usage:
--- - `<Leader>vv` - add    "core" label to current file.
--- - `<Leader>vV` - remove "core" label to current file.
--- - `<Leader>vc` - pick among all files with "core" label.
-local make_pick_core = function(cwd, desc)
-  return function()
-    local sort_latest = MiniVisits.gen_sort.default({ recency_weight = 1 })
-    local local_opts = { cwd = cwd, filter = 'core', sort = sort_latest }
-    MiniExtra.pickers.visit_paths(local_opts, { source = { name = desc } })
-  end
-end
-
-nmap_leader('vc', make_pick_core('',  'Core visits (all)'),       'Core visits (all)')
-nmap_leader('vC', make_pick_core(nil, 'Core visits (cwd)'),       'Core visits (cwd)')
-nmap_leader('vv', '<Cmd>lua MiniVisits.add_label("core")<CR>',    'Add "core" label')
-nmap_leader('vV', '<Cmd>lua MiniVisits.remove_label("core")<CR>', 'Remove "core" label')
-nmap_leader('vl', '<Cmd>lua MiniVisits.add_label()<CR>',          'Add label')
-nmap_leader('vL', '<Cmd>lua MiniVisits.remove_label()<CR>',       'Remove label')
 -- stylua: ignore end
