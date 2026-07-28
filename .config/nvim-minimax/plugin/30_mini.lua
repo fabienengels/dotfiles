@@ -798,15 +798,3 @@ end)
 later(function()
 	require("mini.surround").setup()
 end)
-
--- Highlight and remove trailspace. Temporarily stops highlighting in Insert mode
--- to reduce noise when typing. Example usage:
--- - `<Leader>ot` - trim all trailing whitespace in a buffer
-later(function()
-	require("mini.trailspace").setup()
-end)
-
--- Not mentioned here, but can be useful:
--- - 'mini.doc' - needed only for plugin developers.
--- - 'mini.fuzzy' - not really needed on a daily basis.
--- - 'mini.test' - needed only for plugin developers.
