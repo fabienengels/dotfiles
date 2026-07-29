@@ -47,6 +47,7 @@ window-rule {
     exclude app-id="obsidian"
     exclude app-id="org.mozilla.Thunderbird"
     exclude app-id="thunar"
+    exclude app-id="org.pwmt.zathura"
 
     default-window-height { proportion 0.9; }
     default-column-width { proportion 0.5; }
