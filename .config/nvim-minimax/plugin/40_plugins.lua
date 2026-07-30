@@ -221,9 +221,6 @@ end)
 --   require('mason').setup()
 -- end)
 
--- Beautiful, usable, well maintained color schemes outside of 'mini.nvim' and
--- have full support of its highlight groups. Use if you don't like 'miniwinter'
--- enabled in 'plugin/30_mini.lua' or other suggested 'mini.hues' based ones.
 Config.now(function()
 	add({
 		"https://github.com/catppuccin/nvim",
@@ -231,6 +228,9 @@ Config.now(function()
 
 	require("catppuccin").setup({
 		transparent_background = true,
+		float = {
+			transparent = true,
+		},
 	})
 
 	vim.cmd("color catppuccin-nvim")
