@@ -226,23 +226,12 @@ end)
 -- enabled in 'plugin/30_mini.lua' or other suggested 'mini.hues' based ones.
 Config.now(function()
 	add({
-		"https://github.com/rebelot/kanagawa.nvim",
-		"https://github.com/sainnhe/everforest",
+		"https://github.com/catppuccin/nvim",
 	})
 
-	require("kanagawa").setup({
-		compilation = true,
-		transparent = true,
-		colors = {
-			theme = {
-				all = {
-					ui = {
-						bg_gutter = "none",
-					},
-				},
-			},
-		},
+	require("catppuccin").setup({
+		transparent_background = true,
 	})
 
-	vim.cmd("color kanagawa")
+	vim.cmd("color catppuccin-nvim")
 end)
