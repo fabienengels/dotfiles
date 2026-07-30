@@ -53,15 +53,55 @@ now_if_args(function()
 	-- After changing this, restart Neovim once to install necessary parsers. Wait
 	-- for the installation to finish before opening a file for added language(s).
 	local languages = {
-		-- These are already pre-installed with Neovim. Used as an example.
+		"astro",
+		"bash",
+		"c",
+		"caddy",
+		"cpp",
+		"css",
+		"csv",
+		"cuda",
+		"diff",
+		"dockerfile",
+		"eex",
+		"elixir",
+		"fish",
+		"git_config",
+		"git_rebase",
+		"gitattributes",
+		"gitcommit",
+		"gitignore",
+		"glsl",
+		"go",
+		"gomod",
+		"hcl",
+		"heex",
+		"html",
+		"htmldjango",
+		"ini",
+		"jinja",
+		"jq",
+		"jsdoc",
+		"json",
+		"json5",
+		"just",
 		"lua",
-		"vimdoc",
+		"make",
 		"markdown",
-		-- Add here more languages with which you want to use tree-sitter
-		-- To see available languages:
-		-- - Execute `:=require('nvim-treesitter').get_available()`
-		-- - Visit 'SUPPORTED_LANGUAGES.md' file at
-		--   https://github.com/nvim-treesitter/nvim-treesitter/blob/main
+		"nix",
+		"nu",
+		"python",
+		"regex",
+		"rust",
+		"scss",
+		"sql",
+		"ssh_config",
+		"svelte",
+		"toml",
+		"typescript",
+		"typst",
+		"vimdoc",
+		"yaml",
 	}
 	local isnt_installed = function(lang)
 		return #vim.api.nvim_get_runtime_file("parser/" .. lang .. ".*", false) == 0
@@ -86,18 +126,6 @@ end)
 
 -- Language servers ===========================================================
 
--- Language Server Protocol (LSP) is a set of conventions that power creation of
--- language specific tools. It requires two parts:
--- - Server - program that performs language specific computations.
--- - Client - program that asks server for computations and shows results.
---
--- Here Neovim itself is a client (see `:h vim.lsp`). Language servers need to
--- be installed separately based on your OS, CLI tools, and preferences.
--- See note about 'mason.nvim' at the bottom of the file.
---
--- Neovim's team collects commonly used configurations for most language servers
--- inside 'neovim/nvim-lspconfig' plugin.
---
 -- Add it now if file (and not 'mini.starter') is shown after startup.
 --
 -- Troubleshooting:
@@ -106,8 +134,34 @@ now_if_args(function()
 	add({ "https://github.com/neovim/nvim-lspconfig" })
 
 	vim.lsp.enable({
+		-- "ansible_ls",
+		"astro",
+		"bashls",
+		"biome",
+		"clangd",
+		"dockerls",
+		-- "glsl_analyzer",
+		"gopls",
+		"htmx",
+		"just",
+		"kcl",
+		"kdl_lsp",
 		"lua_ls",
+		"marksman",
+		"nil_ls",
+		"nushell",
+		"tofu_ls",
+		"postgres_lsp",
+		"pyright",
+		"ruff",
 		"rust_analyzer",
+		"stylua",
+		"superhtml",
+		"svelte",
+		"tailwindcss",
+		"tombi",
+		"tinymist",
+		"yamlls",
 	})
 end)
 
