@@ -183,12 +183,13 @@ later(function()
 			lsp_format = "fallback",
 		},
 		formatters_by_ft = {
+			bash = { "shfmt" },
+			fish = { "fish_indent" },
+			go = { "goimports" },
 			lua = { "stylua" },
 			python = { "ruff" },
 			rust = { "rustfmt" },
-			go = { "goimports" },
-			bash = { "shfmt" },
-			fish = { "fish_indent" },
+			svelte = { "prettier" },
 		},
 	})
 end)
