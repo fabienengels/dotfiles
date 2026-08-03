@@ -6,39 +6,28 @@ local nmap = function(lhs, rhs, desc)
 	vim.keymap.set("n", lhs, rhs, { desc = desc })
 end
 
+-- stylua: ignore start
+
 -- Paste linewise before/after current line
 -- Usage: `yiw` to yank a word and `]p` to put it on the next line.
-nmap("[p", '<Cmd>exe "iput! " . v:register<CR>', "Paste Above")
-nmap("]p", '<Cmd>exe "iput "  . v:register<CR>', "Paste Below")
+nmap('[p',    '<Cmd>exe "iput! " . v:register<CR>', 'Paste Above')
+nmap(']p',    '<Cmd>exe "iput "  . v:register<CR>', 'Paste Below')
+
+nmap('<Esc>', '<Cmd>nohl<CR>', 'Clear search highlighting')
+nmap('<C-d>', '<C-d>zz',       'Move down in buffer with cursor centered')
+nmap('<C-u>', '<C-u>zz',       'Move up in buffer with cursor centered')
+nmap('J',     'mzJ`z',         'Join lines without moving cursor')
+
+
+local map = vim.keymap.set
+map("v", "J", ":m '>+1<CR>gv=gv", { desc = "moves lines down in visual selection" })
+map("v", "K", ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual selection" })
 
 -- Many general mappings are created by 'mini.basics'. See 'plugin/30_mini.lua'
 
--- stylua: ignore start
 
 -- Leader mappings ============================================================
 
--- Neovim has the concept of a Leader key (see `:h <Leader>`). It is a configurable
--- key that is primarily used for "workflow" mappings (opposed to text editing).
--- Like "open file explorer", "create scratch buffer", "pick from buffers".
---
--- In 'plugin/10_options.lua' <Leader> is set to <Space>, i.e. press <Space>
--- whenever there is a suggestion to press <Leader>.
---
--- This config uses a "two key Leader mappings" approach: first key describes
--- semantic group, second key executes an action. Both keys are usually chosen
--- to create some kind of mnemonic.
--- Example: `<Leader>f` groups "find" type of actions; `<Leader>ff` - find files.
--- Use this section to add Leader mappings in a structural manner.
---
--- Usually if there are global and local kinds of actions, lowercase second key
--- denotes global and uppercase - local.
--- Example: `<Leader>fs` / `<Leader>fS` - find workspace/document LSP symbols.
---
--- Many of the mappings use 'mini.nvim' modules set up in 'plugin/30_mini.lua'.
-
--- Create a global table with information about Leader groups in certain modes.
--- This is used to provide 'mini.clue' with extra clues.
--- Add an entry if you create a new group.
 Config.leader_group_clues = {
   { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
   { mode = 'n', keys = '<Leader>e', desc = '+Explore/Edit' },
@@ -64,6 +53,9 @@ end
 local xmap_leader = function(suffix, rhs, desc)
   vim.keymap.set('x', '<Leader>' .. suffix, rhs, { desc = desc })
 end
+
+-- Update plugins
+nmap_leader('U', vim.pack.update, 'Update plugins')
 
 -- b is for 'Buffer'. Common usage:
 -- - `<Leader>bs` - create scratch (temporary) buffer
@@ -114,10 +106,10 @@ nmap_leader('fA', pick_added_hunks_buf,                         'Added hunks (bu
 nmap_leader('fb', '<Cmd>Pick buffers<CR>',                      'Buffers')
 nmap_leader('fc', '<Cmd>Pick git_commits<CR>',                  'Commits (all)')
 nmap_leader('fC', '<Cmd>Pick git_commits path="%"<CR>',         'Commits (buf)')
-nmap_leader('fd', '<Cmd>Pick diagnostic scope="all"<CR>',       'Diagnostic workspace')
-nmap_leader('fD', '<Cmd>Pick diagnostic scope="current"<CR>',   'Diagnostic buffer')
+nmap_leader('fd', '<Cmd>Pick diagnostic scope="current"<CR>',   'Diagnostic buffer')
+nmap_leader('fD', '<Cmd>Pick diagnostic scope="all"<CR>',       'Diagnostic workspace')
 nmap_leader('ff', '<Cmd>Pick files<CR>',                        'Files')
-nmap_leader('fg', '<Cmd>Pick grep_live<CR>',                    'Grep live')
+nmap_leader('fg', '<Cmd>Pick git_files<CR>',                    'Files tracked by git')
 nmap_leader('fG', '<Cmd>Pick grep pattern="<cword>"<CR>',       'Grep current word')
 nmap_leader('fh', '<Cmd>Pick help<CR>',                         'Help tags')
 nmap_leader('fH', '<Cmd>Pick hl_groups<CR>',                    'Highlight groups')
@@ -169,8 +161,25 @@ nmap_leader('lr', '<Cmd>lua vim.lsp.buf.rename()<CR>',          'Rename')
 nmap_leader('lR', '<Cmd>lua vim.lsp.buf.references()<CR>',      'References')
 nmap_leader('ls', '<Cmd>lua vim.lsp.buf.definition()<CR>',      'Source definition')
 nmap_leader('lt', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', 'Type definition')
+nmap_leader('lS', '<Cmd>lua vim.lsp.buf.signature_help()<CR>',  'Signature help')
+nmap_leader('lD', '<Cmd> lua vim.lsp.buf.declaration()<CR>',    'Go to declaration')
 
 xmap_leader('lf', '<Cmd>lua require("conform").format()<CR>', 'Format selection')
+
+local diagnostic_goto = function(next, severity)
+  severity = severity and vim.diagnostic.severity[severity] or nil
+  return function()
+    vim.diagnostic.jump { count = next and 1 or -1, float = false, severity = severity }
+  end
+end
+
+nmap("]d", diagnostic_goto(true), "Next Diagnostic")
+nmap("[d", diagnostic_goto(false), "Prev Diagnostic")
+-- to fix, the followings don't work
+nmap("]e", diagnostic_goto(true, "ERROR"), "Next Error")
+nmap("[e", diagnostic_goto(false, "ERROR"), "Prev Error")
+nmap("]w", diagnostic_goto(true, "WARN"), "Next Warning")
+nmap("[w", diagnostic_goto(false, "WARN"), "Prev Warning")
 
 -- s is for 'Session'. Common usage:
 -- - `<Leader>sn` - start new session

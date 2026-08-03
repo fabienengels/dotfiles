@@ -79,7 +79,14 @@ end)
 -- See also:
 -- - `:h MiniNotify.config` for some of common configuration examples.
 now(function()
-	require("mini.notify").setup()
+	require("mini.notify").setup({
+		-- only show messages
+		content = {
+			format = function(notif)
+				return notif.msg
+			end,
+		},
+	})
 end)
 
 -- Session management. A thin wrapper around `:h mksession` that consistently
@@ -686,7 +693,19 @@ end)
 --   Execute one either with Lua function, `:Pick <picker-name>` command, or
 --   one of `<Leader>f` mappings defined in 'plugin/20_keymaps.lua'
 later(function()
-	require("mini.pick").setup()
+	require("mini.pick").setup({
+		window = {
+			config = function()
+				local height = math.floor(vim.o.lines / 2)
+				local width = vim.o.columns
+
+				return {
+					height = height,
+					width = width,
+				}
+			end,
+		},
+	})
 end)
 
 -- Manage and expand snippets (templates for a frequently used text).

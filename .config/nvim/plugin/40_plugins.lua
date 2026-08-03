@@ -132,8 +132,9 @@ end)
 -- - Run `:checkhealth vim.lsp` to see potential issues.
 now_if_args(function()
 	add({ "https://github.com/neovim/nvim-lspconfig" })
+	add({ "https://github.com/mason-org/mason.nvim" })
 
-	vim.lsp.enable({
+	local languages = {
 		-- "ansible_ls",
 		"astro",
 		"bashls",
@@ -162,7 +163,15 @@ now_if_args(function()
 		"tombi",
 		"tinymist",
 		"yamlls",
+	}
+	require("mason").setup({
+		firewall = {
+			enabled = true,
+			auto_managed = true,
+		},
 	})
+
+	vim.lsp.enable(languages)
 end)
 
 -- Formatting =================================================================
@@ -207,20 +216,22 @@ later(function()
 	add({ "https://github.com/rafamadriz/friendly-snippets" })
 end)
 
+-- Git signs ==================================================================
+
+later(function()
+	add({ "https://github.com/lewis6991/gitsigns.nvim" })
+	require("gitsigns").setup()
+end)
+
 -- Honorable mentions =========================================================
 
 -- 'mason-org/mason.nvim' (a.k.a. "Mason") is a great tool (package manager) for
 -- installing external language servers, formatters, and linters. It provides
 -- a unified interface for installing, updating, and deleting such programs.
 --
--- The caveat is that these programs will be set up to be mostly used inside Neovim.
--- If you need them to work elsewhere, consider using other package managers.
 --
 -- You can use it like so:
--- now_if_args(function()
---   add({ 'https://github.com/mason-org/mason.nvim' })
---   require('mason').setup()
--- end)
+now_if_args(function() end)
 
 Config.now(function()
 	add({

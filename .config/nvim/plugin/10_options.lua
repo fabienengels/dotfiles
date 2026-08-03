@@ -9,6 +9,11 @@ vim.o.undofile    = true           -- Enable persistent undo
 
 vim.o.shada = "'100,<50,s10,:1000,/100,@100,h" -- Limit ShaDa file (for startup)
 
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undofile = true
+vim.o.undodir = vim.fn.stdpath "data" .. "/undodir"
+
 -- Enable all filetype plugins and syntax (if not enabled, for better startup)
 vim.cmd('filetype plugin indent on')
 if vim.fn.exists('syntax_on') ~= 1 then vim.cmd('syntax enable') end
@@ -92,23 +97,43 @@ Config.new_autocmd("FileType", nil, f, "Proper 'formatoptions'")
 -- Neovim has built-in support for showing diagnostic messages. This configures
 -- a more conservative display while still being useful.
 -- See `:h vim.diagnostic` and `:h vim.diagnostic.config()`.
+
+local severity = vim.diagnostic.severity
 local diagnostic_opts = {
-	-- Show signs on top of any other sign, but only for warnings and errors
-	signs = { priority = 9999, severity = { min = "WARN", max = "ERROR" } },
-
-	-- Show all diagnostics as underline (for their messages type `<Leader>ld`)
-	underline = { severity = { min = "HINT", max = "ERROR" } },
-
-	-- Show more details immediately for errors on the current line
-	virtual_lines = false,
-	virtual_text = {
-		current_line = true,
-		severity = { min = "ERROR", max = "ERROR" },
+	float = {
+		-- border = "rounded", -- Options: "none", "single", "double", "rounded", "solid", "shadow"
+		source = "always", -- Shows the source of the diagnostic (e.g., tsserver, lua_ls)
+		header = "", -- Removes the default "Diagnostics:" header
+		prefix = "", -- Removes the prefix before each diagnostic text
 	},
-
-	-- Don't update diagnostics when typing
-	update_in_insert = false,
+	-- virtual_text = true,
+	signs = {
+		text = {
+			[severity.ERROR] = "",
+			[severity.WARN] = "",
+			[severity.INFO] = "",
+			[severity.HINT] = "",
+		},
+	},
 }
+
+-- local diagnostic_opts = {
+-- 	-- Show signs on top of any other sign, but only for warnings and errors
+-- 	signs = { priority = 9999, severity = { min = "WARN", max = "ERROR" } },
+--
+-- 	-- Show all diagnostics as underline (for their messages type `<Leader>ld`)
+-- 	underline = { severity = { min = "HINT", max = "ERROR" } },
+--
+-- 	-- Show more details immediately for errors on the current line
+-- 	virtual_lines = false,
+-- 	virtual_text = {
+-- 		current_line = true,
+-- 		severity = { min = "ERROR", max = "ERROR" },
+-- 	},
+--
+-- 	-- Don't update diagnostics when typing
+-- 	update_in_insert = false,
+-- }
 
 -- Use `later()` to avoid sourcing `vim.diagnostic` on startup
 Config.later(function()
