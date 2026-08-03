@@ -223,19 +223,10 @@ later(function()
 	require("gitsigns").setup()
 end)
 
--- Honorable mentions =========================================================
-
--- 'mason-org/mason.nvim' (a.k.a. "Mason") is a great tool (package manager) for
--- installing external language servers, formatters, and linters. It provides
--- a unified interface for installing, updating, and deleting such programs.
---
---
--- You can use it like so:
-now_if_args(function() end)
-
 Config.now(function()
 	add({
 		"https://github.com/catppuccin/nvim",
+		"https://github.com/nvim-lualine/lualine.nvim",
 	})
 
 	require("catppuccin").setup({
@@ -244,6 +235,8 @@ Config.now(function()
 			transparent = true,
 		},
 	})
+
+	require("lualine").setup()
 
 	vim.cmd("color catppuccin-nvim")
 end)
