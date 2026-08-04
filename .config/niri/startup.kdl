@@ -1,4 +1,4 @@
-// spawn-at-startup "sunsetr"
+spawn-at-startup "sunsetr"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "fcitx5" "-d"
 spawn-at-startup "waybar"
