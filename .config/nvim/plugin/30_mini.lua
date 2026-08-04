@@ -107,9 +107,9 @@ end)
 -- See also:
 -- - `:h MiniStarter-example-config` - non-default config examples
 -- - `:h MiniStarter-lifecycle` - how to work with Starter buffer
-now(function()
-	require("mini.starter").setup()
-end)
+-- now(function()
+-- 	require("mini.starter").setup()
+-- end)
 
 -- Statusline. Sets `:h 'statusline'` to show more info in a line below window.
 -- Example usage:
