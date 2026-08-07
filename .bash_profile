@@ -4,6 +4,6 @@
 
 export MPD_HOST=$XDG_RUNTIME_DIR/mpd.sock
 export EDITOR=nvim
-export PATH="~/.local/bin:~/.cargo/bin:~/.bun/bun:$PATH"
+export PATH="~/.local/bin:~/.cargo/bin:~/.bun/bin:$PATH"
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
