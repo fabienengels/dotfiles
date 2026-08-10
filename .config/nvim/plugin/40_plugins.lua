@@ -238,5 +238,5 @@ Config.now(function()
 
 	require("lualine").setup()
 
-	vim.cmd("color catppuccin-nvim")
+	vim.cmd("color catppuccin")
 end)

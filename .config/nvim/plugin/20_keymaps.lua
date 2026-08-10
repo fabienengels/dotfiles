@@ -162,20 +162,26 @@ nmap_leader('lR', '<Cmd>lua vim.lsp.buf.references()<CR>',      'References')
 nmap_leader('ls', '<Cmd>lua vim.lsp.buf.definition()<CR>',      'Source definition')
 nmap_leader('lt', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', 'Type definition')
 nmap_leader('lS', '<Cmd>lua vim.lsp.buf.signature_help()<CR>',  'Signature help')
-nmap_leader('lD', '<Cmd> lua vim.lsp.buf.declaration()<CR>',    'Go to declaration')
+nmap_leader('lD', '<Cmd>lua vim.lsp.buf.declaration()<CR>',     'Go to declaration')
 
 xmap_leader('lf', '<Cmd>lua require("conform").format()<CR>', 'Format selection')
 
 local diagnostic_goto = function(next, severity)
-  severity = severity and vim.diagnostic.severity[severity] or nil
+  local opts = {}
+  if severity then
+    opts.severity = { equal = vim.diagnostic.severity[severity] }
+  end
   return function()
-    vim.diagnostic.jump { count = next and 1 or -1, float = false, severity = severity }
+    if next then
+      vim.diagnostic.goto_next(opts)
+    else
+      vim.diagnostic.goto_prev(opts)
+    end
   end
 end
 
 nmap("]d", diagnostic_goto(true), "Next Diagnostic")
 nmap("[d", diagnostic_goto(false), "Prev Diagnostic")
--- to fix, the followings don't work
 nmap("]e", diagnostic_goto(true, "ERROR"), "Next Error")
 nmap("[e", diagnostic_goto(false, "ERROR"), "Prev Error")
 nmap("]w", diagnostic_goto(true, "WARN"), "Next Warning")
