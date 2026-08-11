@@ -166,26 +166,29 @@ nmap_leader('lD', '<Cmd>lua vim.lsp.buf.declaration()<CR>',     'Go to declarati
 
 xmap_leader('lf', '<Cmd>lua require("conform").format()<CR>', 'Format selection')
 
-local diagnostic_goto = function(next, severity)
-  local opts = {}
-  if severity then
-    opts.severity = { equal = vim.diagnostic.severity[severity] }
-  end
+-- TOFIX
+-- local diagnostic_goto = function(next, severity)
+--   return function()
+--     vim.diagnostic.jump({
+--       count = next and 1 or -1,
+--       float = false,
+--       severity = severity and vim.diagnostic.severity[severity] or nil,
+--     })
+--   end
+-- end
+-- nmap("]e", diagnostic_goto(true, "ERROR"), "Next Error")
+-- nmap("[e", diagnostic_goto(false, "ERROR"), "Prev Error")
+-- nmap("]w", diagnostic_goto(true, "WARN"), "Next Warning")
+-- nmap("[w", diagnostic_goto(false, "WARN"), "Prev Warning")
+
+local diagnostic_goto = function(next)
   return function()
-    if next then
-      vim.diagnostic.goto_next(opts)
-    else
-      vim.diagnostic.goto_prev(opts)
-    end
+    vim.diagnostic.jump({ count = next and 1 or -1, })
   end
 end
 
 nmap("]d", diagnostic_goto(true), "Next Diagnostic")
 nmap("[d", diagnostic_goto(false), "Prev Diagnostic")
-nmap("]e", diagnostic_goto(true, "ERROR"), "Next Error")
-nmap("[e", diagnostic_goto(false, "ERROR"), "Prev Error")
-nmap("]w", diagnostic_goto(true, "WARN"), "Next Warning")
-nmap("[w", diagnostic_goto(false, "WARN"), "Prev Warning")
 
 -- s is for 'Session'. Common usage:
 -- - `<Leader>sn` - start new session
