@@ -2,6 +2,7 @@
 -- General ====================================================================
 vim.g.mapleader = ' ' -- Use `<Space>` as <Leader> key
 
+vim.o.updatetime = 500 -- Time (ms) before CursorHold fires
 vim.o.mousescroll = 'ver:25,hor:6' -- Customize mouse scroll
 vim.o.switchbuf   = 'usetab'       -- Use already opened buffers when switching
 vim.o.undofile    = true           -- Enable persistent undo
@@ -136,4 +137,7 @@ local diagnostic_opts = {
 -- Use `later()` to avoid sourcing `vim.diagnostic` on startup
 Config.later(function()
 	vim.diagnostic.config(diagnostic_opts)
+
+	-- Auto-show diagnostic float when cursor is over a diagnostic
+	Config.new_autocmd("CursorHold", "*", vim.diagnostic.open_float, "Auto-open diagnostic float")
 end)
