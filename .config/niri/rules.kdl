@@ -44,7 +44,7 @@ window-rule {
     exclude app-id="com.mitchellh.ghostty"
     exclude app-id="com.system76.CosmicFiles"
     exclude app-id="firefox"
-    exclude app-id="md.Obsidian"
+    exclude app-id="md.obsidian.Obsidian"
     exclude app-id="org.mozilla.Thunderbird"
     exclude app-id="org.pwmt.zathura"
     exclude app-id="thunar"
