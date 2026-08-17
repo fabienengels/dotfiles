@@ -34,4 +34,4 @@ confirm-close-surface = false
 keybind = alt+t=new_tab
 
 config-file = override
-theme = matugen
+theme = noctalia

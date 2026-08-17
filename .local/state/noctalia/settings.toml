@@ -1,0 +1,139 @@
+config_version = 12
+
+[bar.default]
+center = [ "clock", "media" ]
+concave_edge_corners = false
+end = [ "tray", "notifications", "network", "bluetooth", "volume", "brightness", "battery" ]
+margin_ends = 16
+radius_top_left = 0
+radius_top_right = 0
+scale = 1.2000000104308128
+start = [ "workspaces" ]
+
+[control_center]
+hidden_tabs = [ "system" ]
+
+[desktop_widgets]
+enabled = false
+
+[dock]
+enabled = false
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = false
+    timeout = 120.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 300.0
+
+[location]
+auto_locate = true
+
+[lockscreen]
+fingerprint = false
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [ "lockscreen-login-box@HDMI-A-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 82.0
+    box_width = 768.0
+    cx = 1536.0
+    cy = 864.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = false
+        show_keyboard_layout = true
+        show_login_button = false
+        show_media = false
+        show_session_buttons = false
+        show_unlock_hint = false
+        show_weather = false
+
+[nightlight]
+enabled = true
+
+[[plugins.source]]
+enabled = false
+kind = "git"
+location = "https://github.com/noctalia-dev/official-plugins"
+name = "official"
+
+[[plugins.source]]
+enabled = false
+kind = "git"
+location = "https://github.com/noctalia-dev/community-plugins"
+name = "community"
+
+[shell]
+font_family = "JetBrains Mono"
+
+    [shell.launcher]
+    categories = false
+    fetch_exchange_rates = false
+    show_icons = false
+
+        [shell.launcher.providers.calculator]
+        global = false
+
+    [shell.panel]
+    open_near_click_launcher = true
+
+[system.monitor]
+enabled = false
+
+[theme]
+source = "wallpaper"
+
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "ghostty", "kcolorscheme", "niri", "qt" ]
+
+[wallpaper]
+directory = "/home/fabien/Sync/Pictures/Wallpapers"
+transition_on_startup = true
+
+    [wallpaper.default]
+    path = "/home/fabien/Sync/Pictures/Wallpapers/037fe1a2be05c23b77071df19267ee8a.jpg"
+
+    [wallpaper.last]
+    path = "/home/fabien/Sync/Pictures/Wallpapers/037fe1a2be05c23b77071df19267ee8a.jpg"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/fabien/Sync/Pictures/Wallpapers/037fe1a2be05c23b77071df19267ee8a.jpg"
+
+[widget.media]
+hide_album_art = true
+max_length = 380
+
+[widget.workspaces]
+hide_when_empty = true
+occupied_color = "on_secondary"
+scale = 1.2

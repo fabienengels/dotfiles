@@ -1,67 +1,90 @@
 blur {
-   passes 2        // more passes = stronger blur (default: 3)
-   offset 4.0      // sample distance per pass (default: 3.0)
-   noise 0.01      // grain overlay (default: 0.02)
-   saturation 1.50 // color saturation boost (default: 1.5)
+  passes 2        // more passes = stronger blur (default: 3)
+  offset 4.0      // sample distance per pass (default: 3.0)
+  noise 0.01      // grain overlay (default: 0.02)
+  saturation 1.50 // color saturation boost (default: 1.5)
 }
 
 window-rule {
-    geometry-corner-radius 4
-    clip-to-geometry true
+  geometry-corner-radius 12
+  clip-to-geometry true
+
+  background-effect {
+    blur true
+    xray false
+  }
 }
 
-window-rule {
-    match app-id="vicinae"
-    match app-id="thunar"
-    match app-id="com.system76.CosmicFiles"
-    match app-id="com.mitchellh.ghostty"
-
-    opacity 0.92
-    
-    background-effect {
-        blur true
-        xray true
-    }
-}
-
-window-rule {
-    match app-id="com.mitchellh.ghostty"
-
-    default-column-width {proportion 0.3; }
-}
-
+/*
+  Noctalia
+  Disable xray on all our surfaces so it looks more realistic.
+  Noctalia publishes blur regions automatically when ext-background-effects is available.
+*/
 layer-rule {
-    match namespace="vicinae"
+  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+  background-effect {
+    xray false
+    // blur false
+  }
+}
+
+/* Enable blur on noctalia's window switcher and disable xray. */
+layer-rule {
+    match namespace="noctalia-window-switcher"
     background-effect {
         blur true
-        xray true
+        xray false
     }
 }
 
+// Floating Noctalia settings window.
 window-rule {
-    open-floating true
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
 
-    exclude app-id="com.mitchellh.ghostty"
-    exclude app-id="com.system76.CosmicFiles"
-    exclude app-id="firefox"
-    exclude app-id="md.obsidian.Obsidian"
-    exclude app-id="org.mozilla.Thunderbird"
-    exclude app-id="org.pwmt.zathura"
-    exclude app-id="thunar"
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
+}
 
-    default-window-height { proportion 0.9; }
-    default-column-width { proportion 0.5; }
+window-rule {
+  match app-id="thunar"
+  match app-id="com.system76.CosmicFiles"
+  match app-id="com.mitchellh.ghostty"
+
+  opacity 0.85
+
+  background-effect {
+    blur true
+    xray true
+  }
+}
+
+window-rule {
+  open-floating true
+
+  exclude app-id="com.mitchellh.ghostty"
+  exclude app-id="com.system76.CosmicFiles"
+  exclude app-id="firefox"
+  exclude app-id="md.obsidian.Obsidian"
+  exclude app-id="org.mozilla.Thunderbird"
+  exclude app-id="org.pwmt.zathura"
+  exclude app-id="thunar"
+
+  default-window-height { proportion 0.9; }
+  default-column-width { proportion 0.5; }
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
-    geometry-corner-radius 10
-    clip-to-geometry true
+  match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+  open-floating true
 
-    default-column-width { fixed 960; }
-    default-window-height { fixed 540; }
+  default-column-width { fixed 960; }
+  default-window-height { fixed 540; }
 
-    default-floating-position x=40 y=40 relative-to="top-right"
+  default-floating-position x=40 y=40 relative-to="top-right"
 }

@@ -1,6 +1,8 @@
 layout {
     always-center-single-column
 
+    gaps 16
+
     tab-indicator {
         width 16
         corner-radius 8
@@ -25,7 +27,7 @@ layout {
         // active-gradient from="#7dc4e4" to="#8aadf4" angle=45
         // active-gradient from="#7287fd" to="#8839ef" angle=45
         // inactive-gradient from="#939ab7" to="#8087a2" angle=45
-        // width 5
+        width 3
     }
 
     shadow {
