@@ -1,7 +1,7 @@
 config_version = 12
 
 [bar.default]
-center = [ "clock", "media" ]
+center = [ "clock" ]
 concave_edge_corners = false
 end = [ "tray", "notifications", "network", "bluetooth", "volume", "brightness", "battery" ]
 margin_ends = 16
@@ -70,6 +70,9 @@ name = "community"
 [shell]
 font_family = "JetBrains Mono"
 
+    [shell.animation]
+    enabled = false
+
     [shell.launcher]
     categories = false
     fetch_exchange_rates = false
@@ -89,6 +92,7 @@ source = "wallpaper"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "ghostty", "kcolorscheme", "niri", "qt" ]
+    community_ids = [ "bat", "obsidian", "pi-agent", "pywalfox-beta4", "zathura", "zellij" ]
 
 [wallpaper]
 directory = "/home/fabien/Sync/Pictures/Wallpapers"
