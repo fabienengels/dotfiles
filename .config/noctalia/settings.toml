@@ -46,37 +46,11 @@ fingerprint = false
 [lockscreen_widgets]
 enabled = true
 schema_version = 2
-widget_order = [ "lockscreen-login-box@HDMI-A-1" ]
 
     [lockscreen_widgets.grid]
     cell_size = 16
     major_interval = 4
     visible = true
-
-    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
-    box_height = 82.0
-    box_width = 768.0
-    cx = 1536.0
-    cy = 864.0
-    output = "HDMI-A-1"
-    rotation = 0.0
-    type = "login_box"
-
-        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
-        center_password_text = false
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
-        show_caps_lock = false
-        show_keyboard_layout = true
-        show_login_button = false
-        show_media = false
-        show_session_buttons = false
-        show_unlock_hint = false
-        show_weather = false
 
 [nightlight]
 enabled = true
@@ -119,15 +93,6 @@ source = "wallpaper"
 [wallpaper]
 directory = "/home/fabien/Sync/Pictures/Wallpapers"
 transition_on_startup = true
-
-    [wallpaper.default]
-    path = "/home/fabien/Sync/Pictures/Wallpapers/037fe1a2be05c23b77071df19267ee8a.jpg"
-
-    [wallpaper.last]
-    path = "/home/fabien/Sync/Pictures/Wallpapers/037fe1a2be05c23b77071df19267ee8a.jpg"
-
-    [wallpaper.monitors.HDMI-A-1]
-    path = "/home/fabien/Sync/Pictures/Wallpapers/037fe1a2be05c23b77071df19267ee8a.jpg"
 
 [widget.media]
 hide_album_art = true
