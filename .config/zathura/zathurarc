@@ -1,5 +1,4 @@
 set window-title-basename true
-set page-padding 20
 set adjust-open best-fit
 set font "JetBrains Mono 10"
 

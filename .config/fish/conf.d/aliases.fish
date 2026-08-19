@@ -20,7 +20,5 @@ alias l="eza -l --icons --group-directories-first --git"
 alias yt="yt-dlp --cookies-from-browser firefox --embed-thumbnail --embed-chapters"
 alias s2c="slurp | grim -g - - | wl-copy"
 
-alias wallpaper-random="noctalia msg wallpaper-random"
-
 # Create hx alias when using Arch
 command -q hx || alias hx=helix

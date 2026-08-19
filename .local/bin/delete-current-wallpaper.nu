@@ -1,10 +1,6 @@
 #!/usr/bin/env nu
 
-let path = awww query --json
-           | from json
-           | get ""
-           | get displaying.image
-           | first
+let path = noctalia msg wallpaper-get
 
 rm -v $path
 
