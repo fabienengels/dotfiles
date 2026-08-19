@@ -84,6 +84,9 @@ font_family = "JetBrains Mono"
     [shell.panel]
     open_near_click_launcher = true
 
+    [shell.screenshot]
+    directory = "~/Sync/Pictures/Screenshots"
+
 [system.monitor]
 enabled = false
 
