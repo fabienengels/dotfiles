@@ -88,3 +88,10 @@ window-rule {
 
   default-floating-position x=40 y=40 relative-to="top-right"
 }
+
+// Automatically set Gamescope windows to fullscreen and inhibit display sleep
+//window-rule {
+//    match app-id=r#"^gamescope$"#
+//    open-fullscreen true
+//    inhibit-idle true
+//}

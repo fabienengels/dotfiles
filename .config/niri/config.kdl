@@ -10,6 +10,7 @@ environment {
 
 output "LG Electronics LG ULTRAGEAR+ 306NTTQ3U177" {
     scale 1.2
+    variable-refresh-rate 
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
