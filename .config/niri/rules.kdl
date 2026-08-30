@@ -73,6 +73,7 @@ window-rule {
   exclude app-id="org.mozilla.Thunderbird"
   exclude app-id="org.pwmt.zathura"
   exclude app-id="thunar"
+  exclude app-id="orca-slicer"
 
   default-window-height { proportion 0.9; }
   default-column-width { proportion 0.5; }
