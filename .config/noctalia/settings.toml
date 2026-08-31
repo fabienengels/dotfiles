@@ -1,17 +1,17 @@
 config_version = 12
 
 [bar.default]
-center = [ "clock" ]
+center = ["clock"]
 concave_edge_corners = false
-end = [ "tray", "notifications", "network", "bluetooth", "volume", "brightness", "battery" ]
+end = ["tray", "caffeine", "notifications", "network", "bluetooth", "volume", "brightness", "battery"]
 margin_ends = 16
 radius_top_left = 0
 radius_top_right = 0
 scale = 1.2000000104308128
-start = [ "workspaces" ]
+start = ["workspaces"]
 
 [control_center]
-hidden_tabs = [ "system" ]
+hidden_tabs = ["system"]
 
 [desktop_widgets]
 enabled = false
@@ -20,22 +20,22 @@ enabled = false
 enabled = false
 
 [idle]
-behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+behavior_order = ["lock", "screen-off", "lock-and-suspend"]
 
-    [idle.behavior.lock]
-    action = "lock"
-    enabled = false
-    timeout = 120.0
+[idle.behavior.lock]
+action = "lock"
+enabled = false
+timeout = 120.0
 
-    [idle.behavior.lock-and-suspend]
-    action = "lock_and_suspend"
-    enabled = false
-    timeout = 900.0
+[idle.behavior.lock-and-suspend]
+action = "lock_and_suspend"
+enabled = false
+timeout = 900.0
 
-    [idle.behavior.screen-off]
-    action = "screen_off"
-    enabled = true
-    timeout = 300.0
+[idle.behavior.screen-off]
+action = "screen_off"
+enabled = true
+timeout = 300.0
 
 [location]
 auto_locate = true
@@ -47,10 +47,10 @@ fingerprint = false
 enabled = true
 schema_version = 2
 
-    [lockscreen_widgets.grid]
-    cell_size = 16
-    major_interval = 4
-    visible = true
+[lockscreen_widgets.grid]
+cell_size = 16
+major_interval = 4
+visible = true
 
 [nightlight]
 enabled = true
@@ -70,22 +70,22 @@ name = "community"
 [shell]
 font_family = "JetBrains Mono"
 
-    [shell.animation]
-    enabled = false
+[shell.animation]
+enabled = false
 
-    [shell.launcher]
-    categories = false
-    fetch_exchange_rates = false
-    show_icons = false
+[shell.launcher]
+categories = false
+fetch_exchange_rates = false
+show_icons = false
 
-        [shell.launcher.providers.calculator]
-        global = false
+[shell.launcher.providers.calculator]
+global = false
 
-    [shell.panel]
-    open_near_click_launcher = true
+[shell.panel]
+open_near_click_launcher = true
 
-    [shell.screenshot]
-    directory = "~/Sync/Pictures/Screenshots"
+[shell.screenshot]
+directory = "~/Sync/Pictures/Screenshots"
 
 [system.monitor]
 enabled = false
@@ -93,9 +93,9 @@ enabled = false
 [theme]
 source = "wallpaper"
 
-    [theme.templates]
-    builtin_ids = [ "gtk3", "gtk4", "ghostty", "kcolorscheme", "niri", "qt" ]
-    community_ids = [ "bat", "obsidian", "pi-agent", "pywalfox-beta4", "zathura", "zellij" ]
+[theme.templates]
+builtin_ids = ["gtk3", "gtk4", "ghostty", "kcolorscheme", "niri", "qt"]
+community_ids = ["bat", "obsidian", "pi-agent", "pywalfox-beta4", "zathura", "zellij"]
 
 [wallpaper]
 directory = "/home/fabien/Sync/Pictures/Wallpapers"
