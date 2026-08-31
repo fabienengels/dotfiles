@@ -98,19 +98,6 @@ now(function()
 	require("mini.sessions").setup()
 end)
 
--- Start screen. This is what is shown when you open Neovim like `nvim`.
--- Example usage:
--- - Type prefix keys to limit available candidates
--- - Navigate down/up with `<C-n>` and `<C-p>`
--- - Press `<CR>` to select an entry
---
--- See also:
--- - `:h MiniStarter-example-config` - non-default config examples
--- - `:h MiniStarter-lifecycle` - how to work with Starter buffer
--- now(function()
--- 	require("mini.starter").setup()
--- end)
-
 -- Tabline. Sets `:h 'tabline'` to show all listed buffers in a line at the top.
 -- Buffers are ordered as they were created. Navigate with `[b` and `]b`.
 now(function()
@@ -583,9 +570,9 @@ later(function()
 	MiniKeymap.map_multistep("i", "<S-Tab>", { "pmenu_prev" })
 	-- On `<CR>` try to accept current completion item, fall back to accounting
 	-- for pairs from 'mini.pairs'
-	MiniKeymap.map_multistep("i", "<CR>", { "pmenu_accept", "minipairs_cr" })
+	-- MiniKeymap.map_multistep("i", "<CR>", { "pmenu_accept", "minipairs_cr" })
 	-- On `<BS>` just try to account for pairs from 'mini.pairs'
-	MiniKeymap.map_multistep("i", "<BS>", { "minipairs_bs" })
+	-- MiniKeymap.map_multistep("i", "<BS>", { "minipairs_bs" })
 end)
 
 -- Move any selection in any direction. Example usage in Normal mode:
@@ -637,10 +624,10 @@ end)
 -- - `)` when there is ")" to the right - jump over ")" without inserting new one
 -- - `<C-v>(` - always insert a single "(" literally. This is useful since
 --   'mini.pairs' doesn't provide particularly smart behavior, like auto balancing
-later(function()
-	-- Create pairs not only in Insert, but also in Command line mode
-	require("mini.pairs").setup({ modes = { command = true } })
-end)
+-- later(function()
+-- 	-- Create pairs not only in Insert, but also in Command line mode
+-- 	require("mini.pairs").setup({ modes = { command = true } })
+-- end)
 
 -- Pick anything with single window layout and fast matching. This is one of
 -- the main usability improvements as it powers a lot of "find things quickly"
