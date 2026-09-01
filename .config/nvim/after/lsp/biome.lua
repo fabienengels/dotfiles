@@ -4,11 +4,14 @@ return {
 		["biome"] = {
 			filetypes = {
 				"css",
+				"graphql",
 				"html",
 				"javascript",
+				"javascriptreact",
 				"json",
 				"jsonc",
 				"typescript",
+				"typescriptreact",
 			},
 		},
 	},

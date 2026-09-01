@@ -14,33 +14,20 @@ return {
 	end,
 	settings = {
 		["rust-analyzer"] = {
+			-- Note: keys below match the schema of rust-analyzer 2026-08-24
+			-- (verified in crates/rust-analyzer/src/config.rs). Old names like
+			-- `cargo.allFeatures`, `inlayHints.autoParameterHints`, etc. are no
+			-- longer recognized and would be silently ignored.
 			cargo = {
-				allFeatures = true,
-				loadOutDirsFromCheck = true,
+				features = "all",
 			},
 			check = {
 				command = "clippy",
-				allFeatures = true,
-			},
-			completion = {
-				allWidgets = true,
-				autoImport = {
-					enable = true,
-				},
-			},
-			diagnostics = {
-				disable = {},
-				preloadFunctionsThreshold = 1024,
+				features = "all",
 			},
 			inlayHints = {
-				autoParameterHints = true,
-				closureReturnType = "with_syntax",
-				discriminantHints = "fieldValue",
-				lifetimeElision = "avoid",
-				bindingModeHints = { prefix = "always" },
-			},
-			procMacro = {
-				enable = true,
+				discriminantHints = { enable = "always" },
+				lifetimeElisionHints = { enable = "skip_trivial" },
 			},
 		},
 	},

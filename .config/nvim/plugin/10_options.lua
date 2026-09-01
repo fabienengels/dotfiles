@@ -3,7 +3,6 @@
 vim.g.mapleader = ' ' -- Use `<Space>` as <Leader> key
 
 vim.o.updatetime = 500 -- Time (ms) before CursorHold fires
-vim.o.mousescroll = 'ver:25,hor:6' -- Customize mouse scroll
 vim.o.switchbuf   = 'usetab'       -- Use already opened buffers when switching
 vim.o.undofile    = true           -- Enable persistent undo
 vim.o.undodir = vim.fn.stdpath "data" .. "/undodir"
