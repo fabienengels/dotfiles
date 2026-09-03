@@ -133,6 +133,7 @@ end)
 now_if_args(function()
 	add({ "https://github.com/neovim/nvim-lspconfig" })
 	add({ "https://github.com/mason-org/mason.nvim" })
+	add({ "https://github.com/mason-org/mason-lspconfig.nvim" })
 
 	local languages = {
 		-- "ansible_ls",
@@ -168,6 +169,32 @@ now_if_args(function()
 		firewall = {
 			enabled = true,
 			auto_managed = true,
+		},
+	})
+
+	-- Mason <-> LSP bridge (Mason 2.x itself no longer auto-installs LSP servers):
+	-- - `ensure_installed`: install these servers via Mason at startup if missing.
+	-- - Only servers that Mason should *own* are listed here. System-installed
+	--   servers (gopls, clangd, pyright, ...) are deliberately omitted so Mason
+	--   doesn't download duplicate copies that would shadow them. (Note: Mason's
+	--   bin dir is prepended to PATH, so a Mason-installed binary always wins
+	--   over a same-named system binary — e.g. the leftover rustup shim).
+	-- - `dockerls` is omitted: the Mason registry maps it to the wrong package
+	--   (dockerfile-language-server), while lspconfig expects `docker-langserver`
+	--   from docker-language-server (installed in the Mason bin dir manually).
+	-- - `kdl_lsp` and `nushell` are omitted: no package exists in the Mason registry.
+	-- - Anything installed via Mason is enabled automatically (automatic_enable
+	--   default), and `:LspInstall <server>` installs + enables on demand.
+	require("mason-lspconfig").setup({
+		ensure_installed = {
+			"astro",
+			"htmx",
+			"just",
+			"kcl",
+			"postgres_lsp",
+			"rust_analyzer",
+			"svelte",
+			"tofu_ls",
 		},
 	})
 
