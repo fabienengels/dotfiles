@@ -94,7 +94,7 @@ enabled = false
 source = "wallpaper"
 
 [theme.templates]
-builtin_ids = ["gtk3", "gtk4", "ghostty", "kcolorscheme", "niri", "qt"]
+builtin_ids = ["btop", "gtk3", "gtk4", "ghostty", "kcolorscheme", "niri", "qt"]
 community_ids = ["bat", "obsidian", "pi-agent", "pywalfox-beta4", "zathura", "zellij"]
 
 [wallpaper]
