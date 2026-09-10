@@ -11,6 +11,15 @@ radius = 0
 start = [ "network", "bluetooth", "notifications", "caffeine", "tray" ]
 widget_spacing = 8
 
+[widget.tray]
+drawer = true
+
+[widget.volume]
+show_label = false
+
+[widget.workspaces]
+active_pill_size = 1.0
+
 [control_center]
 hidden_tabs = ["system"]
 
