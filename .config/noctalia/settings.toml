@@ -1,14 +1,15 @@
 config_version = 12
 
 [bar.default]
-center = ["clock"]
-concave_edge_corners = false
-end = ["tray", "caffeine", "notifications", "network", "bluetooth", "volume", "brightness", "battery"]
-margin_ends = 16
-radius_top_left = 0
-radius_top_right = 0
-scale = 1.2
-start = ["workspaces"]
+background_opacity = 0.85
+center = [ "workspaces" ]
+end = [ "brightness", "volume", "battery", "clock" ]
+hover_highlight = false
+margin_ends = 0
+position = "left"
+radius = 0
+start = [ "network", "bluetooth", "notifications", "caffeine", "tray" ]
+widget_spacing = 8
 
 [control_center]
 hidden_tabs = ["system"]
