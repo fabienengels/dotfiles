@@ -13,6 +13,7 @@ keybinds clear-defaults=true {
         bind "Alt 7" { GoToTab 7; }
         bind "Alt 8" { GoToTab 8; }
         bind "Alt 9" { GoToTab 9; }
+        bind "Alt t" { NewTab; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "normal"; }
@@ -300,23 +301,6 @@ web_client {
     font "monospace"
 }
  
-// Use a simplified UI without special fonts (arrow glyphs)
-// Options:
-//   - true
-//   - false (Default)
-// 
-// simplified_ui true
- 
-// Enable OSC8 hyperlink output
-// Options:
-//   - true (Default)
-//   - false
-// 
-// osc8_hyperlinks true
- 
-// Choose the theme that is specified in the themes section.
-// Default: default
-// 
 theme "noctalia"
  
 // Theme to use when the host terminal reports a dark color palette.
