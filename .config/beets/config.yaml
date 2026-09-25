@@ -1,41 +1,64 @@
 directory: ~/Music
-library: ~/.config/beets/library.db
-plugins: the convert embedart fetchart ftintitle lastgenre missing scrub duplicates replaygain
-original_date: yes
-replace:
-  "Alt236": "ALT 236"
-  "&": "and"
-  '[*<>\/\\]': "-"
-  '[<>:"\?\*\|]': _
-  '[?.":\!`]': ""
-  '[\\/]': _
-  '[\x00-\x1f]': _
-  '\.$': _
-  '\s+$': ""
-  "^-": _
-  '^\.': _
-  '^\s+': ""
-  "✝": "+"
-ui:
-  color: yes
+library: ~/Sync/beets.db
 import:
   move: yes
-  timid: yes
-  default_action: skip
-  languages: en fr
+  languages: fr en
+plugins:
+  - deezer
+  - musicbrainz
+  - the
+  - embedart
+  - fetchart
+  - scrub
+  - ftintitle
+  - replaygain
+  - zero
+original_date: yes
+# replace:
+#   "Alt236": "ALT 236"
+#   "&": "and"
+#   '[*<>\/\\]': "-"
+#   '[<>:"\?\*\|]': _
+#   '[?.":\!`]': ""
+#   '[\\/]': _
+#   '[\x00-\x1f]': _
+#   '\.$': _
+#   '\s+$': ""
+#   "^-": _
+#   '^\.': _
+#   '^\s+': ""
+#   "✝": "+"
+ui:
+  color: yes
 musicbrainz:
   genres: yes
 match:
   preferred:
-    countries: ["FR", "US", "GB|UK"]
+    media: ["CD", "Digital Media"]
+    countries: ["FR", "US", "GB", "UK"]
+  distance_wights:
+    media: 4.0
+  ignored_media:
+    - ".*Vinyl.*"
 paths:
   default: Albums/%lower{%left{$albumartist, 1}}/$albumartist - $album%aunique{}/$track $title
   comp: Albums/_/$album%aunique{}/$track $title
   singleton: Singletons/%the{$artist} - $title
+lastgenre:
+  count: 2
 fetchart:
+  auto: no
   enforce_ratio: true
   minwidth: 1200
   maxwidth: 1200
-  sources: "*"
+  sources:
+    - filesystem
+    - coverart
+    - itunes
+    - amazon
+    - albumart
 replaygain:
-  backend: gstreamer
+  backend: metaflac
+zero:
+  fields:
+    - comments
