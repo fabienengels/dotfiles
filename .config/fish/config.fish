@@ -10,6 +10,7 @@ starship init fish | source
 zoxide init fish | source
 atuin init fish --disable-up-arrow | source
 # flux completion fish | source
+direnv hook fish | source
 
 # if test -f '/usr/share/fish/vendor_completions.d/kubectl.fish'
 #     source /usr/share/fish/vendor_completions.d/kubectl.fish
