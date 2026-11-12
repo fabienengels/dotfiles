@@ -62,7 +62,7 @@ window-rule {
   match app-id="com.mitchellh.ghostty"
   match app-id="foot"
 
-  opacity 0.85
+  opacity 0.8
 
   background-effect {
     blur true
